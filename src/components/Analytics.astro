@@ -1,14 +1,59 @@
 ---
-const GA_ID = import.meta.env.PUBLIC_GA_ID;
+import Button from "./Button.astro"
 ---
-{GA_ID && (
-  <>
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
-    <script is:inline define:vars={{ GA_ID }}>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', GA_ID);
-    </script>
-  </>
-)}
+
+<div class="fixed bottom-0 left-0 right-0  bg-gray-100 dark:bg-slate-700 p-4 shadow-lg z-50" id="cookie-banner">
+  <div class=" text-gray-600 dark:text-red-100 max-w-4xl mx-auto">
+    <p class="text-sm mb-4">
+      Ce site utilise des cookies pour améliorer votre expérience et analyser le trafic.
+    </p>
+    <div class="flex flex-wrap gap-2 justify-end">
+      <Button id="accept-all" >
+        Tout accepter
+      </Button>
+      <Button id="decline-all" >
+        Tout refuser
+      </Button>
+      <Button id="customize" >
+        Personnaliser
+      </Button>
+    </div>
+  </div>
+</div>
+
+<!-- Fenêtre de préférences -->
+<div class="fixed inset-0 text-gray-600 dark:text-gray-200 bg-black bg-opacity-50 flex items-center justify-center z-50" id="cookie-modal" hidden>
+  <div class= "bg-gray-100 dark:bg-slate-700 rounded-lg p-6 max-w-md w-full mx-4" id="cookie-settings">
+    <h3 class="text-xl font-semibold mb-4">Préférences de confidentialité</h3>
+    <div class="space-y-4 mb-4">
+      <label class="flex items-start gap-3">
+        <input type="checkbox" id="analytics" class="mt-1 h-5 w-5" />
+        <div >
+          <span class="block font-medium">Mesure d'audience</span>
+          <span class="block text-sm">Google Analytics - nous aide à comprendre comment vous utilisez le site</span>
+        </div>
+      </label>
+      <label class="flex items-start gap-3">
+        <input type="checkbox" id="services" class="mt-1 h-5 w-5" />
+        <div>
+          <span class="block font-medium">Services tiers</span>
+          <span class="block text-sm">Calendly - pour la prise de rendez-vous</span>
+        </div>
+      </label>
+    </div>
+    <p class="text-sm mb-4">
+      ℹ️ Ces services peuvent déposer des cookies nécessaires à leur bon fonctionnement.
+    </p>
+    <div class="flex flex-wrap gap-2 justify-end">
+      <Button id="save-preferences">
+        Enregistrer mes préférences
+      </Button>
+      <Button id="close-modal">
+        Fermer
+      </Button>
+    </div>
+  </div>
+</div>
+
+
+

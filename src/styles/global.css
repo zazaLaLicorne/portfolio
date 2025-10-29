@@ -1,64 +1,252 @@
-@keyframes aurora {
-  0%, 100% {
-    transform: translateY(-20px) translateX(0);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(20px) translateX(10px);
-    opacity: 0.5;
-  }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------
+   🎨 Variables globales (thème clair)
+-------------------------------- */
+:root {
+  --color-bg: #f5f2ff;
+  --color-text: #262038;
+  --color-primary: #b26bff;
+  --color-primary-dark: #7c3aed;
+  --color-secondary: #f9a8d4;
+  --color-accent: #fde68a;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Merriweather', serif;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s ease;
 }
 
-@keyframes float {
-  0% {
-    transform: translateX(-10%);
-  }
-  100% {
-    transform: translateX(120%);
-  }
+/* ------------------------------
+   🌙 Thème sombre
+-------------------------------- */
+[data-theme="dark"] {
+  --color-bg: #1e1e2a;
+  --color-text: #f5f3ff;
+  --color-primary: #c084fc;
+  --color-primary-dark: #a855f7;
+  --color-secondary: #f9a8d4;
+  --color-accent: #fde68a;
 }
 
-/* Aurore boréale pour le dark mode */
-.dark-mode::before {
-  content: "";
+/* ------------------------------
+   🧱 Styles de base
+-------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-base;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+  transition: background-color var(--transition-normal),
+              color var(--transition-normal);
+}
+
+/* ------------------------------
+   🪶 Titres
+-------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  line-height: 1.2;
+}
+
+
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; color: var(--color-primary-dark); }
+
+p {
+  /* color: var(--color-text);
+  opacity: 0.9;  */
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+[data-theme="dark"] p {
+  opacity: 1;
+}
+
+
+/* ------------------------------
+   🔗 Liens
+-------------------------------- */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+a::after {
+  content: '';
   position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(120deg, rgba(66, 245, 183, 0.1) 0%, rgba(66, 245, 183, 0.3) 50%, rgba(66, 245, 183, 0.1) 100%),
-    linear-gradient(60deg, rgba(255, 105, 180, 0.1) 0%, rgba(255, 105, 180, 0.3) 50%, rgba(255, 105, 180, 0.1) 100%);
-  animation: aurora 15s ease-in-out infinite;
-  z-index: -1;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-normal);
 }
 
-/* Nuages pour le light mode */
-.cloud {
-  position: absolute;
-  background: white;
-  border-radius: 50px;
-  opacity: 0.7;
-  animation: float 20s linear infinite;
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-.cloud:nth-child(1) {
-  width: 100px;
-  height: 40px;
-  top: 20%;
-  left: -10%;
-  animation-delay: 0s;
+
+/* ------------------------------
+   🌟 Cartes et sections
+-------------------------------- */
+.card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast);
 }
 
-.cloud:nth-child(2) {
-  width: 150px;
-  height: 60px;
-  top: 60%;
-  left: -20%;
-  animation-delay: 3s;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.cloud:nth-child(3) {
-  width: 200px;
-  height: 80px;
-  top: 40%;
-  left: -30%;
-  animation-delay: 6s;
+[data-theme="dark"] .card {
+  background-color: #2a2a3a;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
+
+/* ------------------------------
+   🧩 Utilitaires globaux
+-------------------------------- */
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section {
+  @apply py-16 px-6 md:px-12;
+}
+
+.container {
+  @apply max-w-6xl mx-auto;
+}
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 1s ease-out;
+    }
+
+          @keyframes aurora-1 {
+        0%, 100% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 0.3;
+        }
+        33% {
+          transform: translateY(-20px) translateX(10px) rotate(2deg);
+          opacity: 0.5;
+        }
+        66% {
+          transform: translateY(10px) translateX(-5px) rotate(-1deg);
+          opacity: 0.4;
+        }
+      }
+
+      @keyframes aurora-2 {
+        0%, 100% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 0.3;
+        }
+        33% {
+          transform: translateY(15px) translateX(-15px) rotate(-2deg);
+          opacity: 0.5;
+        }
+        66% {
+          transform: translateY(-10px) translateX(10px) rotate(1deg);
+          opacity: 0.4;
+        }
+      }
+
+      @keyframes aurora-3 {
+        0%, 100% {
+          transform: translateY(0) scale(1);
+          opacity: 0.2;
+        }
+        50% {
+          transform: translateY(-30px) scale(1.1);
+          opacity: 0.4;
+        }
+      }
+
+      .animate-aurora-1 {
+        animation: aurora-1 15s ease-in-out infinite;
+      }
+
+      .animate-aurora-2 {
+        animation: aurora-2 20s ease-in-out infinite;
+        animation-delay: 5s;
+      }
+
+      .animate-aurora-3 {
+        animation: aurora-3 25s ease-in-out infinite;
+        animation-delay: 10s;
+      }
+
+      /* Nuages Light Mode */
+      @keyframes float-cloud {
+        0% {
+          transform: translateX(-10%);
+        }
+        100% {
+          transform: translateX(110%);
+        }
+      }
+
+      .cloud-1 {
+        top: 20%;
+        animation: float-cloud 30s linear infinite;
+      }
+
+      .cloud-2 {
+        top: 50%;
+        animation: float-cloud 45s linear infinite;
+        animation-delay: 5s;
+      }
+
+      .cloud-3 {
+        top: 70%;
+        animation: float-cloud 35s linear infinite;
+        animation-delay: 10s;
+      }

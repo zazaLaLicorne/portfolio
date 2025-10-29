@@ -1,4 +1,5 @@
 ---
+import Button from "./Button.astro"
 ---
 
 <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-auto">
@@ -9,23 +10,19 @@
       </p>
 
       <nav>
-        <ul class="flex flex-wrap justify-center gap-6 text-sm">
+        <ul class="flex  justify-center gap-6 text-sm">
           <li>
             <a 
               href="/m-legales" 
-              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+              class="text-gray-600 dark:text-gray-400 font-medium transition-colors"
             >
               Mentions légales
             </a>
           </li>
           <li>
-            <button 
-              id="manage-cookies" 
-              type="button"
-              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors cursor-pointer"
-            >
+            <a id="manage-cookies" class="text-gray-600 dark:text-gray-400 font-medium transition-colors" >
               Gérer mes cookies
-            </button>
+            </a>
           </li>
         </ul>
       </nav>
@@ -33,12 +30,3 @@
   </div>
 </footer>
 
-<script>
-  const manageCookiesBtn = document.getElementById('manage-cookies');
-  
-  manageCookiesBtn?.addEventListener('click', () => {
-    // Ici vous pourrez intégrer votre gestionnaire de cookies
-    console.log('Ouvrir le panneau de gestion des cookies');
-    alert('Gestionnaire de cookies à implémenter');
-  });
-</script>
