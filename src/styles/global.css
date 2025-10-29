@@ -1,0 +1,64 @@
+@keyframes aurora {
+  0%, 100% {
+    transform: translateY(-20px) translateX(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(20px) translateX(10px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+/* Aurore boréale pour le dark mode */
+.dark-mode::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(66, 245, 183, 0.1) 0%, rgba(66, 245, 183, 0.3) 50%, rgba(66, 245, 183, 0.1) 100%),
+    linear-gradient(60deg, rgba(255, 105, 180, 0.1) 0%, rgba(255, 105, 180, 0.3) 50%, rgba(255, 105, 180, 0.1) 100%);
+  animation: aurora 15s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* Nuages pour le light mode */
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.7;
+  animation: float 20s linear infinite;
+}
+
+.cloud:nth-child(1) {
+  width: 100px;
+  height: 40px;
+  top: 20%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.cloud:nth-child(2) {
+  width: 150px;
+  height: 60px;
+  top: 60%;
+  left: -20%;
+  animation-delay: 3s;
+}
+
+.cloud:nth-child(3) {
+  width: 200px;
+  height: 80px;
+  top: 40%;
+  left: -30%;
+  animation-delay: 6s;
+}

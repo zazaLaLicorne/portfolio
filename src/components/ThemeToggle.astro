@@ -1,0 +1,32 @@
+---
+
+---
+
+<button
+id="theme-toggle"
+  class="fixed top-4 right-4 p-2 rounded bg-gray-200 dark:bg-gray-800 z-50"
+ 
+>
+  <span class="dark:hidden">🌙</span>
+  <span class="hidden dark:inline">☀️</span>
+</button>
+
+<script is:inline>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      toggleButton.textContent = "🌙";
+      body.classList.remove('bg-gradient-to-b', 'from-[#87CEEB]', 'to-[#E0F7FA]');
+      body.classList.add('bg-gradient-to-b', 'from-[#000428]', 'to-[#0a1e3f]');
+    } else {
+      toggleButton.textContent = '☀️';
+      body.classList.remove('bg-gradient-to-b', 'from-[#000428]', 'to-[#0a1e3f]');
+      body.classList.add('bg-gradient-to-b', 'from-[#87CEEB]', 'to-[#E0F7FA]');
+    }
+  });
+</script>

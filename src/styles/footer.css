@@ -1,0 +1,72 @@
+.site-footer {
+  background: var(--bg);
+  border-top: 1px solid var(--text);
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(text);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-text {
+  font-size: var(--font-base);
+  margin-bottom: 1rem;
+}
+
+.footer-nav {
+  margin-top: 1rem;
+}
+
+.footer-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-list a:hover {
+  color: var(--accent);
+}
+
+/* Bouton "Gérer mes cookies" stylisé comme un lien */
+.footer-list .manage-cookies-link {
+  /* Reset des styles button */
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  
+  /* Styles identiques aux liens */
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: inherit;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-list .manage-cookies-link:hover {
+  color: var(--accent);
+  transform: none; /* Désactive le translateY du button global */
+  background: none;
+}
+
+@media (max-width: 768px) {
+  .footer-list {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

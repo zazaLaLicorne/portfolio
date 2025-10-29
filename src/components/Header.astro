@@ -1,0 +1,47 @@
+---
+import "../styles/header.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
+
+---
+
+
+<header class="site-header">
+  <nav class="">
+    <!-- Remplacez la checkbox par un lien burger -->
+    <a href="#menu" class="burger" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+    
+    <ul class="nav-list" id="menu">
+      <!-- Ajoutez un lien de fermeture invisible -->
+      <li class="close-menu"><a href="#"></a></li>
+      
+      <li class="nav-item">
+        <a href="#section1">section1</a>
+      </li>
+      <li class="nav-item">
+        <a href="#section2">section2</a>
+        <!-- <ul class="submenu">
+          <li><a href="#accomp-individuel">Thérapie individuelle</a></li>
+          <li><a href="#accomp-couple">Thérapie conjugale</a></li>
+        </ul> -->
+      </li>
+      <li class="nav-item">
+        <a href="#section3">section3</a>
+      </li>
+      <li class="nav-item">
+        <a href="#section4">section4</a>
+      </li>
+      <li class="nav-item">
+        <a href="#section5">section5</a>
+      </li>
+      <li class="nav-item">
+        <a href="#section6">section6</a>
+      </li>
+
+    </ul>
+    <ThemeToggle client:load />
+  </nav>
+</header>
