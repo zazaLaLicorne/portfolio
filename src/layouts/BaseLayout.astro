@@ -1,25 +1,138 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import "../styles/global.css";
-
 ---
 
-
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <title>Isabelle LAMARRE Portfolio</title>
     <meta
       name="description"
-      content="Portfolio d' Isabelle LAMARRE- Développeuse Web/JS/Réact/Next/Astro"
+      content="Portfolio d'Isabelle LAMARRE - Développeuse Web/JS/React/Next/Astro"
     />
   </head>
-   <body class="light-mode min-h-screen relative overflow-hidden transition-colors duration-500"> 
-     <Header slot="header" />
-    <main class="relative z-10 container mx-auto p-4"><slot /></main>
-    <Footer slot="footer" />
+  <body class="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20 transition-colors duration-500 relative overflow-x-hidden">
+    
+    <!-- Effet Aurore Boréale (Dark Mode uniquement) -->
+    <div class="hidden dark:block fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <!-- Aurore 1 -->
+      <div class="aurora-1 absolute inset-0 opacity-30">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-emerald-400/30 via-transparent to-transparent animate-aurora-1"></div>
+      </div>
+      
+      <!-- Aurore 2 -->
+      <div class="aurora-2 absolute inset-0 opacity-30">
+        <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-purple-400/30 via-transparent to-transparent animate-aurora-2"></div>
+      </div>
+      
+      <!-- Aurore 3 -->
+      <div class="aurora-3 absolute inset-0 opacity-20">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-t from-blue-400/30 via-transparent to-transparent animate-aurora-3"></div>
+      </div>
+    </div>
+
+    <!-- Nuages (Light Mode uniquement) -->
+    <div class="dark:hidden fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <div class="cloud cloud-1 absolute w-32 h-12 bg-white/40 rounded-full blur-xl"></div>
+      <div class="cloud cloud-2 absolute w-48 h-16 bg-white/30 rounded-full blur-xl"></div>
+      <div class="cloud cloud-3 absolute w-40 h-14 bg-white/35 rounded-full blur-xl"></div>
+    </div>
+
+    <!-- Contenu -->
+    <div class="relative z-10 flex flex-col min-h-screen">
+      <Header />
+      <main class="flex-grow pt-16">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+
+    <style>
+      @keyframes aurora-1 {
+        0%, 100% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 0.3;
+        }
+        33% {
+          transform: translateY(-20px) translateX(10px) rotate(2deg);
+          opacity: 0.5;
+        }
+        66% {
+          transform: translateY(10px) translateX(-5px) rotate(-1deg);
+          opacity: 0.4;
+        }
+      }
+
+      @keyframes aurora-2 {
+        0%, 100% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 0.3;
+        }
+        33% {
+          transform: translateY(15px) translateX(-15px) rotate(-2deg);
+          opacity: 0.5;
+        }
+        66% {
+          transform: translateY(-10px) translateX(10px) rotate(1deg);
+          opacity: 0.4;
+        }
+      }
+
+      @keyframes aurora-3 {
+        0%, 100% {
+          transform: translateY(0) scale(1);
+          opacity: 0.2;
+        }
+        50% {
+          transform: translateY(-30px) scale(1.1);
+          opacity: 0.4;
+        }
+      }
+
+      .animate-aurora-1 {
+        animation: aurora-1 15s ease-in-out infinite;
+      }
+
+      .animate-aurora-2 {
+        animation: aurora-2 20s ease-in-out infinite;
+        animation-delay: 5s;
+      }
+
+      .animate-aurora-3 {
+        animation: aurora-3 25s ease-in-out infinite;
+        animation-delay: 10s;
+      }
+
+      /* Nuages Light Mode */
+      @keyframes float-cloud {
+        0% {
+          transform: translateX(-10%);
+        }
+        100% {
+          transform: translateX(110%);
+        }
+      }
+
+      .cloud-1 {
+        top: 20%;
+        animation: float-cloud 30s linear infinite;
+      }
+
+      .cloud-2 {
+        top: 50%;
+        animation: float-cloud 45s linear infinite;
+        animation-delay: 5s;
+      }
+
+      .cloud-3 {
+        top: 70%;
+        animation: float-cloud 35s linear infinite;
+        animation-delay: 10s;
+      }
+    </style>
   </body>
 </html>

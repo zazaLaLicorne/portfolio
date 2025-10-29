@@ -1,19 +1,44 @@
 ---
-import "../styles/footer.css";
 ---
 
-<footer class="site-footer">
-  <div class="footer-container">
-    <p class="footer-text">© {new Date().getFullYear()} Isabelle LAMARRE — Tous droits réservés.</p>
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="text-center">
+      <p class="text-gray-600 dark:text-gray-400 mb-4">
+        © {new Date().getFullYear()} Isabelle LAMARRE — Tous droits réservés.
+      </p>
 
-    <nav class="footer-nav">
-      <ul class="footer-list">
-        <li><a href="/m-legales">Mentions légales</a></li>
-        <li><button id="manage-cookies" class="manage-cookies-link" type="button">
-            Gérer mes cookies
-          </button>
-   </li>
-      </ul>
-    </nav>
+      <nav>
+        <ul class="flex flex-wrap justify-center gap-6 text-sm">
+          <li>
+            <a 
+              href="/m-legales" 
+              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+            >
+              Mentions légales
+            </a>
+          </li>
+          <li>
+            <button 
+              id="manage-cookies" 
+              type="button"
+              class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors cursor-pointer"
+            >
+              Gérer mes cookies
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </footer>
+
+<script>
+  const manageCookiesBtn = document.getElementById('manage-cookies');
+  
+  manageCookiesBtn?.addEventListener('click', () => {
+    // Ici vous pourrez intégrer votre gestionnaire de cookies
+    console.log('Ouvrir le panneau de gestion des cookies');
+    alert('Gestionnaire de cookies à implémenter');
+  });
+</script>

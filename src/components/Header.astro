@@ -1,47 +1,123 @@
 ---
-import "../styles/header.css";
-import ThemeToggle from "../components/ThemeToggle.astro";
-
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-
-<header class="site-header">
-  <nav class="">
-    <!-- Remplacez la checkbox par un lien burger -->
-    <a href="#menu" class="burger" aria-label="Ouvrir le menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </a>
-    
-    <ul class="nav-list" id="menu">
-      <!-- Ajoutez un lien de fermeture invisible -->
-      <li class="close-menu"><a href="#"></a></li>
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-md">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
       
-      <li class="nav-item">
-        <a href="#section1">section1</a>
-      </li>
-      <li class="nav-item">
-        <a href="#section2">section2</a>
-        <!-- <ul class="submenu">
-          <li><a href="#accomp-individuel">Thérapie individuelle</a></li>
-          <li><a href="#accomp-couple">Thérapie conjugale</a></li>
-        </ul> -->
-      </li>
-      <li class="nav-item">
-        <a href="#section3">section3</a>
-      </li>
-      <li class="nav-item">
-        <a href="#section4">section4</a>
-      </li>
-      <li class="nav-item">
-        <a href="#section5">section5</a>
-      </li>
-      <li class="nav-item">
-        <a href="#section6">section6</a>
-      </li>
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          IL
+        </a>
+      </div>
 
-    </ul>
-    <ThemeToggle client:load />
+      <!-- Navigation Desktop -->
+      <ul class="hidden md:flex items-center space-x-8">
+        <li>
+          <a href="#section1" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
+            Section 1
+          </a>
+        </li>
+        <li>
+          <a href="#section2" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
+            Section 2
+          </a>
+        </li>
+        <li>
+          <a href="#section3" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
+            Section 3
+          </a>
+        </li>
+        <li>
+          <a href="#section4" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
+            Section 4
+          </a>
+        </li>
+        <li>
+          <a href="#section5" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
+            Section 5
+          </a>
+        </li>
+        <li>
+          <a href="#section6" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
+            Section 6
+          </a>
+        </li>
+      </ul>
+
+      <!-- Theme Toggle -->
+      <div class="hidden md:block">
+        <ThemeToggle />
+      </div>
+
+      <!-- Burger Menu Mobile -->
+      <button 
+        id="mobile-menu-button"
+        class="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        aria-label="Menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <ul class="space-y-2">
+        <li>
+          <a href="#section1" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+            Section 1
+          </a>
+        </li>
+        <li>
+          <a href="#section2" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+            Section 2
+          </a>
+        </li>
+        <li>
+          <a href="#section3" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+            Section 3
+          </a>
+        </li>
+        <li>
+          <a href="#section4" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+            Section 4
+          </a>
+        </li>
+        <li>
+          <a href="#section5" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+            Section 5
+          </a>
+        </li>
+        <li>
+          <a href="#section6" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+            Section 6
+          </a>
+        </li>
+        <li class="pt-2 border-t border-gray-200 dark:border-gray-700">
+          <ThemeToggle />
+        </li>
+      </ul>
+    </div>
   </nav>
 </header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Fermer le menu mobile quand on clique sur un lien
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>
