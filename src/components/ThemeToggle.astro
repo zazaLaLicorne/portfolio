@@ -3,6 +3,7 @@
 
 <button
   id="theme-toggle"
+  type="button"
   class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 shadow-sm hover:shadow-md"
   aria-label="Toggle theme"
 >
@@ -36,9 +37,12 @@
   </svg>
 </button>
 
-<script is:inline>
+<script>
+  // Fonction pour initialiser le thème
   function initTheme() {
-    const theme = localStorage.getItem('theme') || 'light';
+    // Vérifier le localStorage ou utiliser 'light' par défaut
+    const savedTheme = localStorage.getItem('theme');
+    const theme = savedTheme || 'light';
     
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -47,26 +51,34 @@
     }
   }
 
-  // Initialiser le thème au chargement
+  // Initialiser immédiatement (avant DOMContentLoaded)
   initTheme();
 
-  // Toggle theme
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('theme-toggle');
+  // Attacher l'événement au bouton
+  function attachToggleListener() {
+    const toggleButtons = document.querySelectorAll('#theme-toggle');
     
-    toggleButton?.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      
-      if (isDark) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        
+        if (isDark) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
     });
-  });
+  }
 
-  // Réappliquer le thème lors de la navigation (pour Astro)
-  document.addEventListener('astro:page-load', initTheme);
+  // Attacher au chargement initial
+  document.addEventListener('DOMContentLoaded', attachToggleListener);
+
+  // Réattacher lors de la navigation Astro
+  document.addEventListener('astro:page-load', () => {
+    initTheme();
+    attachToggleListener();
+  });
 </script>
