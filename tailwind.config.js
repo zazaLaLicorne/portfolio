@@ -41,6 +41,12 @@ export default {
         warning: "#F59E0B",
         success: "#10B981",
       },
+       animation: {
+      'glow-light': 'glowPulseLight 6s ease-in-out infinite',
+      'glow-dark': 'glowPulseDark 6s ease-in-out infinite',
+      'rotate-shadow': 'rotateShadow 10s linear infinite',
+      'breathingShadow': 'breathingShadow 10s linear infinite'
+  },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui"],
         serif: ["Merriweather", "ui-serif", "serif"],

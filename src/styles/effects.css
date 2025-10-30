@@ -1,0 +1,45 @@
+@keyframes glowPulseLight {
+  0%, 100% {
+    box-shadow: 0 0 20px 5px rgba(255, 200, 230, 0.3),
+                0 0 40px 15px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px 10px rgba(255, 230, 250, 0.6),
+                0 0 60px 25px rgba(255, 200, 230, 0.4);
+  }
+}
+
+@keyframes glowPulseDark {
+  0%, 100% {
+    box-shadow: 0 0 25px 5px rgba(120, 180, 255, 0.2),
+                0 0 60px 20px rgba(40, 100, 200, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 35px 10px rgba(160, 220, 255, 0.4),
+                0 0 80px 30px rgba(100, 180, 255, 0.25);
+  }
+}
+
+@keyframes rotateShadow {
+  0% {
+    box-shadow: 0 0 25px 5px rgba(200, 150, 255, 0.2);
+  }
+  25% {
+    box-shadow: 5px 0 30px 10px rgba(150, 100, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 5px 30px 10px rgba(120, 200, 255, 0.4);
+  }
+  75% {
+    box-shadow: -5px 0 30px 10px rgba(200, 150, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 25px 5px rgba(200, 150, 255, 0.2);
+  }
+}
+
+@keyframes breathingShadow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.15); }
+}
+

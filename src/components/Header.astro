@@ -1,64 +1,42 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+import Image from "astro/components/Image.astro";
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-md">
+<header class="fixed top-0 left-0 right-0 bg-slate-200 dark:bg-slate-800 z-50 shadow-md">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       
-      <!-- Logo -->
-      <div class="flex-shrink-0">
-        <a href="/" class="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-          IL
+     <div class="flex-shrink-0">
+        <a href="/" aria-label="home" class="flex items-center hover:text-[var(--color-accent)] transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="currentColor">
+            <path d="M226.67-186.67h140v-246.66h226.66v246.66h140v-380L480-756.67l-253.33 190v380ZM160-120v-480l320-240 320 240v480H526.67v-246.67h-93.34V-120H160Zm320-352Z"/>
+          </svg>
         </a>
       </div>
 
       <!-- Navigation Desktop -->
       <ul class="hidden md:flex items-center space-x-8">
-        <li>
-          <a href="#section1" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
-            Section 1
-          </a>
-        </li>
-        <li>
-          <a href="#section2" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
-            Section 2
-          </a>
-        </li>
-        <li>
-          <a href="#section3" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
-            Section 3
-          </a>
-        </li>
-        <li>
-          <a href="#section4" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
-            Section 4
-          </a>
-        </li>
-        <li>
-          <a href="#section5" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
-            Section 5
-          </a>
-        </li>
-        <li>
-          <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">
-            Contacts
-          </a>
-        </li>
+        <li><a href="#section1" class="hover:text-[var(--color-accent)] font-medium transition-colors">Section 1</a></li>
+        <li><a href="#section2" class="hover:text-[var(--color-accent)] font-medium transition-colors">Section 2</a></li>
+        <li><a href="#section3" class="hover:text-[var(--color-accent)] font-medium transition-colors">Section 3</a></li>
+        <li><a href="#section4" class="hover:text-[var(--color-accent)] font-medium transition-colors">Section 4</a></li>
+        <li><a href="#section5" class="hover:text-[var(--color-accent)] font-medium transition-colors">Section 5</a></li>
+        <li><a href="#contact" class="hover:text-[var(--color-accent)] font-medium transition-colors">Contacts</a></li>
       </ul>
 
       <!-- Theme Toggle -->
-      <div class="hidden md:block">
+      <div>
         <ThemeToggle />
       </div>
 
       <!-- Burger Menu Mobile -->
       <button 
         id="mobile-menu-button"
-        class="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-[var(--color-text)]"
         aria-label="Menu"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-6 h-6" fill="none" stroke="var(--color-text)" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
@@ -67,39 +45,12 @@ import ThemeToggle from "./ThemeToggle.astro";
     <!-- Menu Mobile -->
     <div id="mobile-menu" class="hidden md:hidden pb-4">
       <ul class="space-y-2">
-        <li>
-          <a href="#section1" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-            Section 1
-          </a>
-        </li>
-        <li>
-          <a href="#section2" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-            Section 2
-          </a>
-        </li>
-        <li>
-          <a href="#section3" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-            Section 3
-          </a>
-        </li>
-        <li>
-          <a href="#section4" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-            Section 4
-          </a>
-        </li>
-        <li>
-          <a href="#section5" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-            Section 5
-          </a>
-        </li>
-        <li>
-          <a href="#section6" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-            Section 6
-          </a>
-        </li>
-        <li class="pt-2 border-t border-gray-200 dark:border-gray-700">
-          <ThemeToggle />
-        </li>
+        <li><a href="#section1" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Section 1</a></li>
+        <li><a href="#section2" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Section 2</a></li>
+        <li><a href="#section3" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Section 3</a></li>
+        <li><a href="#section4" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Section 4</a></li>
+        <li><a href="#section5" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Section 5</a></li>
+        <li><a href="#contact" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Contacts</a></li>
       </ul>
     </div>
   </nav>
@@ -113,7 +64,6 @@ import ThemeToggle from "./ThemeToggle.astro";
     mobileMenu?.classList.toggle('hidden');
   });
 
-  // Fermer le menu mobile quand on clique sur un lien
   const mobileLinks = mobileMenu?.querySelectorAll('a');
   mobileLinks?.forEach(link => {
     link.addEventListener('click', () => {

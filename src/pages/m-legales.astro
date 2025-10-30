@@ -1,14 +1,15 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
 ---
 
 <BaseLayout>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center mb-20 text-gray-600 dark:text-gray-300">
-    <h1>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 bg-slate-400 dark:bg-slate-950 lg:px-8 py-20">
+    <h1 class="text-center">
       Mentions légales
     </h1>
-    <section> 
+    <section class="flex flex-col"> 
       <h2>
         1. Éditeur du site
       </h2>
@@ -36,9 +37,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Site réalisé avec le framework <strong>Astro</strong> (sans base de données
         ni backend).
       </p>
-    </section>
-
-    <section >
+    
       <h2>
         2. Hébergement
       </h2>
@@ -47,13 +46,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <strong>Vercel Inc.</strong><br />
         440 N Barranca Ave #4133<br />
         Covina, CA 91723, États-Unis<br />
-        Site : <a href="https://vercel.com" target="_blank" rel="noopener"
-          >vercel.com</a
-        >
+        Site : <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>
       </p>
-    </section>
-
-    <section>
+    
       <h2>
         3. Cookies et mesures d’audience
       </h2>
@@ -68,9 +63,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Vous pouvez à tout moment accepter ou refuser le dépôt de cookies via la
         bannière de consentement affichée lors de votre première visite.
       </p>
-    </section>
-
-    <section>
+    
       <h2>
         4. Prise de rendez-vous et données personnelles
       </h2>
@@ -87,9 +80,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           >https://calendly.com/privacy</a
         >.
       </p>
-    </section>
+    
 
-    <section>
       <h2>
         5. Propriété intellectuelle
       </h2>
@@ -99,9 +91,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         mention contraire. Toute reproduction, représentation, modification ou
         utilisation sans autorisation préalable est interdite.
       </p>
-    </section>
 
-    <section>
       <h2>
         6. Liens externes
       </h2>
@@ -111,9 +101,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         dont le fonctionnement est indépendant. L’éditeur ne peut être tenu
         responsable de leur contenu ni de leurs politiques de confidentialité.
       </p>
-    </section>
 
-    <section>
       <h2>
         7. Collecte et traitement des données
       </h2>
@@ -144,9 +132,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           >lalicornecosmique62@gmail.com</a
         >.
       </p>
-    </section>
-
-    <section>
+  
       <h2>
         8. Limitation de responsabilité
       </h2>
@@ -155,9 +141,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         sur le site, mais ne saurait être tenu responsable d’erreurs,
         d’omissions ou de toute interruption de service.
       </p>
-    </section>
 
-    <section>
       <h2>
         9. Droit applicable
       </h2>
@@ -169,6 +153,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
     <br/>
     <br/>
-    <a href="/" class=".btn">← Retour à l’accueil</a>
+    <Button href="/">← Retour à l’accueil</Button>
   </div>
 </BaseLayout>

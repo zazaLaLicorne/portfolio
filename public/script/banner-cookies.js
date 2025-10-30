@@ -1,34 +1,35 @@
 // public/banner-cookies.js
 
-// Fonction pour récupérer GA_ID depuis une balise meta
+// Récupère l’ID GA depuis une balise <meta name="ga-id" content="G-XXXXXXX">
 function getGAID() {
   const metaTag = document.querySelector('meta[name="ga-id"]');
   return metaTag ? metaTag.getAttribute("content") : null;
 }
 
-// Fonction pour charger Google Analytics
+// Charge Google Analytics uniquement après consentement
 function loadGoogleAnalytics(GA_ID) {
   if (!GA_ID) {
     console.error("GA_ID n'est pas défini.");
     return;
   }
 
+  // Empêche le double chargement
   if (document.querySelector('[src*="googletagmanager.com"]')) return;
 
-  const script1 = document.createElement("script");
-  script1.async = true;
-  script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-  document.head.appendChild(script1);
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
   }
   gtag("js", new Date());
-  gtag("config", GA_ID);
+  gtag("config", GA_ID, { anonymize_ip: true });
 }
 
-// Fonctions utilitaires
+// Gestion simplifiée des cookies
 function getCookie(name) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -53,71 +54,48 @@ document.addEventListener("DOMContentLoaded", () => {
   const banner = document.getElementById("cookie-banner");
   const modal = document.getElementById("cookie-modal");
   const analyticsCheckbox = document.getElementById("analytics");
-  const servicesCheckbox = document.getElementById("services");
 
   // Vérifie le consentement existant
   const consent = getCookie("cookie-consent");
   if (consent) {
     banner.classList.add("hidden");
-    modal.classList.add("hidden");
+    modal?.classList.add("hidden");
     const preferences = JSON.parse(consent);
     if (preferences.analytics) {
       loadGoogleAnalytics(GA_ID);
     }
   }
 
-  // Bouton "Tout accepter"
+  // Tout accepter
   document.getElementById("accept-all")?.addEventListener("click", () => {
-    setCookie(
-      "cookie-consent",
-      JSON.stringify({ analytics: true, services: true })
-    );
+    setCookie("cookie-consent", JSON.stringify({ analytics: true }));
     banner.style.display = "none";
     loadGoogleAnalytics(GA_ID);
   });
 
-  // Bouton "Tout refuser"
+  // Tout refuser
   document.getElementById("decline-all")?.addEventListener("click", () => {
-    setCookie(
-      "cookie-consent",
-      JSON.stringify({ analytics: false, services: false })
-    );
+    setCookie("cookie-consent", JSON.stringify({ analytics: false }));
     banner.style.display = "none";
   });
 
-  // Bouton "Personnaliser"
-  document.getElementById("customize")?.addEventListener("click", () => {
-    modal.classList.remove("hidden");
-  });
-
-  // Bouton "Enregistrer"
+  // Enregistrer préférences (si tu gardes la modale)
   document.getElementById("save-preferences")?.addEventListener("click", () => {
-    console.log("Bouton 'Enregistrer' cliqué");
-    const preferences = {
-      analytics: analyticsCheckbox.checked,
-      services: servicesCheckbox.checked,
-    };
+    const preferences = { analytics: analyticsCheckbox?.checked || false };
     setCookie("cookie-consent", JSON.stringify(preferences));
-
-    if (preferences.analytics) {
-      loadGoogleAnalytics(GA_ID);
-    }
-
+    if (preferences.analytics) loadGoogleAnalytics(GA_ID);
     banner.style.display = "none";
-    modal.classList.add("hidden");
+    modal?.classList.add("hidden");
   });
 
-  // Bouton "Fermer"
+  // Fermer modale
   document.getElementById("close-modal")?.addEventListener("click", () => {
-    console.log("Bouton 'close' cliqué");
-    modal.classList.add("hidden");
+    modal?.classList.add("hidden");
   });
 
-  // Fermer la modale en cliquant sur l'overlay
+  // Fermer en cliquant sur l’overlay
   modal?.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.add("hidden");
-    }
+    if (e.target === modal) modal.classList.add("hidden");
   });
 
   // Bouton "Gérer mes cookies" dans le footer
@@ -125,10 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const consent = getCookie("cookie-consent");
     if (consent) {
       const preferences = JSON.parse(consent);
-      analyticsCheckbox.checked = preferences.analytics || false;
-      servicesCheckbox.checked = preferences.services || false;
+      if (analyticsCheckbox) analyticsCheckbox.checked = preferences.analytics || false;
     }
     banner.style.display = "block";
     modal.hidden = false;
   });
 });
+
+
+
