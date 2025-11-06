@@ -1,0 +1,41 @@
+---
+import "../styles/cardverticale.css";
+import Badge from "./Badge.astro";
+import Button from "./Button.astro";
+import { Image } from "astro:assets";
+
+const {
+  projet,
+  image,
+  alt = "Illustration",
+  badgeLabel = "Projet",
+  badgeColor = "#6366f1",
+  title = "Titre du projet",
+  description = "Petite description du projet pour donner envie de cliquer.",
+  link = "#",
+  buttonLabel = "Voir le projet",
+} = Astro.props;
+
+const slug = projet?.slug;
+const href = link && link !== "#" ? link : (projet ? `/projets/${projet.slug}/` : "#");
+
+---
+
+<div class="card2">
+  <div class="card2-image">
+    <Image src={image} alt={alt} width={800} height={500} loading="lazy" />
+    <div class="badge-container">
+      <Badge label={badgeLabel} color={badgeColor} />
+    </div>
+  </div>
+
+  <div class="card2-content">
+    <h3 class="card2-title">{title}</h3>
+    <p class="card2-desc" set:html={description}></p>
+    <div class="card2-footer">
+      <a href={href}>
+        <Button label={buttonLabel} variant="gradient" size="sm" />
+      </a>
+    </div>
+  </div>
+</div>

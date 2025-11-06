@@ -5,11 +5,11 @@ import Button from "../components/Button.astro";
 ---
 
 <BaseLayout>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 bg-slate-400 dark:bg-slate-950 lg:px-8 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 text-[var(--text-color)] lg:px-8 py-20">
     <h1 class="text-center">
       Mentions légales
     </h1>
-    <section class="flex flex-col"> 
+    <section class="flex flex-col text-center gap-4 mt-8"> 
       <h2>
         1. Éditeur du site
       </h2>
@@ -33,6 +33,7 @@ import Button from "../components/Button.astro";
         la développeuse Web et de faciliter la prise de contact ou de
         rendez-vous.
       </p>
+     
       <p >
         Site réalisé avec le framework <strong>Astro</strong> (sans base de données
         ni backend).
@@ -96,7 +97,7 @@ import Button from "../components/Button.astro";
         6. Liens externes
       </h2>
       <p>
-        Le site propose des liens vers des services externes (Google Maps,
+        Le site propose des liens vers des services externes (
         Calendly, email, téléphone). Ces liens redirigent vers des plateformes
         dont le fonctionnement est indépendant. L’éditeur ne peut être tenu
         responsable de leur contenu ni de leurs politiques de confidentialité.
@@ -153,6 +154,6 @@ import Button from "../components/Button.astro";
     </section>
     <br/>
     <br/>
-    <Button href="/">← Retour à l’accueil</Button>
+    <Button href="/" variant="retour" >← Retour à l’accueil</Button>
   </div>
 </BaseLayout>

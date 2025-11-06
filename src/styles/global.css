@@ -1,3 +1,4 @@
+@import './variables.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,7 +7,7 @@
 /* ------------------------------
    🎨 Variables globales (thème clair)
 -------------------------------- */
-:root {
+/* :root {
   --color-bg: #f8f7fa;
   --color-text: #1f2937;
   --color-primary: #b26bff;
@@ -23,12 +24,12 @@
 
   --transition-fast: 0.2s ease;
   --transition-normal: 0.35s ease;
-}
+} */
 
 /* ------------------------------
    🌙 Thème sombre
 -------------------------------- */
-[data-theme="dark"] {
+/* [data-theme="dark"] {
   --color-bg: #1e1e2a;
   --color-text: #f5f3ff;
   --color-primary: #c084fc;
@@ -37,16 +38,28 @@
   --color-accent: #fde68a;
 }
 
+:root {
+  --text-color: #1f2937; 
+}
+
+html.dark {
+  --text-color: #e2e8f0;
+
+body {
+  color: var(--text-color);
+} */
+
 /* ------------------------------
    🧱 Styles de base
 -------------------------------- */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 html.dark {
-  --color-text: #e2e8f0; /* clair pour dark */
-}
+  --color-text: #e2e8f0; }
+html h1,h2,h3{
+  --text-color:blue;}
 
 body {
   @apply font-sans text-base bg-white dark:bg-gray-900;
@@ -55,6 +68,7 @@ body {
   margin: 0;
   transition: background-color var(--transition-normal),
               color var(--transition-normal);
+  
 }
 /* ------------------------------
    🪶 Titres
@@ -76,7 +90,6 @@ h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; color: var(--color-primary-dark); }
 
 p {
-  color: var(--color-text);
   opacity: 0.9; 
   font-weight: 400;
   line-height: 1.7;
@@ -84,41 +97,6 @@ p {
 
 [data-theme="dark"] p {
   opacity: 1;
-}
-
-
-/* ------------------------------
-   🔗 Liens
--------------------------------- */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  position: relative;
-  transition: color var(--transition-fast);
-}
-
-a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-primary);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform var(--transition-normal);
-}
-
-a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* Burger menu SVG toujours visible en light/dark */
-#mobile-menu-button svg {
-  stroke: var(--color-text);
-  transition: stroke 0.3s ease;
 }
 
 
@@ -152,7 +130,7 @@ section {
 /* ------------------------------
    🌟 Cartes et sections
 -------------------------------- */
-.card {
+/* .card {
   background-color: var(--color-bg);
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -169,13 +147,13 @@ section {
 [data-theme="dark"] .card {
   background-color: var(--color-bg);
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
+} */
 
 /* ------------------------------
    🧩 Utilitaires globaux
 -------------------------------- */
 .text-gradient {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent-light),var(--bg-tertiary-dark), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -204,11 +182,26 @@ section {
       animation: fade-in 1s ease-out;
     }
 
-   /* <div className="relative">
-                <div
-                  className="absolute -inset-2 rounded-lg bg-[conic-gradient(at_bottom,_var(--tw-gradient-stops))] from-red-600 via-violet-600 to-purple-600 opacity-50 blur-2xl"
-                ></div>
-                <div className="relative flex w-full h-64 items-center justify-center border border-zinc-700 rounded-lg bg-zinc-900 text-slate-300">
-                  Gradient shadow
-                </div>
-              </div> */
+    /* ---------- HEADER ---------- */
+
+/* panneau verre */
+.glass {
+  background: rgba(255,255,255,0.06); /* white glass */
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 16px;
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+}
+
+/* rappel fuchsia */
+.glass.accent::after {
+  content: "";
+  position: absolute;
+  width: 6px; height: 40px;
+  background: rgba(255,0,255,0.06);
+  right: 8px; top: 8px;
+  border-radius: 4px;
+}
+

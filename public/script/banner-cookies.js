@@ -52,14 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const banner = document.getElementById("cookie-banner");
-  const modal = document.getElementById("cookie-modal");
-  const analyticsCheckbox = document.getElementById("analytics");
+  // const modal = document.getElementById("cookie-modal");
+  // const analyticsCheckbox = document.getElementById("analytics");
 
   // Vérifie le consentement existant
   const consent = getCookie("cookie-consent");
   if (consent) {
     banner.classList.add("hidden");
-    modal?.classList.add("hidden");
+    // modal?.classList.add("hidden");
     const preferences = JSON.parse(consent);
     if (preferences.analytics) {
       loadGoogleAnalytics(GA_ID);
@@ -80,23 +80,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Enregistrer préférences (si tu gardes la modale)
-  document.getElementById("save-preferences")?.addEventListener("click", () => {
-    const preferences = { analytics: analyticsCheckbox?.checked || false };
-    setCookie("cookie-consent", JSON.stringify(preferences));
-    if (preferences.analytics) loadGoogleAnalytics(GA_ID);
-    banner.style.display = "none";
-    modal?.classList.add("hidden");
-  });
+  // document.getElementById("save-preferences")?.addEventListener("click", () => {
+  //   const preferences = { analytics: analyticsCheckbox?.checked || false };
+  //   setCookie("cookie-consent", JSON.stringify(preferences));
+  //   if (preferences.analytics) loadGoogleAnalytics(GA_ID);
+  //   banner.style.display = "none";
+  //   modal?.classList.add("hidden");
+  // });
 
   // Fermer modale
-  document.getElementById("close-modal")?.addEventListener("click", () => {
-    modal?.classList.add("hidden");
-  });
+  // document.getElementById("close-modal")?.addEventListener("click", () => {
+  //   modal?.classList.add("hidden");
+  // });
 
   // Fermer en cliquant sur l’overlay
-  modal?.addEventListener("click", (e) => {
-    if (e.target === modal) modal.classList.add("hidden");
-  });
+  // modal?.addEventListener("click", (e) => {
+  //   if (e.target === modal) modal.classList.add("hidden");
+  // });
 
   // Bouton "Gérer mes cookies" dans le footer
   document.getElementById("manage-cookies")?.addEventListener("click", () => {
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (analyticsCheckbox) analyticsCheckbox.checked = preferences.analytics || false;
     }
     banner.style.display = "block";
-    modal.hidden = false;
+    // modal.hidden = false;
   });
 });
 
