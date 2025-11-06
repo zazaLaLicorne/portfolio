@@ -3,122 +3,133 @@
    ========================================== */
 
 :root {
-  /* === LIGHT MODE === */
-  --bg-light: #FDEFEF;
-  --bg-secondary-light: #F4DFD0;
-  --bg-tertiary-light: #DAD0C2;
-  --accent-light: #CDBBA7;
-  --text-light: #1A1A1D;
-  --text-secondary-light: #3B1C32;
+    /* === LIGHT MODE === */
+    --bg-light: #FDEFEF;
+    --bg-secondary-light: #F4DFD0;
+    --bg-tertiary-light: #DAD0C2;
+    --accent-light: #CDBBA7;
+    --text-light: #1A1A1D;
+    --text-secondary-light: #3B1C32;
 
-  /* === DARK MODE === */
-  --bg-dark: #1A1A1D;
-  --bg-secondary-dark: #3B1C32;
-  --bg-tertiary-dark: #6A1E55;
-  --accent-dark: #A64D79;
-  --text-dark: #FDEFEF;
-  --text-secondary-dark: #DAD0C2;
+    /* === DARK MODE === */
+    --bg-dark: #1A1A1D;
+    --bg-secondary-dark: #3B1C32;
+    --bg-tertiary-dark: #6A1E55;
+    --accent-dark: #A64D79;
+    --text-dark: #FDEFEF;
+    --text-secondary-dark: #DAD0C2;
 
-  /* === VARIABLES ACTIVES (par défaut Light) === */
-  --bg: var(--bg-light);
-  --bg-secondary: var(--bg-secondary-light);
-  --bg-tertiary: var(--bg-tertiary-light);
-  --accent: var(--accent-light);
-  --text: var(--text-light);
-  --text-secondary: var(--text-secondary-light);
+    /* === VARIABLES ACTIVES (par défaut Light) === */
+    --bg: var(--bg-light);
+    --bg-secondary: var(--bg-secondary-light);
+    --bg-tertiary: var(--bg-tertiary-light);
+    --accent: var(--accent-light);
+    --text: var(--text-light);
+    --text-secondary: var(--text-secondary-light);
 
-  /* === ESPACEMENTS === */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
+    /* === ESPACEMENTS === */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
 
-  /* === TYPOGRAPHIE === */
-  --font-base: 1rem;
-  --font-lg: 1.25rem;
-  --font-xl: 1.5rem;
-  --font-2xl: 2rem;
-  --font-3xl: 3rem;
+    /* === TYPOGRAPHIE === */
+    --font-base: 1rem;
+    --font-lg: 1.25rem;
+    --font-xl: 1.5rem;
+    --font-2xl: 2rem;
+    --font-3xl: 3rem;
 
-  /* === TRANSITIONS === */
-  --transition-fast: 0.2s ease;
-  --transition-medium: 0.3s ease;
-  --transition-slow: 0.5s ease;
+    /* === TRANSITIONS === */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
 
-  /* === OMBRES === */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* === OMBRES === */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
 
-  /* === BORDER RADIUS === */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-full: 9999px;
+    /* === BORDER RADIUS === */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
+
+    /* ===GRADIENTS=== */
+    --gradient-primary: linear-gradient(90deg,
+            var(--accent-dark),
+            var(--accent-light),
+            var(--bg-tertiary-dark),
+            var(--accent));
+    --gradient-secondary: linear-gradient(90deg, #6c5ce7, #00b894, #ffeaa7, #ff7675);
 }
+
 
 /* === APPLICATION DU DARK MODE === */
 body.dark-mode {
-  --bg: var(--bg-dark);
-  --bg-secondary: var(--bg-secondary-dark);
-  --bg-tertiary: var(--bg-tertiary-dark);
-  --accent: var(--accent-dark);
-  --text: var(--text-dark);
-  --text-secondary: var(--text-secondary-dark);
+    --bg: var(--bg-dark);
+    --bg-secondary: var(--bg-secondary-dark);
+    --bg-tertiary: var(--bg-tertiary-dark);
+    --accent: var(--accent-dark);
+    --text: var(--text-dark);
+    --text-secondary: var(--text-secondary-dark);
 }
 
 /* === STYLES DE BASE === */
 body {
-  background-color: var(--bg);
-  color: var(--text);
-  transition: background-color var(--transition-medium), 
-              color var(--transition-medium);
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color var(--transition-medium),
+        color var(--transition-medium);
 }
 
 /* === CLASSES UTILITAIRES === */
 .bg-primary {
-  background-color: var(--bg);
+    background-color: var(--bg);
 }
 
 .bg-secondary {
-  background-color: var(--bg-secondary);
+    background-color: var(--bg-secondary);
 }
 
 .bg-tertiary {
-  background-color: var(--bg-tertiary);
+    background-color: var(--bg-tertiary);
 }
 
 .text-primary {
-  color: var(--text);
+    color: var(--text);
 }
 
 .text-secondary {
-  color: var(--text-secondary);
+    color: var(--text-secondary);
 }
 
 .text-accent {
-  color: var(--accent);
+    color: var(--accent);
 }
 
 .bg-accent {
-  background-color: var(--accent);
+    background-color: var(--accent);
 }
 
 /* === BOUTONS === */
 button {
-  background-color: var(--accent);
-  color: var(--text);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--radius-md);
-  border: none;
-  cursor: pointer;
-  transition: all var(--transition-fast);
+    background-color: var(--accent);
+    color: var(--text);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
 }
 
 
- button, input, select, textarea
-{
+button,
+input,
+select,
+textarea {
     font-family: inherit;
 }
 
@@ -137,79 +148,53 @@ button {
     background: none;
 }
 
-@keyframes gradientShift {
-    0%   { background-position: 0 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0 50%; }
-}
-/* .btn-gradient {
-    background: linear-gradient(45deg, #4622a5, #5e9ca7);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 25px;
-    box-shadow: 0 3px 6px rgba(0,0,0,.15);
-    background-size: 200% 200%;
-    animation: gradientShift 6s ease infinite;
-}
-
-.btn-sm { padding: .25rem .75rem; font-size: .875rem; }
-.btn-md { padding: .5rem 1rem;    font-size: 1rem;     }
-.btn-lg { padding: .75rem 1.5rem; font-size: 1.125rem; } */
-
 
 button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 button:active {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 /* === LIENS === */
 a {
-  color: var(--accent);
-  position: relative;
-  transition: color var(--transition-fast);
+    color: var(--accent);
+    position: relative;
+    transition: color var(--transition-fast);
 }
 
 a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-   background: linear-gradient(
-    90deg,
-    var(--accent-dark),
-    var(--accent-light),
-    var(--bg-tertiary-dark),
-    var(--accent)
-  );
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform var(--transition-medium);
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-medium);
 }
 
 a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* === CARTES === */
 .card {
-  background-color: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-medium);
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-medium);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
 }
 
 /* gradient */
@@ -223,14 +208,22 @@ a:hover::after {
     animation: slide-gradient 6s linear infinite;
     border-radius: 999px;
 
-    -webkit-mask-image: linear-gradient(to right, transparent, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, transparent);
-    mask-image: linear-gradient(to right, transparent, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, transparent);
 }
 
 @keyframes slide-gradient {
-    0% { background-position: 0 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0 50%; }
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

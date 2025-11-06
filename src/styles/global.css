@@ -1,53 +1,9 @@
 @import './variables.css';
+@import './effects.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-/* ------------------------------
-   🎨 Variables globales (thème clair)
--------------------------------- */
-/* :root {
-  --color-bg: #f8f7fa;
-  --color-text: #1f2937;
-  --color-primary: #b26bff;
-  --color-primary-dark: #7c3aed;
-  --color-secondary: #f9a8d4;
-  --color-accent: #fde68a;
-
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 24px;
-
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-serif: 'Merriweather', serif;
-
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.35s ease;
-} */
-
-/* ------------------------------
-   🌙 Thème sombre
--------------------------------- */
-/* [data-theme="dark"] {
-  --color-bg: #1e1e2a;
-  --color-text: #f5f3ff;
-  --color-primary: #c084fc;
-  --color-primary-dark: #a855f7;
-  --color-secondary: #f9a8d4;
-  --color-accent: #fde68a;
-}
-
-:root {
-  --text-color: #1f2937; 
-}
-
-html.dark {
-  --text-color: #e2e8f0;
-
-body {
-  color: var(--text-color);
-} */
 
 /* ------------------------------
    🧱 Styles de base
@@ -153,9 +109,15 @@ section {
    🧩 Utilitaires globaux
 -------------------------------- */
 .text-gradient {
-  background: linear-gradient(90deg, var(--accent-dark), var(--accent-light),var(--bg-tertiary-dark), var(--accent));
+  background: var(--gradient-primary);
+  background-size: 150% 150%;
+  background-position: 0% 50%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: gradientShift 6s ease-in-out infinite;
 }
 
 .section {
@@ -182,7 +144,30 @@ section {
       animation: fade-in 1s ease-out;
     }
 
-    /* ---------- HEADER ---------- */
+  
+  a[class*="bg-"],
+  a[class*="animated-gradient"],
+  a[class*="btn"],
+  a[class*="button"],
+  a[class*="retour"],
+  a[class*="validez"],
+  a[class*="supprimer"],
+  a[class*="social-links"]
+   {
+    position: relative;
+    text-decoration: none;
+  }
+
+  a[class*="bg-"]::after,
+  a[class*="animated-gradient"]::after,
+  a[class*="btn"]::after,
+  a[class*="button"]::after,
+  a[class*="retour"]::after,
+  a[class*="validez"]::after,  
+  a[class*="social-links"]::after {
+    display: none !important;
+    content: none !important;
+  }
 
 /* panneau verre */
 .glass {

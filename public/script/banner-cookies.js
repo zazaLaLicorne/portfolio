@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const consent = getCookie("cookie-consent");
     if (consent) {
       const preferences = JSON.parse(consent);
-      if (analyticsCheckbox) analyticsCheckbox.checked = preferences.analytics || false;
+      // if (analyticsCheckbox) analyticsCheckbox.checked = preferences.analytics || false;
     }
     banner.style.display = "block";
     // modal.hidden = false;
