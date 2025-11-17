@@ -64,7 +64,7 @@ const iconSizes = {
         href={link.url}
         target="_blank"
         rel="noopener noreferrer"
-        class={`social-link ${sizeClasses[size]} ${link.bgColor}`}
+        class={`social-link ${link.name.toLowerCase()} ${sizeClasses[size]} ${link.bgColor}`}
         aria-label={`Visitez mon profil ${link.name}`}
         title={link.name}
       >
@@ -112,20 +112,10 @@ const iconSizes = {
     justify-content: center;
   }
 
-  /* Animation de pulse au survol */
-  @keyframes pulse {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.8;
-    }
-  }
+  .social-link.github:hover .social-icon {
+  animation: none !important;
+}
 
-  .social-link:hover .social-icon {
-    animation: pulse 1.5s ease-in-out infinite;
-  }
 
   /* Responsive */
   @media (max-width: 640px) {

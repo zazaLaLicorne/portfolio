@@ -81,30 +81,6 @@ section {
   animation: glowPulseDark 8s ease-in-out infinite;
 }
 
-
-
-/* ------------------------------
-   🌟 Cartes et sections
--------------------------------- */
-/* .card {
-  background-color: var(--color-bg);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 1.5rem;
-  transition: transform var(--transition-fast),
-              box-shadow var(--transition-fast);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-[data-theme="dark"] .card {
-  background-color: var(--color-bg);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-} */
-
 /* ------------------------------
    🧩 Utilitaires globaux
 -------------------------------- */
