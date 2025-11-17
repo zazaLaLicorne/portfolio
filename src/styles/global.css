@@ -166,3 +166,8 @@ section {
   border-radius: 4px;
 }
 
+.social-link::after {
+    display: none !important;
+    content: none !important;
+}
+
