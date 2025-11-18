@@ -4,12 +4,63 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------------------------------
+   🧱 Police
+-------------------------------- */
+@font-face {
+  font-family: "HindSiliguri-Light";
+  src: url(../assets/font/HindSiliguri-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HindSiliguri-Regular";
+  src: url(../assets/font/HindSiliguri-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HindSiliguri-Medium";
+  src: url(../assets/font/HindSiliguri-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HindSiliguri-SemiBold";
+  src: url(../assets/font/HindSiliguri-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HindSiliguri-Bold";
+  src: url(../assets/font/HindSiliguri-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style:italic;
+  font-display: swap;
+}
 
+:root {
+    --font-regular: "HindSiliguri-Regular", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Arial, "Noto Sans", sans-serif;
+    --font-bold: "HindSiliguri-Bold", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Arial, "Noto Sans", sans-serif;
+    --font-semibold: "HindSiliguri-SemiBold", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Arial, "Noto Sans", sans-serif;
+    --font-light: "HindSiliguri-Light", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Arial, "Noto Sans", sans-serif;
+    --font-medium: "HindSiliguri-Medium", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Arial, "Noto Sans", sans-serif;
+}
 /* ------------------------------
    🧱 Styles de base
 -------------------------------- */
 html {
   scroll-behavior:smooth;
+  font-family: var(--font-regular);
 }
 
 html.dark {
@@ -18,7 +69,7 @@ html h1,h2,h3{
   --text-color:blue;}
 
 body {
-  @apply font-sans text-base bg-white dark:bg-gray-900;
+  @apply  text-base bg-white dark:bg-gray-900;
   color: var(--color-text);
   line-height: 1.6;
   margin: 0;
@@ -68,6 +119,7 @@ section {
   transition: box-shadow 0.5s ease-in-out;
   min-height: 100vh;
   display:flex;
+  background-color: var(--section-bg);
 }
 
 
@@ -104,22 +156,6 @@ section {
 .container {
   @apply max-w-6xl mx-auto;
 }
-
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fade-in {
-      animation: fade-in 1s ease-out;
-    }
-
   
   a[class*="bg-"],
   a[class*="animated-gradient"],
@@ -169,5 +205,15 @@ section {
 .social-link::after {
     display: none !important;
     content: none !important;
+}
+
+.portrait {
+   border: 5px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+  var(--gradient-primary) border-box;
+             
+  background-size: 100% 100%, 300% 100%;
+  animation: rotate-gradient 6s linear infinite;
+  box-shadow: 0 0 20px rgba(237, 21, 143, 0.4);
 }
 

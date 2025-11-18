@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
 import "../styles/global.css";
 import "../styles/effects.css";
+import "animate.css";
 const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
 
@@ -34,7 +35,6 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
   <body
     class="min-h-screen flex flex-col transition-colors duration-500 relative overflow-x-hidden"
   >
-  
     <div class="relative z-10 flex flex-col min-h-screen">
       <Header />
       <main class="flex-grow pt-16">
@@ -43,6 +43,26 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
       <Analytics />
       <Footer />
     </div>
-    <script is:inline define:vars={{ GA_ID }} type="module" src="/script/banner-cookies.js"></script>
+    <script
+      is:inline
+      define:vars={{ GA_ID }}
+      type="module"
+      src="/script/banner-cookies.js"></script>
+    <script type="module">
+      import WOW from "wowjs/dist/wow.js"; // <- Import direct depuis dist
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const wow = new WOW({
+          boxClass: "wow",
+          animateClass: "animated",
+          offset: 0,
+          mobile: true,
+          live: true,
+          scrollContainer: null,
+          resetAnimation: true,
+        });
+        wow.init();
+      });
+    </script>
   </body>
 </html>

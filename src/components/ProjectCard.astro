@@ -8,8 +8,8 @@ const {
   projet,
   image,
   alt = "Illustration",
-  badgeLabel = "Projet",
-  badgeColor = "#6366f1",
+  badgeLabel = "Freelance",
+  badgeColor = "var(--freelance)",
   title = "Titre du projet",
   description = "Petite description du projet pour donner envie de cliquer.",
   link = "#",
@@ -21,20 +21,20 @@ const href = link && link !== "#" ? link : (projet ? `/projets/${projet.slug}/` 
 
 ---
 
-<div class="card2">
-  <div class="card2-image">
+<div class="card">
+  <div class="card-image">
     <Image src={image} alt={alt} width={800} height={500} loading="lazy" />
     <div class="badge-container">
       <Badge label={badgeLabel} color={badgeColor} />
     </div>
   </div>
 
-  <div class="card2-content">
-    <h3 class="card2-title">{title}</h3>
-    <p class="card2-desc" set:html={description}></p>
-    <div class="card2-footer">
+  <div class="card-content">
+    <h3 class="card-title">{title}</h3>
+    <p class="card-desc" set:html={description}></p>
+    <div class="card-footer">
       <a href={href}>
-        <Button label={buttonLabel} variant="gradient" size="sm" />
+        <Button label={buttonLabel} variant="gradient" />
       </a>
     </div>
   </div>

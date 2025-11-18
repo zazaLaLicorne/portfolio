@@ -1,0 +1,52 @@
+---
+import Layout from "./BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/Button.astro";
+import "../styles/global.css";
+import { Image } from "astro:assets";
+
+interface Props {
+  image: ImageMetadata;
+  alt: string;
+  badgeLabel: string;
+  badgeColor: string;
+  title: string;
+  description: string;
+  link: string;
+  buttonLabel: string;
+  children: any;
+}
+
+const {
+  image,
+  alt,
+  title,
+} = Astro.props as Props;
+---
+
+<Layout title={title}>
+  <Header slot="header" />
+  
+    <article class="blog-post">
+      <header class="blog-post-header">
+        <h1 class="blog-post-title">{title}</h1>
+      </header>
+
+      {
+          <figure class="blog-post-image">
+            <Image src={image} alt={alt ?? ""} width="800" height="600" />
+          </figure>
+        
+      }
+
+      <div class="blog-post-content">
+        <slot />
+      </div>
+      <a href="../developpement">
+        <Button label={"← Retour aux articles"} variant="gradient" />
+    </a>
+    </article>
+
+  <Footer slot="footer" />
+</Layout>

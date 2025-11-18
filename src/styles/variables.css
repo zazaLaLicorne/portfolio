@@ -64,6 +64,11 @@
             var(--bg-tertiary-dark),
             var(--accent));
     --gradient-secondary: linear-gradient(90deg, #6c5ce7, #00b894, #ffeaa7, #ff7675);
+
+    --freelance: var(--accent-dark);
+    --perso: #6c5ce7;   
+    --stage:  #00b894;
+    --entreprise: #ffeaa7;
 }
 
 
@@ -207,6 +212,7 @@ a:hover::after {
     animation: slide-gradient 6s linear infinite;
     border-radius: 999px;
     -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, transparent);
+    /* -webkit-mask-image: var(--gradient-primary); */
     mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, transparent);
 }
 
