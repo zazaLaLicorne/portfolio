@@ -1,0 +1,104 @@
+---
+// src/components/TechCards.astro
+interface Props {
+  size?: "sm" | "md" | "lg";
+}
+
+const { size = "md" } = Astro.props;
+
+// Catégories et technologies avec SVG inline
+const categories = [
+  {
+    title: "Conception & Suivi Projet",
+    techs: [
+      { name: "Figma", icon: `<svg viewBox="0 0 24 24" fill="#F24E1E"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0z"/></svg>` },
+      { name: "Canva", icon: `<svg viewBox="0 0 24 24" fill="#00C4CC"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0z"/></svg>` },
+      { name: "Notion", icon: `<svg viewBox="0 0 24 24" fill="#000000"><path d="M4 4h16v16H4z"/></svg>` },
+    ],
+  },
+  {
+    title: "Langages",
+    techs: [
+      { name: "JavaScript", icon: `<svg viewBox="0 0 24 24" fill="#F7DF1E"><path d="M2 2h20v20H2z"/></svg>` },
+      { name: "TypeScript", icon: `<svg viewBox="0 0 24 24" fill="#3178C6"><path d="M2 2h20v20H2z"/></svg>` },
+      { name: "HTML5", icon: `<svg viewBox="0 0 24 24" fill="#E44D26"><path d="M2 2h20v20H2z"/></svg>` },
+      { name: "CSS3", icon: `<svg viewBox="0 0 24 24" fill="#1572B6"><path d="M2 2h20v20H2z"/></svg>` },
+    ],
+  },
+  {
+    title: "Framework Front",
+    techs: [
+      { name: "React", icon: `<svg viewBox="0 0 24 24" fill="#61DAFB"><circle cx="12" cy="12" r="2"/></svg>` },
+      { name: "Astro", icon: `<svg viewBox="0 0 24 24" fill="#0F172A"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
+      { name: "Next.js", icon: `<svg viewBox="0 0 24 24" fill="#000000"><path d="M2 2h20v20H2z"/></svg>` },
+    ],
+  },
+  {
+    title: "Backend & BDD",
+    techs: [
+      { name: "Node.js", icon: `<svg viewBox="0 0 24 24" fill="#339933"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
+      { name: "MongoDB", icon: `<svg viewBox="0 0 24 24" fill="#47A248"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
+    ],
+  },
+   {
+    title: "Bibliotheques frontend",
+    techs: [
+      { name: "Tailwind.css", icon: `<svg viewBox="0 0 24 24" fill="#339933"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
+      { name: "Daisy UI", icon: `<svg viewBox="0 0 24 24" fill="#47A248"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
+      { name: "Shadcn", icon: `<svg viewBox="0 0 24 24" fill="#47A248"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
+    ],
+  },
+];
+
+const sizeClasses = {
+  sm: "w-10 h-10",
+  md: "w-16 h-16",
+  lg: "w-20 h-20",
+};
+---
+
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+  {categories.map(category => (
+    <div class="card glass flex flex-col items-center p-6">
+      <h3 class="mb-4 text-xl font-bold">{category.title}</h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        {category.techs.map(tech => (
+          <div class={`flex flex-col items-center justify-center transition-transform hover:scale-110`}>
+            <span
+              class={`tech-icon ${sizeClasses[size]}`}
+              set:html={tech.icon}
+            />
+            <span class="text-sm text-center mt-2">{tech.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .tech-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .tech-icon:hover {
+    animation: pulse 1.5s ease-in-out infinite;
+    transform: scale(1.2);
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1.0); filter: brightness(1); }
+    50% { transform: scale(1.1); filter: brightness(1.25); }
+  }
+</style>

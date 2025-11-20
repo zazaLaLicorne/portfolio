@@ -151,6 +151,63 @@
   }
 }
 
+
+@keyframes aurora {
+  0%, 100% {
+    transform: translateY(-20px) translateX(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(20px) translateX(10px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+/* Animation de gradient - méthode 1 : background-position */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animation de gradient - méthode 2 : hue-rotate */
+@keyframes gradientHue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Animation de gradient - méthode 3 : multiple backgrounds */
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%, 100% 50%;
+  }
+  50% {
+    background-position: 100% 50%, 0% 50%;
+  }
+  100% {
+    background-position: 0% 50%, 100% 50%;
+  }
+}
+
 .animated-gradient {
   background: var(--gradient-primary);
   background-size: 300% 300%;

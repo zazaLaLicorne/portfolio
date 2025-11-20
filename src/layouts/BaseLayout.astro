@@ -4,7 +4,7 @@ import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
 import "../styles/global.css";
 import "../styles/effects.css";
-import "animate.css";
+import 'aos/dist/aos.css';
 const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
 
@@ -48,20 +48,44 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
       define:vars={{ GA_ID }}
       type="module"
       src="/script/banner-cookies.js"></script>
-    <script type="module">
-      import WOW from "wowjs/dist/wow.js"; // <- Import direct depuis dist
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const wow = new WOW({
-          boxClass: "wow",
-          animateClass: "animated",
-          offset: 0,
-          mobile: true,
-          live: true,
-          scrollContainer: null,
-          resetAnimation: true,
+   <script>
+      import AOS from 'aos';
+      
+      // Initialisation AOS après le chargement du DOM
+      document.addEventListener('DOMContentLoaded', () => {
+        AOS.init({
+          // Paramètres globaux
+          duration: 800,              // Durée de l'animation (ms)
+          easing: 'ease-in-out',      // Fonction d'easing
+          once: false,                // Animation une seule fois (false = répète)
+          mirror: true,               // Animation au scroll inverse
+          offset: 120,                // Décalage (px) avant déclenchement
+          delay: 0,                   // Délai (ms)
+          anchorPlacement: 'top-bottom', // Position de déclenchement
+          
+          // Désactiver sur mobile si souhaité
+          disable: false,             // false, 'mobile', 'phone', 'tablet'
+          
+          // Classe à ajouter lors de l'initialisation
+          startEvent: 'DOMContentLoaded',
+          
+          // Gestion du throttle (performance)
+          throttleDelay: 99,
+          debounceDelay: 50,
+          
+          // Désactiver pour les animations réduites
+          disableMutationObserver: false,
         });
-        wow.init();
+
+        // Rafraîchir AOS après changement de thème
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+          themeToggle.addEventListener('click', () => {
+            setTimeout(() => {
+              AOS.refresh();
+            }, 300);
+          });
+        }
       });
     </script>
   </body>
