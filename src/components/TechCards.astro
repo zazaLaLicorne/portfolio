@@ -1,51 +1,68 @@
 ---
-// src/components/TechCards.astro
 interface Props {
   size?: "sm" | "md" | "lg";
 }
 
 const { size = "md" } = Astro.props;
 
-// Catégories et technologies avec SVG inline
+// Catégories + PNG
 const categories = [
   {
     title: "Conception & Suivi Projet",
     techs: [
-      { name: "Figma", icon: `<svg viewBox="0 0 24 24" fill="#F24E1E"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0z"/></svg>` },
-      { name: "Canva", icon: `<svg viewBox="0 0 24 24" fill="#00C4CC"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0z"/></svg>` },
-      { name: "Notion", icon: `<svg viewBox="0 0 24 24" fill="#000000"><path d="M4 4h16v16H4z"/></svg>` },
+      { name: "Figma", icon: "/icons/icons8-figma-100.png" },
+      { name: "Canva", icon: "/icons/icons8-canva-100.png" },
+      { name: "Notion", icon: "/icons/notion.png" },
     ],
   },
   {
     title: "Langages",
     techs: [
-      { name: "JavaScript", icon: `<svg viewBox="0 0 24 24" fill="#F7DF1E"><path d="M2 2h20v20H2z"/></svg>` },
-      { name: "TypeScript", icon: `<svg viewBox="0 0 24 24" fill="#3178C6"><path d="M2 2h20v20H2z"/></svg>` },
-      { name: "HTML5", icon: `<svg viewBox="0 0 24 24" fill="#E44D26"><path d="M2 2h20v20H2z"/></svg>` },
-      { name: "CSS3", icon: `<svg viewBox="0 0 24 24" fill="#1572B6"><path d="M2 2h20v20H2z"/></svg>` },
+      { name: "JavaScript", icon: "/icons/icons8-javascript-100.png" },
+      { name: "TypeScript", icon: "/icons/icons8-typescript-100.png" },
+      { name: "HTML5", icon: "/icons/icons8-html-5-100.png" },
+      { name: "CSS3", icon: "/icons/icons8-css-100.png" },
     ],
   },
   {
     title: "Framework Front",
     techs: [
-      { name: "React", icon: `<svg viewBox="0 0 24 24" fill="#61DAFB"><circle cx="12" cy="12" r="2"/></svg>` },
-      { name: "Astro", icon: `<svg viewBox="0 0 24 24" fill="#0F172A"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
-      { name: "Next.js", icon: `<svg viewBox="0 0 24 24" fill="#000000"><path d="M2 2h20v20H2z"/></svg>` },
+      { name: "React", icon: "/icons/icons8-react-100.png" },
+      {name: "React Native", icon: "/icons/icons8-react-native-100.png"},
+      { name: "Astro", icon: "/icons/astro.png" },
+      { name: "Next.js", icon: "/icons/next.png" },
     ],
   },
   {
     title: "Backend & BDD",
     techs: [
-      { name: "Node.js", icon: `<svg viewBox="0 0 24 24" fill="#339933"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
-      { name: "MongoDB", icon: `<svg viewBox="0 0 24 24" fill="#47A248"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
+      { name: "Node.js", icon: "/icons/icons8-node-js-100.png" },
+      { name: "MongoDB", icon: "/icons/icons8-mongo-db-100.png" },
+      { name: "Express", icon: "/icons/icons8-express-js-100.png" },
+      
+      
+    ],
+  },
+  {
+    title: "Bibliothèques CSS",
+    techs: [
+      { name: "TailwindCss", icon: "/icons/icons8-tailwindcss-100.png" },
+      { name: "Daisy UI", icon: "/icons/daisyui-logo-2000.png" },
+      { name: "Shadcn/UI", icon: "/icons/shadcnui.png" }
+      
     ],
   },
    {
-    title: "Bibliotheques frontend",
+    title: "Outils",
     techs: [
-      { name: "Tailwind.css", icon: `<svg viewBox="0 0 24 24" fill="#339933"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
-      { name: "Daisy UI", icon: `<svg viewBox="0 0 24 24" fill="#47A248"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
-      { name: "Shadcn", icon: `<svg viewBox="0 0 24 24" fill="#47A248"><path d="M12 0l12 12-12 12-12-12z"/></svg>` },
+      { name: "GitHub", icon: "/icons/icons8-github-100.png" },
+      { name: "Vercel", icon: "/icons/vercel.png" },
+      { name: "Google Analytics", icon: "/icons/google-analytics-logo-bdca.png" },
+      { name: "Google Search Console", icon: "/icons/gsc.png" },
+      { name: "VSCode", icon: "/icons/vscode.png" },
+      { name: "Cloudinary", icon: "/icons/cloudinary.webp" },
+      
+      
     ],
   },
 ];
@@ -57,16 +74,20 @@ const sizeClasses = {
 };
 ---
 
-<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-  {categories.map(category => (
-    <div class="card glass flex flex-col items-center p-6">
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" >
+  {categories.map((category, index) => (
+    <div class="card glass flex flex-col items-center p-6" data-aos="fade-up"
+      data-aos-delay={index * 100}>
       <h3 class="mb-4 text-xl font-bold">{category.title}</h3>
+
       <div class="flex flex-wrap justify-center gap-4">
         {category.techs.map(tech => (
-          <div class={`flex flex-col items-center justify-center transition-transform hover:scale-110`}>
-            <span
-              class={`tech-icon ${sizeClasses[size]}`}
-              set:html={tech.icon}
+          <div class="flex flex-col items-center justify-center transition-transform hover:scale-110">
+            <img
+              src={tech.icon}
+              alt={tech.name}
+              class={`rounded-md object-contain ${sizeClasses[size]}`}
+              loading="lazy"
             />
             <span class="text-sm text-center mt-2">{tech.name}</span>
           </div>
@@ -85,20 +106,23 @@ const sizeClasses = {
     box-shadow: var(--shadow-lg);
   }
 
-  .tech-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  img {
     transition: transform 0.3s ease, filter 0.3s ease;
   }
 
-  .tech-icon:hover {
+  img:hover {
     animation: pulse 1.5s ease-in-out infinite;
-    transform: scale(1.2);
+    transform: scale(1.15);
   }
 
   @keyframes pulse {
-    0%, 100% { transform: scale(1.0); filter: brightness(1); }
-    50% { transform: scale(1.1); filter: brightness(1.25); }
+    0%, 100% {
+      transform: scale(1.0);
+      filter: brightness(1);
+    }
+    50% {
+      transform: scale(1.1);
+      filter: brightness(1.25);
+    }
   }
 </style>

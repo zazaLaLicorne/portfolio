@@ -1,5 +1,6 @@
 @import './variables.css';
 @import './effects.css';
+@import './images.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -113,8 +114,8 @@ p {
 
 section {
   border-radius: 1rem;
-  justify-content: center;
-  align-items: center;
+  justify-content:center;
+  align-items:center;
   padding: 2rem;
   transition: box-shadow 0.5s ease-in-out;
   min-height: 100vh;

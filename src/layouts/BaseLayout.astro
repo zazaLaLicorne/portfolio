@@ -63,9 +63,6 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
           delay: 0,                   // Délai (ms)
           anchorPlacement: 'top-bottom', // Position de déclenchement
           
-          // Désactiver sur mobile si souhaité
-          disable: false,             // false, 'mobile', 'phone', 'tablet'
-          
           // Classe à ajouter lors de l'initialisation
           startEvent: 'DOMContentLoaded',
           
@@ -75,6 +72,10 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
           
           // Désactiver pour les animations réduites
           disableMutationObserver: false,
+          disable : (
+            /bot|crawler|spider|crawling/i.test(navigator.userAgent)
+            || window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          )
         });
 
         // Rafraîchir AOS après changement de thème

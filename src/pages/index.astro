@@ -3,20 +3,22 @@ import Button from "../components/Button.astro";
 import SocialLinks from "../components/SocialLinks.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
+import { CldImage } from 'astro-cloudinary';
 import portrait from "../assets/images/portrait.webp";
 import TechCards from "../components/TechCards.astro";
+
 ---
 
 <BaseLayout>
   <div class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <!-- Hero Section -->
-    <div class="min-h-screen text-center mb-20">
+    <div class="min-h-screen h-screen text-center justify-items-center mb-20">
       <Image
         src={portrait}
         alt="Portrait d'Isabelle"
-        class="rounded-full justify-self-center portrait"
-        width={250}
-        height={250}
+        class="rounded-full justify-self-center img-hero portrait"
+        width={300}
+        height={300}
         loading="eager"
         data-aos="fade-down"
       data-aos-duration="1200"
@@ -43,13 +45,11 @@ import TechCards from "../components/TechCards.astro";
 
           <p data-aos="fade-right"
       data-aos-duration="1200"
-    class="text-2xl" >
+      class="text-2xl" >
             Je m’appelle Isabelle, développeuse web passionnée et curieuse, avec
             un parcours atypique : de la rigueur des laboratoires scientifiques
             à la créativité du développement web.<p />
-           <p class="text-2xl" data-aos="fade-left"
-      data-aos-duration="1200"
-      >
+           <p class="text-2xl" data-aos="fade-left" data-aos-duration="1200">
             J’aime transformer des idées en projets concrets, qu’il s’agisse de sites
             vitrines élégants, d’applications interactives ou d’outils pratiques
             de back-office.</p>
@@ -72,14 +72,38 @@ import TechCards from "../components/TechCards.astro";
         </div>
       </section>
 
-      <!-- <section id="certifications">
+      <section id="certifications" class="flex flex-col justify-start items-center gap-8">
         <div class="text-center">
-          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Section 2
+          <h2 class="text-4xl font-bold mb-4">
+            Certifications
           </h2>
-          <p class="text-gray-600 dark:text-gray-300">Contenu à venir...</p>
-        </div>
-      </section> -->
+        
+          <div class="flip-card w-96 h-[28rem] relative">
+            <div class="flip-inner">
+              {/* FACE AVANT */}
+              <div class="flip-front rounded-xl glass p-4 flex flex-col items-center justify-center shadow-lg">
+                <CldImage src="https://res.cloudinary.com/isabellelamarre/image/upload/v1756411717/mes-projets/Concepteur-D%C3%A9veloppeur%20d%27Applications%20Web%20et%20Mobile/Titre%20RNCP/La%20Capsule/15-04-2025/aytjkvzudyotfqlqh4xf.png" 
+                class="w-48 h-auto mb-4" 
+                alt="Certification RNCP de Concepteur Développeur d'applications Web et Mobile " />
+                  <h3 class="text-xl font-bold">Titre RNCP</h3>
+                  <p class="text-sm opacity-80">Concepteur Développeur d'applications Web et Mobile</p>
+                  <p>Emis par : La Capsule - 92 cours Lafayette, 69003 Lyon </p>
+              </div>
+
+              {/* FACE ARRIÈRE */}
+              <div class="flip-back rounded-xl glass p-4 flex flex-col items-center justify-evenly bg-inherit shadow-lg">
+                <h3 class="text-lg font-semibold mb-2">Compétences acquises</h3>
+                <ol class="text-sm text-left list-decimal space-y-1">
+                  <li> Conception et maquettage d’une application web & mobile</li>
+                  <li> Pilotage d’un projet d’application web & mobile</li>
+                  <li> Concevoir, manipuler, administrer et sécuriser une base de données en lien avec une application web & mobile</li>
+                  <li> Développement d’une application web & mobile</li>
+                  <li> Mise en production d’une application web & mobile.</li>
+                </ol>
+                <p>Date d'émission : 15/04/2025</p>
+              </div>
+          </div>
+      </section>
 
       <section id="technos">
         <div class="text-center">
@@ -116,7 +140,7 @@ import TechCards from "../components/TechCards.astro";
           <div class="flex flex-col m-8">
             <a
               class="text-gray-800 dark:text-white"
-              href="mailto:lalicornecosmique62@gmail.com? subject=Contact depuis le site=Bonjour%20Isabelle,"
+              href="mailto:lalicornecosmique62@gmail.com? subject=Contact depuis le site&body=Bonjour%20Isabelle,"
               aria-label="lalicornecosmique62@gmail.com"
               >lalicornecosmique62@gmail.com</a
             >
@@ -135,7 +159,7 @@ import TechCards from "../components/TechCards.astro";
               target="_blank"
               rel="noopener noreferrer"
               href="https://calendly.com/isabellelamarre62/premier"
-              >prendre rdv</Button
+              >Prendre rendez-vous</Button
             >
           </div>
         </div>
