@@ -1,0 +1,360 @@
+[
+  {
+    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
+    "slug": "karine-lamarre",
+    "title": "Karine LAMARRE 1",
+    "description": "blalbla vbf,e,r",
+    "project_url": "https://karinelamarretherapies.fr",
+    "github_url": "",
+    "badge": "independent",
+    "priority": "high",
+    "images": [
+      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
+      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
+    ],
+    "screenshots": [],
+    "techs": [
+      "Astro",
+      "HTML",
+      "CSS"
+    ],
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
+    "date": "2025-11-24",
+    "videos": {
+      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+      "mobile": {
+        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      },
+      "tablet": {
+        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      }
+    },
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        },
+        "mobile": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        }
+      },
+      "security_headers": "A+"
+    },
+    "createdAt": "2025-11-24T12:22:35.030Z"
+  },
+  {
+    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
+    "slug": "karine-lamarre",
+    "title": "Karine LAMARRE 2",
+    "description": "blalbla vbf,e,r",
+    "project_url": "https://karinelamarretherapies.fr",
+    "github_url": "",
+    "badge": "independent",
+    "priority": "high",
+    "images": [
+      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
+      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
+    ],
+    "screenshots": [],
+    "techs": [
+      "Astro",
+      "HTML",
+      "CSS"
+    ],
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
+    "date": "2025-11-24",
+    "videos": {
+      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+      "mobile": {
+        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      },
+      "tablet": {
+        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      }
+    },
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        },
+        "mobile": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        }
+      },
+      "security_headers": "A+"
+    },
+    "createdAt": "2025-11-24T12:22:35.030Z"
+  },
+  {
+    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
+    "slug": "karine-lamarre",
+    "title": "Karine LAMARRE 3",
+    "description": "blalbla vbf,e,r",
+    "project_url": "https://karinelamarretherapies.fr",
+    "github_url": "",
+    "badge": "independent",
+    "priority": "high",
+    "images": [
+      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
+      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
+    ],
+    "screenshots": [],
+    "techs": [
+      "Astro",
+      "HTML",
+      "CSS"
+    ],
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
+    "date": "2025-11-24",
+    "videos": {
+      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+      "mobile": {
+        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      },
+      "tablet": {
+        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      }
+    },
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        },
+        "mobile": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        }
+      },
+      "security_headers": "A+"
+    },
+    "createdAt": "2025-11-24T12:22:35.030Z"
+  },
+  {
+    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
+    "slug": "karine-lamarre",
+    "title": "Karine LAMARRE 4",
+    "description": "blalbla vbf,e,r",
+    "project_url": "https://karinelamarretherapies.fr",
+    "github_url": "",
+    "badge": "independent",
+    "priority": "high",
+    "images": [
+      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
+      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
+    ],
+    "screenshots": [],
+    "techs": [
+      "Astro",
+      "HTML",
+      "CSS"
+    ],
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
+    "date": "2025-11-24",
+    "videos": {
+      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+      "mobile": {
+        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      },
+      "tablet": {
+        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      }
+    },
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        },
+        "mobile": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        }
+      },
+      "security_headers": "A+"
+    },
+    "createdAt": "2025-11-24T12:22:35.030Z"
+  },
+  {
+    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
+    "slug": "karine-lamarre",
+    "title": "Karine LAMARRE 5",
+    "description": "blalbla vbf,e,r",
+    "project_url": "https://karinelamarretherapies.fr",
+    "github_url": "",
+    "badge": "independent",
+    "priority": "high",
+    "images": [
+      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
+      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
+    ],
+    "screenshots": [],
+    "techs": [
+      "Astro",
+      "HTML",
+      "CSS"
+    ],
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
+    "date": "2025-11-24",
+    "videos": {
+      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+      "mobile": {
+        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      },
+      "tablet": {
+        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      }
+    },
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        },
+        "mobile": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        }
+      },
+      "security_headers": "A+"
+    },
+    "createdAt": "2025-11-24T12:22:35.030Z"
+  },
+   {
+    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
+    "slug": "karine-lamarre",
+    "title": "Karine LAMARRE 6",
+    "description": "blalbla vbf,e,r",
+    "project_url": "https://karinelamarretherapies.fr",
+    "github_url": "",
+    "badge": "independent",
+    "priority": "high",
+    "images": [
+      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
+      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
+    ],
+    "screenshots": [],
+    "techs": [
+      "Astro",
+      "HTML",
+      "CSS"
+    ],
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
+    "date": "2025-11-24",
+    "videos": {
+      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+      "mobile": {
+        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      },
+      "tablet": {
+        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      }
+    },
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        },
+        "mobile": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        }
+      },
+      "security_headers": "A+"
+    },
+    "createdAt": "2025-11-24T12:22:35.030Z"
+  },
+   {
+    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
+    "slug": "karine-lamarre",
+    "title": "Karine LAMARRE 7",
+    "description": "blalbla vbf,e,r",
+    "project_url": "https://karinelamarretherapies.fr",
+    "github_url": "",
+    "badge": "independent",
+    "priority": "high",
+    "images": [
+      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
+      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
+    ],
+    "screenshots": [],
+    "techs": [
+      "Astro",
+      "HTML",
+      "CSS"
+    ],
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
+    "date": "2025-11-24",
+    "videos": {
+      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+      "mobile": {
+        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      },
+      "tablet": {
+        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "portrait": ""
+      }
+    },
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        },
+        "mobile": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        }
+      },
+      "security_headers": "A+"
+    },
+    "createdAt": "2025-11-24T12:22:35.030Z"
+  }
+  
+]

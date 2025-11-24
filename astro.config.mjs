@@ -6,11 +6,17 @@ import compress from 'astro-compress';
 
 // https://astro.build/config
 export default defineConfig({
-     site: 'https://isabellelamarre.fr',
-  integrations: [tailwind(), sitemap(), compress()],
-  output: 'static',
+    site: 'https://isabellelamarre.fr',
+    integrations: [tailwind(), sitemap(), compress()],
+    output: 'static',
 
-  vite: {
+    vite: {
+      resolve: {
+        alias: {
+          '@': '/src'
+        }
+      },
+
     server: {
       headers: {
         // Sécurité maximale côté développement (et build SSR si utilisé)

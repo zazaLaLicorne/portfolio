@@ -3,9 +3,21 @@ import Button from "../components/Button.astro";
 import SocialLinks from "../components/SocialLinks.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import { CldImage } from 'astro-cloudinary';
 import portrait from "../assets/images/portrait.webp";
 import TechCards from "../components/TechCards.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import allProjects from "../data/projects.json";
+
+const priorityOrder = {
+  high: 1,
+  medium: 2,
+  low: 3,
+};
+
+// tri + limitation à 6
+const projects = [...allProjects]
+  .sort((a, b) => priorityOrder[a.priority] - priorityOrder[b.priority])
+  .slice(0, 4);
 
 ---
 
@@ -82,12 +94,17 @@ import TechCards from "../components/TechCards.astro";
             <div class="flip-inner">
               {/* FACE AVANT */}
               <div class="flip-front rounded-xl glass p-4 flex flex-col items-center justify-center shadow-lg">
-                <CldImage src="https://res.cloudinary.com/isabellelamarre/image/upload/v1756411717/mes-projets/Concepteur-D%C3%A9veloppeur%20d%27Applications%20Web%20et%20Mobile/Titre%20RNCP/La%20Capsule/15-04-2025/aytjkvzudyotfqlqh4xf.png" 
-                class="w-48 h-auto mb-4" 
-                alt="Certification RNCP de Concepteur Développeur d'applications Web et Mobile " />
-                  <h3 class="text-xl font-bold">Titre RNCP</h3>
-                  <p class="text-sm opacity-80">Concepteur Développeur d'applications Web et Mobile</p>
-                  <p>Emis par : La Capsule - 92 cours Lafayette, 69003 Lyon </p>
+               <Image
+                  src="https://res.cloudinary.com/isabellelamarre/image/upload/v1756411717/mes-projets/Concepteur-D%C3%A9veloppeur%20d%27Applications%20Web%20et%20Mobile/Titre%20RNCP/La%20Capsule/15-04-2025/aytjkvzudyotfqlqh4xf.png"
+                  alt="Certification RNCP de Concepteur Développeur d'applications Web et Mobile"
+                  width={450}
+                  height={450}
+                  class="w-96 h-auto mb-4"
+                  loading="lazy"
+                />
+                <h3 class="text-xl font-bold">Titre RNCP</h3>
+                <p class="text-sm opacity-80">Concepteur Développeur d'applications Web et Mobile</p>
+                <p>Emis par : La Capsule - 92 cours Lafayette, 69003 Lyon </p>
               </div>
 
               {/* FACE ARRIÈRE */}
@@ -114,16 +131,25 @@ import TechCards from "../components/TechCards.astro";
         </div>
       </section>
 
-      <section id="realisations">
+      <section id="realisations" class="flex flex-col justify-start items-center gap-8">
         <div class="text-center">
           <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Section 4
+           Mes Réalisations
           </h2>
-          <p class="text-gray-600 dark:text-gray-300">Contenu à venir...</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {projects.map((item) => (
+              <ProjectCard projet={item} />
+            ))}
+          </div>
         </div>
+         {allProjects.length > 6 && (
+      
+            <Button href="/projects/page/2" >Voir plus de projets</Button>
+          
+          )}
       </section>
 
-      <section id="tarifs" class="glass">
+      <section id="tarifs">
         <div class="text-center">
           <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Section 5

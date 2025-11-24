@@ -1,0 +1,199 @@
+---
+import { Image } from "astro:assets";
+import projects from "@/data/projects.json";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+// Générer toutes les routes statiques
+export function getStaticPaths() {
+  return projects.map((projet) => ({
+    params: { slug: projet.slug },
+    props: { projet }, // On passe le projet en props
+  }));
+}
+
+// Récupérer le projet depuis les props
+const { projet } = Astro.props;
+
+if (!projet) {
+  throw new Error(`Projet introuvable`);
+}
+
+// Pour les icônes tech du dossier public/icons
+function techIcon(name) {
+  return `/icons/${name.toLowerCase()}.png`;
+}
+
+// Pour la date plus lisible
+const date = new Date(projet.date).toLocaleDateString("fr-FR", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<!-- PAGE PROJET -->
+<BaseLayout>    
+<section class="section container !min-h-fit py-20">
+  <div data-aos="fade-up" class="max-w-4xl mx-auto">
+
+    <!-- Titre + badge -->
+    <h1 class="text-4xl font-bold mb-4">{projet.title}</h1>
+
+    {projet.badge && (
+      <span class="inline-block bg-accent text-white px-3 py-1 rounded-lg mb-6">
+        {projet.badge}
+      </span>
+    )}
+
+    <p class="opacity-80 mb-10 text-sm">
+      Projet publié le {date}
+    </p>
+
+    <!-- Thumbnail -->
+    <div data-aos="zoom-in" class="rounded-xl overflow-hidden shadow-lg mb-12">
+      <Image
+        src={projet.thumbnail}
+        alt={projet.title}
+        width={1200}
+        height={700}
+        loading="lazy"
+        class="w-full h-auto object-cover"
+      />
+    </div>
+
+    <!-- Description -->
+    <div data-aos="fade-up" class="prose dark:prose-invert max-w-none mb-12">
+      <p class="text-lg leading-relaxed">
+        {projet.description}
+      </p>
+    </div>
+
+    <!-- Tech Stack -->
+    <div data-aos="fade-up" class="mb-16">
+      <h2 class="text-2xl font-semibold mb-4">Technologies utilisées</h2>
+
+      <div class="flex flex-wrap gap-6">
+        {projet.techs.map((tech) => (
+          <div class="flex items-center gap-3">
+            <Image
+              src={techIcon(tech)}
+              alt={tech}
+              width={40}
+              height={40}
+              class="w-10 h-10"
+              loading="lazy"
+            />
+            <span class="text-lg">{tech}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Liens externes -->
+    <div data-aos="fade-up" class="flex gap-6 mb-20">
+      {projet.project_url && (
+        <a
+          href={projet.project_url}
+          target="_blank"
+          class="animated-gradient px-6 py-3 rounded-lg text-white font-semibold"
+        >
+          Voir le site
+        </a>
+      )}
+
+      {projet.github_url && (
+        <a
+          href={projet.github_url}
+          target="_blank"
+          class="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition"
+        >
+          GitHub
+        </a>
+      )}
+    </div>
+    <!-- 🟣 Vidéos du projet -->
+{projet.videos && (
+  <div class="mt-20" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-6">Vidéos de présentation</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+      <!-- 🎥 Desktop -->
+      {projet.videos.desktop && (
+        <div class="video-card rounded-xl overflow-hidden shadow-lg bg-black">
+          <iframe
+            class="w-full aspect-video"
+            src={projet.videos.desktop.replace("youtu.be", "www.youtube.com/embed")}
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <p class="text-center text-sm opacity-80 py-2">Version Desktop</p>
+        </div>
+      )}
+
+      <!-- 🎥 Tablet Landscape -->
+      {projet.videos.tablet?.landscape && (
+        <div class="video-card rounded-xl overflow-hidden shadow-lg bg-black">
+          <iframe
+            class="w-full aspect-video"
+            src={projet.videos.tablet.landscape.replace("youtu.be", "www.youtube.com/embed")}
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <p class="text-center text-sm opacity-80 py-2">Tablette (Paysage)</p>
+        </div>
+      )}
+
+      <!-- 🎥 Mobile Landscape -->
+      {projet.videos.mobile?.landscape && (
+        <div class="video-card rounded-xl overflow-hidden shadow-lg bg-black">
+          <iframe
+            class="w-full aspect-video"
+            src={projet.videos.mobile.landscape.replace("youtu.be", "www.youtube.com/embed")}
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <p class="text-center text-sm opacity-80 py-2">Mobile (Paysage)</p>
+        </div>
+      )}
+
+      <!-- 🎥 Mobile Portrait -->
+      {projet.videos.mobile?.portrait && projet.videos.mobile.portrait !== "" && (
+        <div class="video-card rounded-xl overflow-hidden shadow-lg bg-black">
+          <iframe
+            class="w-full aspect-video"
+            src={projet.videos.mobile.portrait.replace("youtu.be", "www.youtube.com/embed")}
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <p class="text-center text-sm opacity-80 py-2">Mobile (Portrait)</p>
+        </div>
+      )}
+
+    </div>
+  </div>
+)}
+
+    <!-- Galerie / screenshots si existants -->
+    {projet.images?.length > 0 && (
+      <div data-aos="fade-up">
+        <h2 class="text-2xl font-semibold mb-4">Galerie</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projet.images.map((img) => (
+            <div class="rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={img}
+                alt="Screenshot du projet"
+                width={800}
+                height={600}
+                class="w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+</BaseLayout> 

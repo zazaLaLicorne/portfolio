@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
   size?: "sm" | "md" | "lg";
 }
@@ -10,35 +12,35 @@ const categories = [
   {
     title: "Conception & Suivi Projet",
     techs: [
-      { name: "Figma", icon: "/icons/icons8-figma-100.png" },
-      { name: "Canva", icon: "/icons/icons8-canva-100.png" },
-      { name: "Notion", icon: "/icons/notion.png" },
+      { name: "Figma", icon: "/icons/figma.webp" },
+      { name: "Canva", icon: "/icons/canva.webp" },
+      { name: "Notion", icon: "/icons/notion.webp" },
     ],
   },
   {
     title: "Langages",
     techs: [
-      { name: "JavaScript", icon: "/icons/icons8-javascript-100.png" },
-      { name: "TypeScript", icon: "/icons/icons8-typescript-100.png" },
-      { name: "HTML5", icon: "/icons/icons8-html-5-100.png" },
-      { name: "CSS3", icon: "/icons/icons8-css-100.png" },
+      { name: "JavaScript", icon: "/icons/js.webp" },
+      { name: "TypeScript", icon: "/icons/ts.webp" },
+      { name: "HTML5", icon: "/icons/html.webp" },
+      { name: "CSS3", icon: "/icons/css.webp" },
     ],
   },
   {
     title: "Framework Front",
     techs: [
-      { name: "React", icon: "/icons/icons8-react-100.png" },
-      {name: "React Native", icon: "/icons/icons8-react-native-100.png"},
-      { name: "Astro", icon: "/icons/astro.png" },
-      { name: "Next.js", icon: "/icons/next.png" },
+      { name: "React", icon: "/icons/reac.webp" },
+      {name: "React Native", icon: "/icons/reactnative.webp"},
+      { name: "Astro", icon: "/icons/astro.webp" },
+      { name: "Next.js", icon: "/icons/next.webp" },
     ],
   },
   {
     title: "Backend & BDD",
     techs: [
-      { name: "Node.js", icon: "/icons/icons8-node-js-100.png" },
-      { name: "MongoDB", icon: "/icons/icons8-mongo-db-100.png" },
-      { name: "Express", icon: "/icons/icons8-express-js-100.png" },
+      { name: "Node.js", icon: "/icons/node.webp" },
+      { name: "MongoDB", icon: "/icons/mongo.webp" },
+      { name: "Express", icon: "/icons/express.webp" },
       
       
     ],
@@ -46,20 +48,20 @@ const categories = [
   {
     title: "Bibliothèques CSS",
     techs: [
-      { name: "TailwindCss", icon: "/icons/icons8-tailwindcss-100.png" },
-      { name: "Daisy UI", icon: "/icons/daisyui-logo-2000.png" },
-      { name: "Shadcn/UI", icon: "/icons/shadcnui.png" }
+      { name: "TailwindCss", icon: "/icons/tailwind.webp" },
+      { name: "Daisy UI", icon: "/icons/daisyui.webp" },
+      { name: "Shadcn/UI", icon: "/icons/shadcnui.webp" }
       
     ],
   },
    {
     title: "Outils",
     techs: [
-      { name: "GitHub", icon: "/icons/icons8-github-100.png" },
-      { name: "Vercel", icon: "/icons/vercel.png" },
-      { name: "Google Analytics", icon: "/icons/google-analytics-logo-bdca.png" },
-      { name: "Google Search Console", icon: "/icons/gsc.png" },
-      { name: "VSCode", icon: "/icons/vscode.png" },
+      { name: "GitHub", icon: "/icons/github.webp" },
+      { name: "Vercel", icon: "/icons/vercel.webp" },
+      { name: "Google Analytics", icon: "/icons/ga.webp" },
+      { name: "Google Search Console", icon: "/icons/gsc.webp" },
+      { name: "VSCode", icon: "/icons/vscode.webp" },
       { name: "Cloudinary", icon: "/icons/cloudinary.webp" },
       
       
@@ -83,9 +85,11 @@ const sizeClasses = {
       <div class="flex flex-wrap justify-center gap-4">
         {category.techs.map(tech => (
           <div class="flex flex-col items-center justify-center transition-transform hover:scale-110">
-            <img
+            <Image
               src={tech.icon}
               alt={tech.name}
+              width={100}
+              height={100}
               class={`rounded-md object-contain ${sizeClasses[size]}`}
               loading="lazy"
             />

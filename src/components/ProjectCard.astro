@@ -1,41 +1,88 @@
 ---
-import "../styles/cardverticale.css";
-import Badge from "./Badge.astro";
 import Button from "./Button.astro";
 import { Image } from "astro:assets";
+interface Props {
+  projet: {
+    slug: string;
+    title: string;
+    description: string;
+    thumbnail: string;
+    techs: string[];
+    badge?: string;
+    delay?: number;
+  };
+}
 
-const {
-  projet,
-  image,
-  alt = "Illustration",
-  badgeLabel = "Freelance",
-  badgeColor = "var(--freelance)",
-  title = "Titre du projet",
-  description = "Petite description du projet pour donner envie de cliquer.",
-  link = "#",
-  buttonLabel = "Voir le projet",
-} = Astro.props;
+const { projet } = Astro.props;
+const delay = projet.delay ?? 0;
 
-const slug = projet?.slug;
-const href = link && link !== "#" ? link : (projet ? `/projets/${projet.slug}/` : "#");
+// On tronque la description proprement
+const shortDescription =
+  projet.description.length > 120
+    ? projet.description.slice(0, 120) + "…"
+    : projet.description;
+
+// Génération URL
+const link = `/projects/${projet.slug}/`;
+
+// Fonction helper pour trouver les icônes dans /public
+function techIcon(name: string) {
+  return `/icons/${name.toLowerCase()}.png`; // par ex: /public/icons/astro.png
+}
 
 ---
 
-<div class="card">
-  <div class="card-image">
-    <Image src={image} alt={alt} width={800} height={500} loading="lazy" />
-    <div class="badge-container">
-      <Badge label={badgeLabel} color={badgeColor} />
-    </div>
+<div 
+  data-aos="zoom-in-up"
+  data-aos-delay={delay}
+  data-aos-duration="900"
+  data-aos-easing="cubic-bezier(.21,.98,.6,1)"
+  class="group bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
+ 
+  >
+  <!-- Image -->
+  <div class="relative h-56 overflow-hidden">
+    <Image
+      src={projet.thumbnail}
+      alt={projet.title}
+      width={800}
+      height={500}
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+      loading="lazy"
+    />
+    <!-- Badge -->
+    {projet.badge && (
+      <span
+        class="absolute top-3 left-3 bg-accent px-3 py-1 text-sm font-semibold text-white rounded-full shadow"
+      >
+        {projet.badge}
+      </span>
+    )}
   </div>
 
-  <div class="card-content">
-    <h3 class="card-title">{title}</h3>
-    <p class="card-desc" set:html={description}></p>
-    <div class="card-footer">
-      <a href={href}>
-        <Button label={buttonLabel} variant="gradient" />
-      </a>
+  <!-- Contenu -->
+  <div class="p-5 flex flex-col gap-4">
+    <h3 class="text-xl font-semibold text-primary">{projet.title}</h3>
+
+    <p class="text-sm opacity-80 leading-relaxed">
+      {shortDescription}
+    </p>
+
+   <!-- Tech stack -->
+    <div class="flex flex-wrap items-center gap-3 mt-2">
+      {projet.techs.map((tech) => (
+        <Image
+          src={techIcon(tech)}
+          alt={tech}
+          width={40}
+          height={40}
+          class="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
+          loading="lazy"
+        />
+      ))}
     </div>
+
+    <!-- Bouton -->
+     <Button href={link}>Voir le projet</Button>
   </div>
 </div>

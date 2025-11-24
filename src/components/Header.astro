@@ -1,6 +1,7 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
 import Image from "astro/components/Image.astro";
+const isHome = Astro.url.pathname === "/";
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shadow-md transition-colors duration-300">
@@ -17,6 +18,7 @@ import Image from "astro/components/Image.astro";
       </div>
 
       <!-- Navigation Desktop -->
+    {isHome && (
       <ul class="hidden md:flex items-center space-x-8">
         <li><a href="#about" class="hover:text-[var(--accent-dark)] font-medium transition-colors">Qui suis-je?</a></li>
         <li><a href="#certifications" class="hover:text-[var(--accent-dark)] font-medium transition-colors">Certifications</a></li>
@@ -25,13 +27,14 @@ import Image from "astro/components/Image.astro";
         <li><a href="#tarifs" class="hover:text-[var(--accent-dark)] font-medium transition-colors">Tarifs</a></li>
         <li><a href="#contact" class="hover:text-[var(--accent-dark)] font-medium transition-colors">Contacts</a></li>
       </ul>
-
+     )}
       <!-- Theme Toggle -->
       <div>
         <ThemeToggle />
       </div>
 
       <!-- Burger Menu Mobile -->
+    {isHome && (
       <button 
         id="mobile-menu-button"
         class="md:hidden p-2 rounded-lg hover:bg-gray-200/50 dark:hover:bg-gray-700/50 transition-colors font-semibold text-[var(--color-text)]"
@@ -41,7 +44,7 @@ import Image from "astro/components/Image.astro";
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-    </div>
+      )}
 
     <!-- Menu Mobile -->
     <div id="mobile-menu" class="hidden text-center md:hidden pb-4 mt-2 rounded-lg bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shadow-lg transition-all duration-300">
