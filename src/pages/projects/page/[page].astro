@@ -34,7 +34,7 @@ export function getStaticPaths() {
 const { currentPage, totalPages, projects } = Astro.props;
 ---
 <BaseLayout>
-<section class="flex flex-col justify-start items-center gap-8">
+<section class="flex flex-col justify-start items-center text-center gap-8">
   <h2 class="text-3xl font-bold mb-10 text-center">Mes projets</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -43,22 +43,28 @@ const { currentPage, totalPages, projects } = Astro.props;
   ))}
   </div>
 
-  <div class="flex justify-center items-center gap-6 mt-12">
-    {currentPage > 1 && (
-      <Button href={`/projects/page/${currentPage - 1}`} variant="gradient">
-        ← Précédent
-      </Button>
-    )}
+ <div class="flex justify-center items-center gap-6 mt-12">
+  {currentPage > 1 && (
+    <Button 
+      href={currentPage === 2 ? "/#realisations" : `/projects/page/${currentPage - 1}`} 
+      variant="pagination"
+    >
+      ← Précédent
+    </Button>
+  )}
 
-    <span class="text-lg opacity-80">
-      Page {currentPage} / {totalPages}
-    </span>
+  <span class="text-lg opacity-80">
+    Page {currentPage} / {totalPages}
+  </span>
 
-    {currentPage < totalPages && (
-      <Button href={`/projects/page/${currentPage + 1}`} variant="gradient">
-        Suivant →
-      </Button>
-    )}
-  </div>
+  {currentPage < totalPages && (
+    <Button 
+      href={`/projects/page/${currentPage + 1}`} 
+      variant="pagination"
+    >
+      Suivant →
+    </Button>
+  )}
+</div>
 </section>
 </BaseLayout>

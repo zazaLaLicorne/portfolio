@@ -2,12 +2,13 @@
 import { Image } from "astro:assets";
 import projects from "@/data/projects.json";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Button from "@/components/Button.astro";
 
 // Générer toutes les routes statiques
 export function getStaticPaths() {
   return projects.map((projet) => ({
     params: { slug: projet.slug },
-    props: { projet }, // On passe le projet en props
+    props: { projet },
   }));
 }
 
@@ -20,7 +21,7 @@ if (!projet) {
 
 // Pour les icônes tech du dossier public/icons
 function techIcon(name) {
-  return `/icons/${name.toLowerCase()}.png`;
+  return `/icons/${name.toLowerCase()}.webp`;
 }
 
 // Pour la date plus lisible
@@ -33,7 +34,7 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
 
 <!-- PAGE PROJET -->
 <BaseLayout>    
-<section class="section container !min-h-fit py-20">
+<section class="section container !min-h-fit py-20 text-center">
   <div data-aos="fade-up" class="max-w-4xl mx-auto">
 
     <!-- Titre + badge -->
@@ -71,10 +72,9 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
     <!-- Tech Stack -->
     <div data-aos="fade-up" class="mb-16">
       <h2 class="text-2xl font-semibold mb-4">Technologies utilisées</h2>
-
-      <div class="flex flex-wrap gap-6">
+      <div class="flex flex-wrap justify-center gap-6">
         {projet.techs.map((tech) => (
-          <div class="flex items-center gap-3">
+          <div class="flex flex-col gap-3" data-aos="zoom-in" data-aos-delay="100">
             <Image
               src={techIcon(tech)}
               alt={tech}
@@ -88,35 +88,94 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
         ))}
       </div>
     </div>
-
-    <!-- Liens externes -->
-    <div data-aos="fade-up" class="flex gap-6 mb-20">
+        <!-- Liens externes -->
+    <div data-aos="fade-up" class="flex flex-col gap-6 mb-20">
+    <h2 class="text-2xl font-semibold mb-4">Liens du projet</h2>
       {projet.project_url && (
-        <a
-          href={projet.project_url}
-          target="_blank"
-          class="animated-gradient px-6 py-3 rounded-lg text-white font-semibold"
-        >
+        <Button variant="projet" href={projet.project_url} target="_blank">
           Voir le site
-        </a>
+     </Button>
       )}
 
       {projet.github_url && (
-        <a
-          href={projet.github_url}
-          target="_blank"
-          class="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition"
-        >
-          GitHub
-        </a>
+        <Button variant="projet" href={projet.github_url} target="_blank">
+            <img src="/icons/github.webp" alt="GitHub" class="w-5 h-5" />
+            Voir le code
+        </Button>
       )}
     </div>
-    <!-- 🟣 Vidéos du projet -->
+
+    <!-- Notes -->
+    {projet.scores && (
+  <div class="mt-20" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-6">Scores du projet</h2>
+
+    <!-- TABLEAU SECURITY HEADERS -->
+    <div class="overflow-x-auto justify-self-center mb-10">
+      <table class="table-auto border-collapse rounded-xl overflow-hidden shadow-lg">
+        <thead class="bg-gray-200 dark:bg-gray-700">
+          <tr>
+            <th class="p-4 font-bold">Test</th>
+            <th class="p-4  font-bold">Note</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800">
+          <tr class="border-t border-gray-300 dark:border-gray-700">
+            <td class="p-4 font-medium">Security Headers</td>
+            <td class="p-4 font-bold text-accent">
+              {projet.scores.security_headers}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TABLEAU LIGHTHOUSE -->
+    <h3 class="text-xl font-semibold mb-4">Lighthouse</h3>
+
+    <div class="overflow-x-auto ">
+      <table class="table-auto w-full border-collapse rounded-xl overflow-hidden shadow-lg">
+        <thead class="bg-gray-200 dark:bg-gray-700">
+          <tr>
+            <th class="p-4 font-bold ">Plateforme</th>
+            <th class="p-4 font-bold ">Performance</th>
+            <th class="p-4 font-bold ">Accessibilité</th>
+            <th class="p-4 font-bold ">Best Practices</th>
+            <th class="p-4 font-bold ">SEO</th>
+          </tr>
+        </thead>
+
+        <tbody class="text-center bg-white dark:bg-gray-800">
+
+          <!-- DESKTOP -->
+          <tr class="border-t border-gray-300 dark:border-gray-700">
+            <td class="p-4 font-medium ">Desktop</td>
+            <td class="p-4 ">{projet.scores.lighthouse.desktop.performance}</td>
+            <td class="p-4 ">{projet.scores.lighthouse.desktop.accessibility}</td>
+            <td class="p-4 ">{projet.scores.lighthouse.desktop.best_practices}</td>
+            <td class="p-4 ">{projet.scores.lighthouse.desktop.seo}</td>
+          </tr>
+
+          <!-- MOBILE -->
+          <tr class="border-t border-gray-300 dark:border-gray-700">
+            <td class="p-4 font-medium ">Mobile</td>
+            <td class="p-4 ">{projet.scores.lighthouse.mobile.performance}</td>
+            <td class="p-4 ">{projet.scores.lighthouse.mobile.accessibility}</td>
+            <td class="p-4 ">{projet.scores.lighthouse.mobile.best_practices}</td>
+            <td class="p-4 ">{projet.scores.lighthouse.mobile.seo}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
+
+    <!-- Vidéos du projet -->
 {projet.videos && (
   <div class="mt-20" data-aos="fade-up">
     <h2 class="text-2xl font-semibold mb-6">Vidéos de présentation</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10" data-aos="zoom-in">
 
       <!-- 🎥 Desktop -->
       {projet.videos.desktop && (
@@ -195,5 +254,7 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
       </div>
     )}
   </div>
+  <Button variant="retour" href="/projects/page/1">
+    ← Retour à la liste des projets</Button>
 </section>
 </BaseLayout> 

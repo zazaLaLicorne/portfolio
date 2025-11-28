@@ -29,7 +29,7 @@ const categories = [
   {
     title: "Framework Front",
     techs: [
-      { name: "React", icon: "/icons/reac.webp" },
+      { name: "React", icon: "/icons/react.webp" },
       {name: "React Native", icon: "/icons/reactnative.webp"},
       { name: "Astro", icon: "/icons/astro.webp" },
       { name: "Next.js", icon: "/icons/next.webp" },
@@ -39,7 +39,7 @@ const categories = [
     title: "Backend & BDD",
     techs: [
       { name: "Node.js", icon: "/icons/node.webp" },
-      { name: "MongoDB", icon: "/icons/mongo.webp" },
+      { name: "MongoDB", icon: "/icons/mongodb.webp" },
       { name: "Express", icon: "/icons/express.webp" },
       
       
@@ -76,15 +76,15 @@ const sizeClasses = {
 };
 ---
 
-<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" >
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 text-center" >
   {categories.map((category, index) => (
-    <div class="card glass flex flex-col items-center p-6" data-aos="fade-up"
+    <div class="card glass flex flex-col items-center justify-center p-6" data-aos="fade-up"
       data-aos-delay={index * 100}>
       <h3 class="mb-4 text-xl font-bold">{category.title}</h3>
 
       <div class="flex flex-wrap justify-center gap-4">
         {category.techs.map(tech => (
-          <div class="flex flex-col items-center justify-center transition-transform hover:scale-110">
+          <div class="flex flex-col items-center transition-transform hover:scale-110">
             <Image
               src={tech.icon}
               alt={tech.name}
