@@ -66,8 +66,10 @@ html {
 
 html.dark {
   --color-text: #e2e8f0; }
-html h1,h2,h3{
-  --text-color:blue;}
+h1, h2, h3 {
+  color: var(--color-primary);
+}
+
 
 body {
   @apply  text-base bg-white dark:bg-gray-900;

@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import projects from "@/data/projects.json";
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import ProjectsLayout from "@/layouts/ProjectsLayout.astro";
 import Button from "@/components/Button.astro";
 
 // Générer toutes les routes statiques
@@ -30,23 +30,54 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
   month: "long",
   day: "numeric",
 });
+
+const videosList = [
+  projet.videos?.desktop,
+  projet.videos?.tablet?.landscape,
+  projet.videos?.tablet?.portrait,
+  projet.videos?.mobile?.landscape,
+  projet.videos?.mobile?.portrait
+].filter(Boolean);
+
+const hasOneVideo = videosList.length === 1;
+
+function toEmbed(url) {
+  if (!url) return "";
+
+  if (url.includes("/shorts/")) {
+    return url.replace("youtube.com/shorts/", "www.youtube.com/embed/");
+  }
+
+  if (url.includes("youtu.be/")) {
+    return url.replace("youtu.be/", "www.youtube.com/embed/");
+  }
+
+  if (url.includes("watch?v=")) {
+    return url.replace("watch?v=", "embed/");
+  }
+
+  return url;
+}
 ---
 
 <!-- PAGE PROJET -->
-<BaseLayout>    
-<section class="section container !min-h-fit py-20 text-center">
-  <div data-aos="fade-up" class="max-w-4xl mx-auto">
+<ProjectsLayout>    
+<div class="project-page">
+
+  <div data-aos="fade-up" class="max-w-4xl mt-10 pt-10 mx-auto">
 
     <!-- Titre + badge -->
-    <h1 class="text-4xl font-bold mb-4">{projet.title}</h1>
+    <h1 class="text-4xl text-center font-bold mb-4">{projet.title}</h1>
 
-    {projet.badge && (
-      <span class="inline-block bg-accent text-white px-3 py-1 rounded-lg mb-6">
-        {projet.badge}
-      </span>
-    )}
+   {projet.badge && (
+  <div class="flex justify-center">
+    <span class="inline-block bg-accent text-white px-3 py-1 rounded-lg mb-6">
+      {projet.badge}
+    </span>
+  </div>
+)}
 
-    <p class="opacity-80 mb-10 text-sm">
+    <p class="opacity-80 mb-10 text-center text-sm">
       Projet publié le {date}
     </p>
 
@@ -63,18 +94,16 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
     </div>
 
     <!-- Description -->
-    <div data-aos="fade-up" class="prose dark:prose-invert max-w-none mb-12">
-      <p class="text-lg leading-relaxed">
-        {projet.description}
-      </p>
-    </div>
+   <div data-aos="fade-up" class="project-description mb-12" set:html={projet.description}>
+
+   </div>
 
     <!-- Tech Stack -->
     <div data-aos="fade-up" class="mb-16">
-      <h2 class="text-2xl font-semibold mb-4">Technologies utilisées</h2>
+      <h2 class="text-2xl font-semibold text-center mb-4">Technologies utilisées</h2>
       <div class="flex flex-wrap justify-center gap-6">
         {projet.techs.map((tech) => (
-          <div class="flex flex-col gap-3" data-aos="zoom-in" data-aos-delay="100">
+          <div class="flex flex-col gap-3 items-center" data-aos="zoom-in" data-aos-delay="100">
             <Image
               src={techIcon(tech)}
               alt={tech}
@@ -89,41 +118,44 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
       </div>
     </div>
         <!-- Liens externes -->
-    <div data-aos="fade-up" class="flex flex-col gap-6 mb-20">
+   {(projet.project_url || projet.github_url) && (
+  <div data-aos="fade-up" class="flex flex-col text-center gap-6 mb-20">
     <h2 class="text-2xl font-semibold mb-4">Liens du projet</h2>
-      {projet.project_url && (
-        <Button variant="projet" href={projet.project_url} target="_blank">
-          Voir le site
-     </Button>
-      )}
 
-      {projet.github_url && (
-        <Button variant="projet" href={projet.github_url} target="_blank">
-            <img src="/icons/github.webp" alt="GitHub" class="w-5 h-5" />
-            Voir le code
-        </Button>
-      )}
-    </div>
+    {projet.project_url && (
+      <Button variant="projet" href={projet.project_url} target="_blank">
+        Voir le site
+      </Button>
+    )}
+
+    {projet.github_url && (
+      <Button variant="projet" href={projet.github_url} target="_blank">
+        <img src="/icons/github.webp" alt="GitHub" class="w-5 h-5" />
+        Voir le code
+      </Button>
+    )}
+  </div>
+)}
 
     <!-- Notes -->
-    {projet.scores && (
-  <div class="mt-20" data-aos="fade-up">
-    <h2 class="text-2xl font-semibold mb-6">Scores du projet</h2>
+   {projet.scores?.lighthouse && projet.scores?.security_headers && (
+    <div class="mt-20" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-center mb-6">Scores du projet</h2>
 
     <!-- TABLEAU SECURITY HEADERS -->
-    <div class="overflow-x-auto justify-self-center mb-10">
-      <table class="table-auto border-collapse rounded-xl overflow-hidden shadow-lg">
-        <thead class="bg-gray-200 dark:bg-gray-700">
-          <tr>
-            <th class="p-4 font-bold">Test</th>
-            <th class="p-4  font-bold">Note</th>
-          </tr>
-        </thead>
-        <tbody class="bg-white dark:bg-gray-800">
-          <tr class="border-t border-gray-300 dark:border-gray-700">
-            <td class="p-4 font-medium">Security Headers</td>
-            <td class="p-4 font-bold text-accent">
-              {projet.scores.security_headers}
+      <div class="overflow-x-auto justify-self-center mb-10">
+        <table class="table-auto border-collapse rounded-xl overflow-hidden shadow-lg">
+          <thead class="bg-gray-200 dark:bg-gray-700">
+            <tr>
+              <th class="p-4 font-bold">Test</th>
+              <th class="p-4  font-bold">Note</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white dark:bg-gray-800">
+            <tr class="border-t border-gray-300 dark:border-gray-700">
+              <td class="p-4 font-medium">Security Headers</td>
+              <td class="p-4 font-bold text-accent">
+                {projet.scores.security_headers}
             </td>
           </tr>
         </tbody>
@@ -131,7 +163,7 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
     </div>
 
     <!-- TABLEAU LIGHTHOUSE -->
-    <h3 class="text-xl font-semibold mb-4">Lighthouse</h3>
+    <h3 class="text-xl font-semibold text-center mb-4">Lighthouse</h3>
 
     <div class="overflow-x-auto ">
       <table class="table-auto w-full border-collapse rounded-xl overflow-hidden shadow-lg">
@@ -173,16 +205,20 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
     <!-- Vidéos du projet -->
 {projet.videos && (
   <div class="mt-20" data-aos="fade-up">
-    <h2 class="text-2xl font-semibold mb-6">Vidéos de présentation</h2>
+    <h2 class="text-2xl font-semibold text-center mb-6">Vidéos de présentation</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10" data-aos="zoom-in">
+    <div
+      class={hasOneVideo
+        ? "flex justify-center"
+        : "grid grid-cols-1 md:grid-cols-2 gap-10"}
+      data-aos="zoom-in"
+    >
 
-      <!-- 🎥 Desktop -->
       {projet.videos.desktop && (
         <div class="video-card rounded-xl overflow-hidden shadow-lg bg-black">
           <iframe
             class="w-full aspect-video"
-            src={projet.videos.desktop.replace("youtu.be", "www.youtube.com/embed")}
+            src={toEmbed(projet.videos.desktop)}
             loading="lazy"
             allowfullscreen
           ></iframe>
@@ -190,12 +226,11 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
         </div>
       )}
 
-      <!-- 🎥 Tablet Landscape -->
       {projet.videos.tablet?.landscape && (
         <div class="video-card rounded-xl overflow-hidden shadow-lg bg-black">
           <iframe
             class="w-full aspect-video"
-            src={projet.videos.tablet.landscape.replace("youtu.be", "www.youtube.com/embed")}
+            src={toEmbed(projet.videos.tablet.landscape)}
             loading="lazy"
             allowfullscreen
           ></iframe>
@@ -203,12 +238,23 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
         </div>
       )}
 
-      <!-- 🎥 Mobile Landscape -->
+      {projet.videos.tablet?.portrait && (
+        <div class="video-card rounded-xl overflow-hidden shadow-lg bg-black">
+          <iframe
+            class="w-full aspect-video"
+            src={toEmbed(projet.videos.tablet.portrait)}
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <p class="text-center text-sm opacity-80 py-2">Tablette (Portrait)</p>
+        </div>
+      )}
+
       {projet.videos.mobile?.landscape && (
         <div class="video-card rounded-xl overflow-hidden shadow-lg bg-black">
           <iframe
             class="w-full aspect-video"
-            src={projet.videos.mobile.landscape.replace("youtu.be", "www.youtube.com/embed")}
+            src={toEmbed(projet.videos.mobile.landscape)}
             loading="lazy"
             allowfullscreen
           ></iframe>
@@ -216,12 +262,11 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
         </div>
       )}
 
-      <!-- 🎥 Mobile Portrait -->
       {projet.videos.mobile?.portrait && projet.videos.mobile.portrait !== "" && (
         <div class="video-card rounded-xl overflow-hidden shadow-lg bg-black">
           <iframe
             class="w-full aspect-video"
-            src={projet.videos.mobile.portrait.replace("youtu.be", "www.youtube.com/embed")}
+            src={toEmbed(projet.videos.mobile.portrait)}
             loading="lazy"
             allowfullscreen
           ></iframe>
@@ -253,8 +298,67 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
         </div>
       </div>
     )}
-  </div>
+  
+  <div class="flex justify-center mt-12">
   <Button variant="retour" href="/projects/page/1">
-    ← Retour à la liste des projets</Button>
-</section>
-</BaseLayout> 
+    ← Retour à la liste des projets
+  </Button>
+</div>
+    </div>
+  </div>
+</ProjectsLayout> 
+
+<style>
+  /* Container principal de la description */
+  .project-description {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Titres h4 */
+  .project-description :global(h4) {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  /* Paragraphes */
+  .project-description :global(p) {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* Listes UL - CORRECTION PRINCIPALE */
+  .project-description :global(ul) {
+    display: block;
+    list-style-type: disc;
+    list-style-position: outside;
+    margin: 1rem 0;
+    padding-left: 8rem;
+    font-size: 1.3rem;
+  }
+
+  /* Items de liste */
+  .project-description :global(li) {
+    display: list-item;
+    margin: 0.5rem 0;
+    line-height: 1.6;
+  }
+
+  /* Texte en gras */
+  .project-description :global(strong) {
+    font-weight: 700;
+  }
+
+  /* Texte en italique */
+  .project-description :global(em) {
+    font-style: italic;
+  }
+
+</style>

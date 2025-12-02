@@ -29,17 +29,15 @@ const link = `/projects/${projet.slug}/`;
 function techIcon(name: string) {
   return `/icons/${name.toLowerCase()}.webp`; // par ex: /public/icons/astro.png
 }
-
 ---
 
-<div 
+<div
   data-aos="zoom-in-up"
   data-aos-delay={delay}
   data-aos-duration="900"
   data-aos-easing="cubic-bezier(.21,.98,.6,1)"
   class="group bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
- 
-  >
+>
   <!-- Image -->
   <div class="relative h-56 overflow-hidden">
     <Image
@@ -51,38 +49,39 @@ function techIcon(name: string) {
       loading="lazy"
     />
     <!-- Badge -->
-    {projet.badge && (
-      <span
-        class="absolute top-3 left-3 bg-accent px-3 py-1 text-sm font-semibold text-white rounded-full shadow"
-      >
-        {projet.badge}
-      </span>
-    )}
+    {
+      projet.badge && (
+        <span class="absolute top-3 left-3 bg-accent px-3 py-1 text-sm font-semibold text-white rounded-full shadow">
+          {projet.badge}
+        </span>
+      )
+    }
   </div>
 
   <!-- Contenu -->
   <div class="p-5 flex flex-col gap-4">
-    <h3 class="text-xl font-semibold text-primary">{projet.title}</h3>
+    <h3 class="text-3xl font-bold text-primary">{projet.title}</h3>
 
-    <p class="text-sm opacity-80 leading-relaxed">
-      {shortDescription}
-    </p>
+    <p class="text-xs opacity-80" set:html={shortDescription} />
 
-   <!-- Tech stack -->
+    <!-- Tech stack -->
     <div class="flex flex-wrap items-center justify-center gap-3 mt-2">
-      {projet.techs.map((tech) => (
-        <Image
-          src={techIcon(tech)}
-          alt={tech}
-          width={40}
-          height={40}
-          class="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
-          loading="lazy"
-        />
-      ))}
+      {
+        projet.techs.map((tech) => (
+          <Image
+            src={techIcon(tech)}
+            alt={tech}
+            width={40}
+            height={40}
+            class="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
+            loading="lazy"
+          />
+        ))
+      }
     </div>
 
     <!-- Bouton -->
-     <Button href={link}>Voir le projet</Button>
+    <Button href={link}>Voir le projet</Button>
   </div>
 </div>
+

@@ -2,51 +2,47 @@
 import Layout from "./BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Button from "../components/Button.astro";
 import "../styles/global.css";
-import { Image } from "astro:assets";
-
-interface Props {
-  image: ImageMetadata;
-  alt: string;
-  badgeLabel: string;
-  badgeColor: string;
-  title: string;
-  description: string;
-  link: string;
-  buttonLabel: string;
-  children: any;
-}
-
-const {
-  image,
-  alt,
-  title,
-} = Astro.props as Props;
 ---
 
-<Layout title={title}>
-  <Header slot="header" />
-  
-    <article class="blog-post">
-      <header class="blog-post-header">
-        <h1 class="blog-post-title">{title}</h1>
-      </header>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <slot name="head" />
+  </head>
 
-      {
-          <figure class="blog-post-image">
-            <Image src={image} alt={alt ?? ""} width="800" height="600" />
-          </figure>
-        
-      }
+  <body class="bg-white dark:bg-gray-900">
+    <Header />
 
-      <div class="blog-post-content">
-        <slot />
-      </div>
-      <a href="../developpement">
-        <Button label={"← Retour aux articles"} variant="gradient" />
-    </a>
-    </article>
+    <main class="content-wrapper container mx-auto py-12">
+      <slot />
+    </main>
 
-  <Footer slot="footer" />
-</Layout>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  /* espace central adapté au contenu */
+  .content-wrapper {
+    max-width: 900px;
+    text-align: left;
+  }
+
+  /* listes classiques */
+  .content-wrapper ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  .content-wrapper li {
+    margin-bottom: 0.4rem;
+  }
+
+  .content-wrapper h1,
+  .content-wrapper h2,
+  .content-wrapper h3,
+  .content-wrapper h4 {
+    text-align: left;
+  }
+</style>

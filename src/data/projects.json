@@ -1,17 +1,14 @@
 [
   {
     "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
-    "slug": "karine-lamarre-1",
-    "title": "Karine LAMARRE 1",
-    "description": "blalbla vbf,e,r",
+    "slug": "karine-lamarre",
+    "title": "Karine LAMARRE Thérapies",
+    "description": "<h4><strong>Site vitrine professionnel – Projet client (Astro)</strong></h4>\n\n<p>Développement complet d’un site vitrine pour une praticienne en thérapie individuelle et de couple. Le site a été conçu pour offrir une présentation claire de ses services, renforcer sa crédibilité en ligne et faciliter la prise de rendez-vous.</p>\n\n<h4>Objectifs du projet :</h4>\n<ul>\n  <li>Proposer une identité visuelle sobre…</li>\n  <li>Structurer l’information…</li>\n  <li>Navigation fluide…</li>\n  <li>Optimiser la vitesse…</li>\n</ul>\n\n<h4>Travaux réalisés :</h4>\n<ul>\n  <li>Conception du design…</li>\n  <li>Développement avec Astro…</li>\n  <li>Intégration responsive…</li>\n  <li>Bonnes pratiques SEO…</li>\n  <li>GA + Search Console…</li>\n  <li>Score A+</li>\n  <li>100% Lighthouse</li>\n</ul>\n\n<h4>Résultat :</h4>\n<p>Un site vitrine rapide, sécurisé, accessible et parfaitement adapté à une activité professionnelle locale souhaitant accroître sa visibilité et sa crédibilité.</p>\n",
     "project_url": "https://karinelamarretherapies.fr",
-    "github_url": "https://github.com/zazaLaLicorne/karine",
+    "github_url": "",
     "badge": "independent",
     "priority": "high",
-    "images": [
-      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
-      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
-    ],
+    "images": [],
     "screenshots": [],
     "techs": [
       "Astro",
@@ -21,14 +18,14 @@
     "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
     "date": "2025-11-24",
     "videos": {
-      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+      "desktop": "https://youtu.be/Bs_6mZoZKLc",
       "mobile": {
-        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-        "portrait": ""
+        "landscape": "",
+        "portrait": "https://youtube.com/shorts/VWlvSTJDj4M"
       },
       "tablet": {
-        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-        "portrait": ""
+        "landscape": "https://youtu.be/PFvmj8Y1xg0",
+        "portrait": "https://youtube.com/shorts/llz4h-hbEpg"
       }
     },
     "scores": {
@@ -51,85 +48,87 @@
     "createdAt": "2025-11-24T12:22:35.030Z"
   },
   {
-    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
-    "slug": "karine-lamarre-2",
-    "title": "Karine LAMARRE 2",
-    "description": "blalbla vbf,e,r",
-    "project_url": "https://karinelamarretherapies.fr",
+    "id": "d38a2b7a-d63d-4cdb-9f04-78bf5d6d2e74",
+    "slug": "wap",
+    "title": "WAP",
+    "description": "<h4>Application Mobile - React Native- Projet pour le titre RNCP</h4>\n<p>Conception et Développement d'une application React Native dans le cadre du projet de fin de formation pour la présentation au titre RNCP de concepteur développeur d'application web et mobile. Ce projet favorise la rencontre entre propriétaires de chiens afin de rendre plus agréable la promenade</p>\n<h4>Objectif du projet :</h4>\n<ul>\n<li>Permet d'afficher/ajouter/décrire les lieux DogFriendly</li>\n<li>Permet d'afficher les amis, inconnus et personnes bloquées</li>\n<li>Tuto pour montrer les fonctionnalités de l'application</li>\n</ul>\n<h4>Travaux réalisés :</h4>\n<ul>\n<li>Création des users story et mockup</li>\n<li>Modélisation de  la BDD</li>\n<li>Géolocalisation</li>\n<li>Identification par mot de passe</li>\n<li>Codage en React Native</li>\n<li>Backend avec Express et MongoDB</li>\n</ul>\n<h4>Résultats</h4>\n<p>Ce projet a été une expérience professionnelle et personnelle enrichissante. Il m’a permis d’appliquer toutes les compétences acquises pendant ma formation : développement front-end et back-end, gestion des bases de données et méthodologies Agiles. J’ai également appris à gérer des délais serrés et à collaborer avec des coéquipiers expérimentés. Wap est le reflet de notre travail collectif et de notre passion pour la technologie.</p>",
+    "project_url": "",
     "github_url": "",
-    "badge": "independent",
-    "priority": "high",
-    "images": [
-      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
-      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
-    ],
+    "badge": "formation",
+    "priority": "medium",
+    "images": [],
     "screenshots": [],
     "techs": [
-      "Astro",
-      "HTML",
-      "CSS"
+      "reactnative",
+      "express",
+      "next",
+      "mongodb",
+      "cloudinary"
     ],
-    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
-    "date": "2025-11-24",
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1764687527/mes-projets/portfolio/wap/thumbnail/z6xaoc35cowbd7wpfjln.webp",
+    "date": "2025-12-02",
     "videos": {
-      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+      "desktop": "",
       "mobile": {
-        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-        "portrait": ""
+        "landscape": "",
+        "portrait": "https://youtu.be/aSK4vxZDad8"
       },
       "tablet": {
-        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "landscape": "",
         "portrait": ""
       }
     },
     "scores": {
       "lighthouse": {
         "desktop": {
-          "performance": "100",
-          "accessibility": "100",
-          "best_practices": "100",
-          "seo": "100"
+          "performance": "",
+          "accessibility": "",
+          "best_practices": "",
+          "seo": ""
         },
         "mobile": {
-          "performance": "100",
-          "accessibility": "100",
-          "best_practices": "100",
-          "seo": "100"
+          "performance": "",
+          "accessibility": "",
+          "best_practices": "",
+          "seo": ""
         }
       },
-      "security_headers": "A+"
+      "security_headers": ""
     },
-    "createdAt": "2025-11-24T12:22:35.030Z"
+    "createdAt": "2025-12-02T14:47:15.341Z"
   },
   {
-    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
-    "slug": "karine-lamarre-3",
-    "title": "Karine LAMARRE 3",
-    "description": "blalbla vbf,e,r",
-    "project_url": "https://karinelamarretherapies.fr",
+    "id": "f7a63c91-2f3d-4eb5-ab1d-2326f519f46d",
+    "slug": "flower",
+    "title": "Flower",
+    "description": "<h4>Galerie Photo - Site Personnel  -React</h4>\n<p>Dans le cadre de mon activité freelance, j'ai conçu et développé un site web vitrine mettant en valeur une collection personnelle de photographies botaniques. Ce projet m’a permis de mobiliser une large palette de compétences techniques, de la gestion des médias à l’optimisation SEO, en passant par la mise en place d’un backoffice sur mesure.</p>\n<h4>Missions réalisées :</h4>\n<ul>\n<li>Développement fullstack avec Next.js 15 (App Router) et MongoDB</li>\n<li>Intégration Cloudinary pour l’optimisation, la compression automatique et l’hébergement des images</li>\n<li>Création d’un script d’upload intelligent permettant :</li>\n<ul>\n<li>le chargement par lots d’images classées en dossiers,</li>\n<li>la transformation automatique des formats (WebP),</li>\n<li>l’exportation d’un fichier JSON pour l’insertion en base de données</li>\n</ul>\n<li>Mise en place d’un système de tri dynamique des photos par catégorie, saison, fleur et couleur (via API)</li>\n<li>Développement d’un carrousel responsive avec système de \"likes\" enregistrés en BDD</li>\n<li>Optimisation SEO</li>\n<li>Intégration de Google Analytics avec bannière de consentement RGPD</li>\n</ul>",
+    "project_url": "https://flower.isabellelamarre.fr",
     "github_url": "",
-    "badge": "independent",
-    "priority": "high",
-    "images": [
-      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
-      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
-    ],
+    "badge": "personel",
+    "priority": "medium",
+    "images": [],
     "screenshots": [],
     "techs": [
-      "Astro",
-      "HTML",
-      "CSS"
+      "react",
+      "next",
+      "ts",
+      "tailwind",
+      "shadcnui",
+      "mongodb",
+      "ga",
+      "gsc"
+     
     ],
-    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
-    "date": "2025-11-24",
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1764695099/mes-projets/portfolio/flower/thumbnail/frbmw2ueeilszmwjxrat.webp",
+    "date": "2025-12-02",
     "videos": {
-      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+      "desktop": "https://youtu.be/evBGno9HsG4",
       "mobile": {
-        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "landscape": "",
         "portrait": ""
       },
       "tablet": {
-        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
+        "landscape": "",
         "portrait": ""
       }
     },
@@ -137,224 +136,19 @@
       "lighthouse": {
         "desktop": {
           "performance": "100",
-          "accessibility": "100",
+          "accessibility": "96",
           "best_practices": "100",
           "seo": "100"
         },
         "mobile": {
-          "performance": "100",
-          "accessibility": "100",
+          "performance": "95",
+          "accessibility": "96",
           "best_practices": "100",
           "seo": "100"
         }
       },
-      "security_headers": "A+"
+      "security_headers": "A"
     },
-    "createdAt": "2025-11-24T12:22:35.030Z"
-  },
-  {
-    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
-    "slug": "karine-lamarre-4",
-    "title": "Karine LAMARRE 4",
-    "description": "blalbla vbf,e,r",
-    "project_url": "https://karinelamarretherapies.fr",
-    "github_url": "",
-    "badge": "independent",
-    "priority": "high",
-    "images": [
-      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
-      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
-    ],
-    "screenshots": [],
-    "techs": [
-      "Astro",
-      "HTML",
-      "CSS"
-    ],
-    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
-    "date": "2025-11-24",
-    "videos": {
-      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-      "mobile": {
-        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-        "portrait": ""
-      },
-      "tablet": {
-        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-        "portrait": ""
-      }
-    },
-    "scores": {
-      "lighthouse": {
-        "desktop": {
-          "performance": "100",
-          "accessibility": "100",
-          "best_practices": "100",
-          "seo": "100"
-        },
-        "mobile": {
-          "performance": "100",
-          "accessibility": "100",
-          "best_practices": "100",
-          "seo": "100"
-        }
-      },
-      "security_headers": "A+"
-    },
-    "createdAt": "2025-11-24T12:22:35.030Z"
-  },
-  {
-    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
-    "slug": "karine-lamarre-5",
-    "title": "Karine LAMARRE 5",
-    "description": "blalbla vbf,e,r",
-    "project_url": "https://karinelamarretherapies.fr",
-    "github_url": "",
-    "badge": "independent",
-    "priority": "high",
-    "images": [
-      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
-      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
-    ],
-    "screenshots": [],
-    "techs": [
-      "Astro",
-      "HTML",
-      "CSS"
-    ],
-    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
-    "date": "2025-11-24",
-    "videos": {
-      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-      "mobile": {
-        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-        "portrait": ""
-      },
-      "tablet": {
-        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-        "portrait": ""
-      }
-    },
-    "scores": {
-      "lighthouse": {
-        "desktop": {
-          "performance": "100",
-          "accessibility": "100",
-          "best_practices": "100",
-          "seo": "100"
-        },
-        "mobile": {
-          "performance": "100",
-          "accessibility": "100",
-          "best_practices": "100",
-          "seo": "100"
-        }
-      },
-      "security_headers": "A+"
-    },
-    "createdAt": "2025-11-24T12:22:35.030Z"
-  },
-   {
-    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
-    "slug": "karine-lamarre-6",
-    "title": "Karine LAMARRE 6",
-    "description": "blalbla vbf,e,r",
-    "project_url": "https://karinelamarretherapies.fr",
-    "github_url": "",
-    "badge": "independent",
-    "priority": "high",
-    "images": [
-      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
-      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
-    ],
-    "screenshots": [],
-    "techs": [
-      "Astro",
-      "HTML",
-      "CSS"
-    ],
-    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
-    "date": "2025-11-24",
-    "videos": {
-      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-      "mobile": {
-        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-        "portrait": ""
-      },
-      "tablet": {
-        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-        "portrait": ""
-      }
-    },
-    "scores": {
-      "lighthouse": {
-        "desktop": {
-          "performance": "100",
-          "accessibility": "100",
-          "best_practices": "100",
-          "seo": "100"
-        },
-        "mobile": {
-          "performance": "100",
-          "accessibility": "100",
-          "best_practices": "100",
-          "seo": "100"
-        }
-      },
-      "security_headers": "A+"
-    },
-    "createdAt": "2025-11-24T12:22:35.030Z"
-  },
-   {
-    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
-    "slug": "karine-lamarre-7",
-    "title": "Karine LAMARRE 7",
-    "description": "blalbla vbf,e,r",
-    "project_url": "https://karinelamarretherapies.fr",
-    "github_url": "",
-    "badge": "independent",
-    "priority": "high",
-    "images": [
-      "https://res-console.cloudinary.com/isabellelamarre/thumbnails/v1/image/upload/v1755767753/bWVzLWZsZXVycy9FeHTDqXJpZXVyL0V0w6kvRGFobGlhL21hdXZlL2ZudHdxNm1qYnRxZGYwbXRicHFx/drilldown",
-      "https://res.cloudinary.com/isabellelamarre/image/upload/v1754211720/mes-fleurs/Ext%C3%A9rieur/Et%C3%A9/Arum/rose/buvesfzs40hxcfmjtgvo.jpg"
-    ],
-    "screenshots": [],
-    "techs": [
-      "Astro",
-      "HTML",
-      "CSS"
-    ],
-    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
-    "date": "2025-11-24",
-    "videos": {
-      "desktop": "https://youtu.be/mTF0Gm-4Tio?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-      "mobile": {
-        "landscape": "https://youtu.be/Q6RxjkW49Xc?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-        "portrait": ""
-      },
-      "tablet": {
-        "landscape": "https://youtu.be/biR01UCT6p8?list=PLxiAqOSPZwLYABI2XxxzINT6VaTEcyl_p",
-        "portrait": ""
-      }
-    },
-    "scores": {
-      "lighthouse": {
-        "desktop": {
-          "performance": "100",
-          "accessibility": "100",
-          "best_practices": "100",
-          "seo": "100"
-        },
-        "mobile": {
-          "performance": "100",
-          "accessibility": "100",
-          "best_practices": "100",
-          "seo": "100"
-        }
-      },
-      "security_headers": "A+"
-    },
-    "createdAt": "2025-11-24T12:22:35.030Z"
+    "createdAt": "2025-12-02T17:03:42.906Z"
   }
-  
 ]
