@@ -137,8 +137,8 @@ const projects = [...allProjects]
            Mes Réalisations
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {projects.map((item) => (
-              <ProjectCard projet={item} />
+           {projects.map((projet, index) => (
+              <ProjectCard projet={projet} index={index} />
             ))}
           </div>
         </div>

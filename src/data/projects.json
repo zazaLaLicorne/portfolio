@@ -10,11 +10,7 @@
     "priority": "high",
     "images": [],
     "screenshots": [],
-    "techs": [
-      "Astro",
-      "HTML",
-      "CSS"
-    ],
+    "techs": ["Astro", "HTML", "CSS"],
     "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
     "date": "2025-11-24",
     "videos": {
@@ -58,13 +54,7 @@
     "priority": "medium",
     "images": [],
     "screenshots": [],
-    "techs": [
-      "reactnative",
-      "express",
-      "next",
-      "mongodb",
-      "cloudinary"
-    ],
+    "techs": ["React Native", "Express", "Next", "MongoDB", "Cloudinary"],
     "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1764687527/mes-projets/portfolio/wap/thumbnail/z6xaoc35cowbd7wpfjln.webp",
     "date": "2025-12-02",
     "videos": {
@@ -109,15 +99,14 @@
     "images": [],
     "screenshots": [],
     "techs": [
-      "react",
-      "next",
-      "ts",
-      "tailwind",
-      "shadcnui",
-      "mongodb",
-      "ga",
-      "gsc"
-     
+      "React",
+      "Next",
+      "TypeScript",
+      "TailwindCss",
+      "Shadcn/UI",
+      "MongoDB",
+      "Google Analytics",
+      "Google Search Console"
     ],
     "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1764695099/mes-projets/portfolio/flower/thumbnail/frbmw2ueeilszmwjxrat.webp",
     "date": "2025-12-02",

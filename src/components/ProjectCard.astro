@@ -1,6 +1,8 @@
 ---
 import Button from "./Button.astro";
 import { Image } from "astro:assets";
+import { getTechIcon } from "@/lib/techIcons";
+
 interface Props {
   projet: {
     slug: string;
@@ -11,10 +13,15 @@ interface Props {
     badge?: string;
     delay?: number;
   };
+  index: number;
 }
 
-const { projet } = Astro.props;
+const { projet, index } = Astro.props;
 const delay = projet.delay ?? 0;
+
+const isLazy = index >= 2; // 🔥 lazy à partir de la 3ème
+const loadingType = isLazy ? "lazy" : "eager";
+
 
 // On tronque la description proprement
 const shortDescription =
@@ -25,10 +32,10 @@ const shortDescription =
 // Génération URL
 const link = `/projects/${projet.slug}/`;
 
-// Fonction helper pour trouver les icônes dans /public
-function techIcon(name: string) {
-  return `/icons/${name.toLowerCase()}.webp`; // par ex: /public/icons/astro.png
+function cldThumbnail(url, width = 720) {
+  return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width},c_fill/`);
 }
+
 ---
 
 <div
@@ -41,12 +48,13 @@ function techIcon(name: string) {
   <!-- Image -->
   <div class="relative h-56 overflow-hidden">
     <Image
-      src={projet.thumbnail}
+      src={cldThumbnail(projet.thumbnail)}
       alt={projet.title}
       width={800}
       height={500}
       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-      loading="lazy"
+      loading={loadingType}
+
     />
     <!-- Badge -->
     {
@@ -69,12 +77,13 @@ function techIcon(name: string) {
       {
         projet.techs.map((tech) => (
           <Image
-            src={techIcon(tech)}
+            src={getTechIcon(tech)}
             alt={tech}
             width={40}
             height={40}
             class="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
-            loading="lazy"
+            loading={loadingType}
+
           />
         ))
       }

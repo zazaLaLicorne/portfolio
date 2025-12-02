@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { getTechIcon } from "@/lib/techIcons";
 
 interface Props {
   size?: "sm" | "md" | "lg";
@@ -7,64 +8,38 @@ interface Props {
 
 const { size = "md" } = Astro.props;
 
-// Catégories + PNG
+// Catégories – on retire les chemins vers /public
+// Seule la clé name est nécessaire.
 const categories = [
   {
     title: "Conception & Suivi Projet",
-    techs: [
-      { name: "Figma", icon: "/icons/figma.webp" },
-      { name: "Canva", icon: "/icons/canva.webp" },
-      { name: "Notion", icon: "/icons/notion.webp" },
-    ],
+    techs: ["Figma", "Canva", "Notion"],
   },
   {
     title: "Langages",
-    techs: [
-      { name: "JavaScript", icon: "/icons/js.webp" },
-      { name: "TypeScript", icon: "/icons/ts.webp" },
-      { name: "HTML5", icon: "/icons/html.webp" },
-      { name: "CSS3", icon: "/icons/css.webp" },
-    ],
+    techs: ["JavaScript", "TypeScript", "HTML", "CSS"],
   },
   {
     title: "Framework Front",
-    techs: [
-      { name: "React", icon: "/icons/react.webp" },
-      {name: "React Native", icon: "/icons/reactnative.webp"},
-      { name: "Astro", icon: "/icons/astro.webp" },
-      { name: "Next.js", icon: "/icons/next.webp" },
-    ],
+    techs: ["React", "React Native", "Astro", "Next"],
   },
   {
     title: "Backend & BDD",
-    techs: [
-      { name: "Node.js", icon: "/icons/node.webp" },
-      { name: "MongoDB", icon: "/icons/mongodb.webp" },
-      { name: "Express", icon: "/icons/express.webp" },
-      
-      
-    ],
+    techs: ["Node.js", "MongoDB", "Express"],
   },
   {
     title: "Bibliothèques CSS",
-    techs: [
-      { name: "TailwindCss", icon: "/icons/tailwind.webp" },
-      { name: "Daisy UI", icon: "/icons/daisyui.webp" },
-      { name: "Shadcn/UI", icon: "/icons/shadcnui.webp" }
-      
-    ],
+    techs: ["TailwindCss", "Daisy UI", "Shadcn/UI"],
   },
-   {
+  {
     title: "Outils",
     techs: [
-      { name: "GitHub", icon: "/icons/github.webp" },
-      { name: "Vercel", icon: "/icons/vercel.webp" },
-      { name: "Google Analytics", icon: "/icons/ga.webp" },
-      { name: "Google Search Console", icon: "/icons/gsc.webp" },
-      { name: "VSCode", icon: "/icons/vscode.webp" },
-      { name: "Cloudinary", icon: "/icons/cloudinary.webp" },
-      
-      
+      "GitHub",
+      "Vercel",
+      "Google Analytics",
+      "Google Search Console",
+      "VSCode",
+      "Cloudinary",
     ],
   },
 ];
@@ -74,32 +49,40 @@ const sizeClasses = {
   md: "w-16 h-16",
   lg: "w-20 h-20",
 };
+
+
 ---
 
-<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 text-center" >
+
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 text-center">
   {categories.map((category, index) => (
-    <div class="card glass flex flex-col items-center justify-center p-6" data-aos="fade-up"
-      data-aos-delay={index * 100}>
+    <div
+      class="card glass flex flex-col items-center justify-center p-6"
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+    >
       <h3 class="mb-4 text-xl font-bold">{category.title}</h3>
 
       <div class="flex flex-wrap justify-center gap-4">
         {category.techs.map(tech => (
           <div class="flex flex-col items-center transition-transform hover:scale-110">
             <Image
-              src={tech.icon}
-              alt={tech.name}
+              src={getTechIcon(tech)}
+              alt={tech}
               width={100}
               height={100}
               class={`rounded-md object-contain ${sizeClasses[size]}`}
               loading="lazy"
             />
-            <span class="text-sm text-center mt-2">{tech.name}</span>
+            <span class="text-sm text-center mt-2">{tech}</span>
           </div>
         ))}
       </div>
     </div>
   ))}
 </div>
+
+
 
 <style>
   .card {

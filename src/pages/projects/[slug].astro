@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import projects from "@/data/projects.json";
 import ProjectsLayout from "@/layouts/ProjectsLayout.astro";
 import Button from "@/components/Button.astro";
+import { getTechIcon } from "@/lib/techIcons";
+
 
 // Générer toutes les routes statiques
 export function getStaticPaths() {
@@ -20,9 +22,9 @@ if (!projet) {
 }
 
 // Pour les icônes tech du dossier public/icons
-function techIcon(name) {
-  return `/icons/${name.toLowerCase()}.webp`;
-}
+// function techIcon(name) {
+//   return `/icons/${name.toLowerCase()}.webp`;
+// }
 
 // Pour la date plus lisible
 const date = new Date(projet.date).toLocaleDateString("fr-FR", {
@@ -88,7 +90,7 @@ function toEmbed(url) {
         alt={projet.title}
         width={1200}
         height={700}
-        loading="lazy"
+        loading="eager"
         class="w-full h-auto object-cover"
       />
     </div>
@@ -105,11 +107,11 @@ function toEmbed(url) {
         {projet.techs.map((tech) => (
           <div class="flex flex-col gap-3 items-center" data-aos="zoom-in" data-aos-delay="100">
             <Image
-              src={techIcon(tech)}
+              src={getTechIcon(tech)}
               alt={tech}
               width={40}
               height={40}
-              class="w-10 h-10"
+              class="w-10 h-10 object-contain"
               loading="lazy"
             />
             <span class="text-lg">{tech}</span>
@@ -216,11 +218,12 @@ function toEmbed(url) {
 
       {projet.videos.desktop && (
         <div class="video-card rounded-xl overflow-hidden shadow-lg bg-black">
-          <iframe
-            class="w-full aspect-video"
-            src={toEmbed(projet.videos.desktop)}
-            loading="lazy"
-            allowfullscreen
+        <iframe
+          class="w-full aspect-video"
+          src={toEmbed(projet.videos.desktop)}
+          title={`Vidéo du projet : ${projet.title} — Version Desktop`}
+          loading="lazy"
+          allowfullscreen
           ></iframe>
           <p class="text-center text-sm opacity-80 py-2">Version Desktop</p>
         </div>
@@ -231,9 +234,11 @@ function toEmbed(url) {
           <iframe
             class="w-full aspect-video"
             src={toEmbed(projet.videos.tablet.landscape)}
+            title={`Vidéo du projet : ${projet.title} — Tablette (Paysage)`}
             loading="lazy"
             allowfullscreen
           ></iframe>
+
           <p class="text-center text-sm opacity-80 py-2">Tablette (Paysage)</p>
         </div>
       )}
@@ -241,11 +246,13 @@ function toEmbed(url) {
       {projet.videos.tablet?.portrait && (
         <div class="video-card rounded-xl overflow-hidden shadow-lg bg-black">
           <iframe
-            class="w-full aspect-video"
-            src={toEmbed(projet.videos.tablet.portrait)}
-            loading="lazy"
-            allowfullscreen
-          ></iframe>
+              class="w-full aspect-video"
+              src={toEmbed(projet.videos.tablet.portrait)}
+              title={`Vidéo du projet : ${projet.title} — Tablette (Portrait)`}
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+
           <p class="text-center text-sm opacity-80 py-2">Tablette (Portrait)</p>
         </div>
       )}
@@ -255,6 +262,7 @@ function toEmbed(url) {
           <iframe
             class="w-full aspect-video"
             src={toEmbed(projet.videos.mobile.landscape)}
+            title={`Vidéo du projet : ${projet.title} — Mobile (Paysage)`}
             loading="lazy"
             allowfullscreen
           ></iframe>
@@ -267,6 +275,7 @@ function toEmbed(url) {
           <iframe
             class="w-full aspect-video"
             src={toEmbed(projet.videos.mobile.portrait)}
+            title={`Vidéo du projet : ${projet.title} — Mobile (Portrait)`}
             loading="lazy"
             allowfullscreen
           ></iframe>
@@ -340,7 +349,7 @@ function toEmbed(url) {
     list-style-type: disc;
     list-style-position: outside;
     margin: 1rem 0;
-    padding-left: 8rem;
+    padding-left: 2rem;
     font-size: 1.3rem;
   }
 
