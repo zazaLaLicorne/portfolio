@@ -7,6 +7,8 @@ import portrait from "../assets/images/portrait.webp";
 import TechCards from "../components/TechCards.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import allProjects from "../data/projects.json";
+import setup from "../assets/images/setup.jpg";
+import portrait2 from "../assets/images/portrait2.jpg";
 
 const priorityOrder = {
   high: 1,
@@ -18,30 +20,36 @@ const priorityOrder = {
 const projects = [...allProjects]
   .sort((a, b) => priorityOrder[a.priority] - priorityOrder[b.priority])
   .slice(0, 4);
-
 ---
 
 <BaseLayout>
-  <div class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <!-- Hero Section -->
     <div class="min-h-screen h-screen text-center justify-items-center mb-20">
       <Image
         src={portrait}
         alt="Portrait d'Isabelle"
-        class="rounded-full justify-self-center img-hero portrait"
+        class="rounded-full justify-self-center img-hero bordure-magique"
         width={300}
         height={300}
         loading="eager"
         data-aos="fade-down"
-      data-aos-duration="1200"
-      data-aos-offset="200"
+        data-aos-duration="1200"
+        data-aos-offset="200"
       />
-      <h1 class="text-gradient text-6xl md:text-6xl font-bold mb-6" data-aos="fade-up"
-      data-aos-duration="1200"
-      data-aos-offset="200">
+      <h1
+        class="text-gradient text-6xl md:text-6xl font-bold mb-6"
+        data-aos="zoom-in-up"
+        data-aos-duration="1200"
+        data-aos-offset="200"
+      >
         Isabelle LAMARRE
       </h1>
-      <p class="text-3xl max-w-2xl mx-auto" data-aos="fade-right" data-aos-duration="1200" >
+      <p
+        class="text-3xl max-w-2xl mx-auto"
+        data-aos="zoom-in-down"
+        data-aos-duration="1200"
+      >
         Développeuse Web passionnée par les technologies modernes
       </p>
     </div>
@@ -49,84 +57,110 @@ const projects = [...allProjects]
     <!-- Sections -->
     <div class="space-y-20">
       <section id="about">
-        <div class="text-center font-medium ">
-          <h2 class="text-4xl font-bold mb-4">
-            A propos de moi
-          </h2>
-          <hr class="hr-gradient" />
-
-          <p data-aos="fade-right"
-      data-aos-duration="1200"
-      class="text-2xl" >
-            Je m’appelle Isabelle, développeuse web passionnée et curieuse, avec
-            un parcours atypique : de la rigueur des laboratoires scientifiques
-            à la créativité du développement web.<p />
-           <p class="text-2xl" data-aos="fade-left" data-aos-duration="1200">
-            J’aime transformer des idées en projets concrets, qu’il s’agisse de sites
-            vitrines élégants, d’applications interactives ou d’outils pratiques
-            de back-office.</p>
-            <p class="text-2xl" data-aos="fade-right"
-      data-aos-duration="1200"
-     >
-            🚀 Toujours en quête d’apprentissage, je me forme actuellement sur Google
-            Cloud et je m’intéresse particulièrement aux environnements Next.js,
-            MongoDB et aux solutions DevOps pour rendre mes projets encore plus solides
-            et performants.</p>
-            <p class="text-2xl" data-aos="fade-left"
-      data-aos-duration="1200">💡 Ce que j’aime le plus ? Trouver des solutions simples à des problèmes
-            complexes, et apporter une touche personnelle et créative à mes projets.</p>
-            <p class="text-2xl" data-aos="fade-right"
-      data-aos-duration="1200">👉 Aujourd’hui, je suis à la recherche aussi bien d’un poste salarié
-            pour continuer à monter en compétences au sein d’une équipe, que de missions
-            freelance pour accompagner des projets concrets et variés.
-          </p>
-          <hr class="hr-gradient" />
+        <div class="text-center font-medium">
+          <h2 class="text-4xl font-bold mb-4">A propos de moi</h2>
+          
+          <div class="flex flex-col justify-center items-center mt-8 space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10">
+              <Image
+                src={portrait2}
+                alt="Portrait d'Isabelle a son set-up de travail"
+                class="w-200 bordure-magique rounded-3xl h-auto mx-auto mb-4"
+                width={500}
+                loading="lazy"
+                data-aos="zoom-in-down"
+              />
+              <div>
+                <p data-aos="fade-right" data-aos-duration="1200" class="text-2xl">
+                  Je m’appelle Isabelle, développeuse web passionnée et
+                  curieuse, avec un parcours atypique : de la rigueur des
+                  laboratoires scientifiques à la créativité du développement
+                  web.
+                </p>
+                <hr class="hr-gradient" />
+                <p class="text-2xl" data-aos="fade-left" data-aos-duration="1200">
+                  J’aime transformer des idées en projets concrets, qu’il
+                  s’agisse de sites vitrines élégants, d’applications
+                  interactives ou d’outils pratiques de back-office.
+                </p>
+                <hr class="hr-gradient" />
+                <p class="text-2xl" data-aos="fade-right" data-aos-duration="1200">
+                  🚀 Toujours en quête d’apprentissage, je me forme
+                  actuellement sur Google Cloud et je m’intéresse
+                  particulièrement aux environnements Next.js, MongoDB et aux
+                  solutions DevOps pour rendre mes projets encore plus solides
+                  et performants.
+                </p>
+                <hr class="hr-gradient" />
+                <p class="text-2xl" data-aos="fade-left" data-aos-duration="1200">
+                  💡 Ce que j’aime le plus ? Trouver des solutions simples à
+                  des problèmes complexes, et apporter une touche personnelle
+                  et créative à mes projets.
+                </p>
+                <hr class="hr-gradient" />
+                <p class="text-2xl" data-aos="fade-right" data-aos-duration="1200">
+                  👉 Aujourd’hui, je suis à la recherche aussi bien d’un poste
+                  salarié pour continuer à monter en compétences au sein d’une
+                  équipe, que de missions freelance pour accompagner des
+                  projets concrets et variés.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-
-      <section id="certifications" class="flex flex-col justify-start items-center gap-8">
+      <section id="certifications" class="flex flex-col justify-center items-center gap-8">
         <div class="text-center">
-          <h2 class="text-4xl font-bold mb-4">
-            Certifications
-          </h2>
-        
-          <div class="flip-card w-96 h-[28rem] relative">
-            <div class="flip-inner">
-              {/* FACE AVANT */}
-              <div class="flip-front rounded-xl glass p-4 flex flex-col items-center justify-center shadow-lg">
-               <Image
-                  src="https://res.cloudinary.com/isabellelamarre/image/upload/v1756411717/mes-projets/Concepteur-D%C3%A9veloppeur%20d%27Applications%20Web%20et%20Mobile/Titre%20RNCP/La%20Capsule/15-04-2025/aytjkvzudyotfqlqh4xf.png"
-                  alt="Certification RNCP de Concepteur Développeur d'applications Web et Mobile"
-                  width={450}
-                  height={450}
-                  class="w-96 h-auto mb-4"
-                  loading="lazy"
-                />
-                <h3 class="text-xl font-bold">Titre RNCP</h3>
-                <p class="text-sm opacity-80">Concepteur Développeur d'applications Web et Mobile</p>
-                <p>Emis par : La Capsule - 92 cours Lafayette, 69003 Lyon </p>
-              </div>
+          <h2 class="text-4xl font-bold mb-4">Certifications</h2>
+            <div class="flip-card w-96 h-[28rem] relative" 
+                        data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+              <div class="flip-inner">
+                {/* FACE AVANT */}
+                <div class="flip-front rounded-xl glass p-4 flex flex-col items-center justify-center shadow-lg">
+                  <Image
+                    src="https://res.cloudinary.com/isabellelamarre/image/upload/v1756411717/mes-projets/Concepteur-D%C3%A9veloppeur%20d%27Applications%20Web%20et%20Mobile/Titre%20RNCP/La%20Capsule/15-04-2025/aytjkvzudyotfqlqh4xf.png"
+                    alt="Certification RNCP de Concepteur Développeur d'applications Web et Mobile"
+                    width={450}
+                    height={450}
+                    class="w-96 h-auto mb-4"
+                    loading="lazy"
+                  />
+                  <h3 class="text-xl font-bold">Titre RNCP</h3>
+                  <p class="text-sm opacity-80">
+                    Concepteur Développeur d'applications Web et Mobile
+                  </p>
+                  <p>Emis par : La Capsule - 92 cours Lafayette, 69003 Lyon</p>
+                </div>
 
-              {/* FACE ARRIÈRE */}
-              <div class="flip-back rounded-xl glass p-4 flex flex-col items-center justify-evenly bg-inherit shadow-lg">
-                <h3 class="text-lg font-semibold mb-2">Compétences acquises</h3>
-                <ol class="text-sm text-left list-decimal space-y-1">
-                  <li> Conception et maquettage d’une application web & mobile</li>
-                  <li> Pilotage d’un projet d’application web & mobile</li>
-                  <li> Concevoir, manipuler, administrer et sécuriser une base de données en lien avec une application web & mobile</li>
-                  <li> Développement d’une application web & mobile</li>
-                  <li> Mise en production d’une application web & mobile.</li>
-                </ol>
-                <p>Date d'émission : 15/04/2025</p>
+                {/* FACE ARRIÈRE */}
+                <div class="flip-back rounded-xl glass p-4 flex flex-col items-center justify-evenly bg-inherit shadow-lg">
+                  <h3 class="text-lg font-semibold mb-2">
+                    Compétences acquises
+                  </h3>
+                  <ol class="text-sm text-left list-decimal space-y-1">
+                    <li>
+                      Conception et maquettage d’une application web & mobile
+                    </li>
+                    <li>Pilotage d’un projet d’application web & mobile</li>
+                    <li>
+                      Concevoir, manipuler, administrer et sécuriser une base de
+                      données en lien avec une application web & mobile
+                    </li>
+                    <li>Développement d’une application web & mobile</li>
+                    <li>Mise en production d’une application web & mobile.</li>
+                  </ol>
+                  <p>Date d'émission : 15/04/2025</p>
+                </div>
               </div>
-          </div>
+            </div>
+        </div>
       </section>
 
       <section id="technos">
         <div class="text-center">
-          <h2 class="text-4xl font-bold mb-4">
-            Technologies & Outils
-          </h2>
+          <h2 class="text-4xl font-bold mb-4">Technologies & Outils</h2>
           <TechCards size="lg" />
         </div>
       </section>
@@ -134,61 +168,75 @@ const projects = [...allProjects]
       <section id="realisations" class="flex flex-col justify-start items-center gap-8">
         <div class="text-center">
           <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-           Mes Réalisations
+              Mes Réalisations
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-           {projects.map((projet, index) => (
-              <ProjectCard projet={projet} index={index} />
-            ))}
+                  {
+                    projects.map((projet, index) => (
+                      <ProjectCard projet={projet} index={index} />
+                    ))
+                  }
           </div>
+              {
+                allProjects.length > 6 && (
+                  <Button href="/projects/page/2">Voir plus de projets</Button>
+                )
+              }
         </div>
-         {allProjects.length > 6 && (
-      
-            <Button href="/projects/page/2" >Voir plus de projets</Button>
-          
-          )}
       </section>
 
-      <section id="tarifs">
+      <!-- <section id="tarifs">
         <div class="text-center">
           <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Section 5
           </h2>
-          <p class="text-gray-600 dark:text-gray-300">Contenu à venir...</p>
+          <p class="text-gray-600 dark:text-gray-300">
+            Contenu à venir...
+          </p>
         </div>
-      </section>
+      </section> -->
 
       <section id="contact">
-        <div class="text-center text-gray-600 dark:text-gray-300">
-          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <div class="container flex flex-col justify-center items-center text-center"> 
+        <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Contacts
-          </h2>
-          <div class="flex flex-col m-8">
-            <a
-              class="text-gray-800 dark:text-white"
-              href="mailto:lalicornecosmique62@gmail.com? subject=Contact depuis le site&body=Bonjour%20Isabelle,"
-              aria-label="lalicornecosmique62@gmail.com"
-              >lalicornecosmique62@gmail.com</a
-            >
-            <a
-              class="text-gray-800 dark:text-white"
-              href="tel:+33682157497"
-              aria-label="06 82 15 74 97 ">06 82 15 74 97</a
-            >
+        </h2>
+        <div class="flex sm:flex-col md:flex-row m-8 justify-center items-center md:items-stretch gap-10 md:gap-20">
+          <div class="text-center text-gray-600 dark:text-gray-300">
+            <div class="flex flex-col m-8">
+              <a class="text-gray-800 text-2xl p-3 dark:text-white" 
+                href="mailto:lalicornecosmique62@gmail.com?subject=Contact depuis le site&body=Bonjour%20Isabelle," 
+                aria-label="lalicornecosmique62@gmail.com" data-aos="zoom-in-up" data-aos-duration="1200">
+                📧 : lalicornecosmique62@gmail.com
+              </a>
+              <a class="text-gray-800 text-2xl p-3 dark:text-white" 
+                href="tel:+33682157497" 
+                aria-label="06 82 15 74 97 " data-aos="zoom-in-up" data-aos-duration="1200">
+                📞 : 06 82 15 74 97
+              </a>
+            </div>
+            <div data-aos="zoom-in-up" data-aos-duration="1200">
+              <SocialLinks size="lg"  />
+            </div>
+            <div class="mt-10" data-aos="zoom-in-up" data-aos-duration="1200">
+              <Button variant="gradient" target="_blank" rel="noopener noreferrer" href="https://calendly.com/isabellelamarre62/premier">
+                Prendre rendez-vous
+              </Button>
+            </div>
           </div>
-          <div>
-            <SocialLinks size="lg" />
-          </div>
-          <div class="mt-10">
-            <Button
-              variant="gradient"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://calendly.com/isabellelamarre62/premier"
-              >Prendre rendez-vous</Button
-            >
-          </div>
+          <Image
+            src={setup}
+            alt="setup"
+            width={500}
+            height={300}
+            class="w-200 bordure-magique rounded-3xl h-auto mx-auto mb-4"
+            loading="lazy"
+            data-aos="zoom-in-up"
+            data-aos-duration="1200"
+            data-aos-offset="200"
+          />
         </div>
+    </div>
       </section>
     </div>
   </div>

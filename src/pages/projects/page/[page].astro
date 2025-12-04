@@ -39,7 +39,7 @@ const { currentPage, totalPages, projects } = Astro.props;
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
     {projects.map((item, i) => (
-    <ProjectCard projet={item} />
+    <ProjectCard projet={item} index={i} />
   ))}
   </div>
 
@@ -59,7 +59,7 @@ const { currentPage, totalPages, projects } = Astro.props;
 
   {currentPage < totalPages && (
     <Button 
-      href={`/projects/page/${currentPage + 1}`} 
+      href={`/projects/page/${currentPage + 1}`}  
       variant="pagination"
     >
       Suivant →

@@ -17,7 +17,6 @@ interface Props {
 }
 
 const { projet, index } = Astro.props;
-const delay = projet.delay ?? 0;
 
 const isLazy = index >= 2; // 🔥 lazy à partir de la 3ème
 const loadingType = isLazy ? "lazy" : "eager";
@@ -26,7 +25,7 @@ const loadingType = isLazy ? "lazy" : "eager";
 // On tronque la description proprement
 const shortDescription =
   projet.description.length > 120
-    ? projet.description.slice(0, 120) + "…"
+    ? projet.description.slice(0, 250) + "…"
     : projet.description;
 
 // Génération URL
@@ -40,7 +39,7 @@ function cldThumbnail(url, width = 720) {
 
 <div
   data-aos="zoom-in-up"
-  data-aos-delay={delay}
+  data-aos-delay={index * 200}
   data-aos-duration="900"
   data-aos-easing="cubic-bezier(.21,.98,.6,1)"
   class="group bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"

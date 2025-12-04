@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { getTechIcon } from "@/lib/techIcons";
+import MagicBorderWrapper from "./MagicBorderWrapper.astro";
 
 interface Props {
   size?: "sm" | "md" | "lg";
@@ -59,7 +60,7 @@ const sizeClasses = {
     <div
       class="card glass flex flex-col items-center justify-center p-6"
       data-aos="fade-up"
-      data-aos-delay={index * 100}
+      data-aos-delay={index * 200}
     >
       <h3 class="mb-4 text-xl font-bold">{category.title}</h3>
 
@@ -87,6 +88,7 @@ const sizeClasses = {
 <style>
   .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
   }
   .card:hover {
     transform: translateY(-4px) scale(1.02);

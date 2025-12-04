@@ -210,13 +210,38 @@ section {
     content: none !important;
 }
 
-.portrait {
-   border: 5px solid transparent;
-  background: linear-gradient(white, white) padding-box,
-  var(--gradient-primary) border-box;
-             
+.bordure-magique {
+  border: 5px solid transparent;
+  background: linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+  var(--gradient-primary) border-box;        
   background-size: 100% 100%, 300% 100%;
   animation: rotate-gradient 6s linear infinite;
   box-shadow: 0 0 20px rgba(237, 21, 143, 0.4);
 }
+
+/* BORDURE GRADIENT AVEC --gradient-primary SANS MODIFIER LE FOND */
+.border-gradient {
+  position: relative;
+  padding: 6px; /* épaisseur de la bordure */
+  border-radius: 1rem;
+
+  /* 1) Fond interne : couleur du thème (light/dark) → padding-box */
+  /* 2) Bordure : gradient-primary → border-box */
+  background:
+    linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+    var(--gradient-primary) border-box;
+
+  background-size: 100% 100%, 300% 100%;
+  animation: slide-gradient 6s linear infinite;
+}
+
+/* L'intérieur de la carte */
+.border-gradient > .card-inner {
+  background: var(--bg-secondary);
+  color: var(--text);
+  border-radius: calc(1rem - 6px);
+  padding: 1.5rem;
+}
+
+
 
