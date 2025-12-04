@@ -8,6 +8,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      screens: {
+        'xl2': '1150px', // ton breakpoint personnalisé
+      },
       colors: {
         primary: "#7C3AED",
         primaryLight: "#A78BFA",
