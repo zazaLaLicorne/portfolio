@@ -7,8 +7,10 @@ import portrait from "../assets/images/portrait.webp";
 import TechCards from "../components/TechCards.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import allProjects from "../data/projects.json";
+import certifications from "../data/certifications.json";
 import setup from "../assets/images/setup.jpg";
 import portrait2 from "../assets/images/portrait2.jpg";
+import CertificationCard from "../components/CertificationCard.astro";
 
 const priorityOrder = {
   high: 1,
@@ -112,51 +114,59 @@ const projects = [...allProjects]
       <section id="certifications" class="flex flex-col justify-center items-center gap-8">
         <div class="text-center">
           <h2 class="text-4xl font-bold mb-4">Certifications</h2>
-            <div class="flip-card w-96 h-[28rem] relative" 
-                        data-aos="flip-left"
-                        data-aos-easing="ease-out-cubic"
-                        data-aos-duration="2000">
-              <div class="flip-inner">
-                {/* FACE AVANT */}
-                <div class="flip-front rounded-xl glass p-4 flex flex-col items-center justify-center shadow-lg">
-                  <Image
-                    src="https://res.cloudinary.com/isabellelamarre/image/upload/v1756411717/mes-projets/Concepteur-D%C3%A9veloppeur%20d%27Applications%20Web%20et%20Mobile/Titre%20RNCP/La%20Capsule/15-04-2025/aytjkvzudyotfqlqh4xf.png"
-                    alt="Certification RNCP de Concepteur Développeur d'applications Web et Mobile"
-                    width={450}
-                    height={450}
-                    class="w-96 h-auto mb-4"
-                    loading="lazy"
-                  />
-                  <h3 class="text-xl font-bold">Titre RNCP</h3>
-                  <p class="text-sm opacity-80">
-                    Concepteur Développeur d'applications Web et Mobile
-                  </p>
-                  <p>Emis par : La Capsule - 92 cours Lafayette, 69003 Lyon</p>
-                </div>
+           <!-- <div
+              class="flip-card 
+              w-full max-w-[90%]
+              sm:max-w-[32rem]
+              md:max-w-[24rem]
+              lg:max-w-[26rem]
+              relative
+              h-[22rem] sm:h-[26rem] md:h-[26rem] lg:h-[28rem]"
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+            >
+            <div class="flip-inner"> -->
 
-                {/* FACE ARRIÈRE */}
-                <div class="flip-back rounded-xl glass p-4 flex flex-col items-center justify-evenly bg-inherit shadow-lg">
-                  <h3 class="text-lg font-semibold mb-2">
-                    Compétences acquises
-                  </h3>
-                  <ol class="text-sm text-left list-decimal space-y-1">
-                    <li>
-                      Conception et maquettage d’une application web & mobile
-                    </li>
-                    <li>Pilotage d’un projet d’application web & mobile</li>
-                    <li>
-                      Concevoir, manipuler, administrer et sécuriser une base de
-                      données en lien avec une application web & mobile
-                    </li>
-                    <li>Développement d’une application web & mobile</li>
-                    <li>Mise en production d’une application web & mobile.</li>
-                  </ol>
-                  <p>Date d'émission : 15/04/2025</p>
-                </div>
+              <!-- FACE AVANT -->
+              <!-- <div class="flip-front rounded-xl glass p-4 flex flex-col items-center justify-start shadow-lg h-full overflow-hidden">
+                <Image
+                  src="https://res.cloudinary.com/isabellelamarre/image/upload/v1756411717/mes-projets/Concepteur-D%C3%A9veloppeur%20d%27Applications%20Web%20et%20Mobile/Titre%20RNCP/La%20Capsule/15-04-2025/aytjkvzudyotfqlqh4xf.png"
+                  alt="Certification RNCP de Concepteur Développeur d'applications Web et Mobile"
+                  width={450}
+                  height={450}
+                  class="w-full h-auto max-h-[55%] object-contain mb-2"
+                  loading="lazy"
+                />
+                <h3 class="text-xl font-bold mb-1">Titre RNCP</h3>
+                <p class="text-sm opacity-80">Concepteur Développeur d'applications Web & Mobile</p>
+                <p class="text-xs mt-1">Émis par : La Capsule</p>
+              </div> -->
+
+              <!-- FACE ARRIÈRE -->
+              <!-- <div class="flip-back rounded-xl glass p-4 flex flex-col justify-start shadow-lg h-full overflow-y-auto">
+                <h3 class="text-lg font-semibold mb-2">
+                  Compétences acquises
+                </h3>
+                <ol class="text-sm text-left list-decimal space-y-1">
+                  <li>Conception et maquettage d’une application web & mobile</li>
+                  <li>Pilotage d’un projet d’application web & mobile</li>
+                  <li>Manipulation et sécurisation d’une base de données</li>
+                  <li>Développement d’application web & mobile</li>
+                  <li>Mise en production</li>
+                </ol>
+                <p class="text-xs mt-4">Date d'émission : 15/04/2025</p>
               </div>
+
             </div>
-        </div>
-      </section>
+          </div> -->
+ <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+      {certifications.map((cert) => (
+        <CertificationCard cert={cert} />
+      ))}
+    </div>
+  </div>
+</section>
 
       <section id="technos">
         <div class="text-center">
@@ -198,45 +208,57 @@ const projects = [...allProjects]
 
       <section id="contact">
         <div class="container flex flex-col justify-center items-center text-center"> 
-        <h2 class="text-4xl font-bold mb-4">
+          <h2 class="text-4xl font-bold mb-4">
             Contacts
-        </h2>
-        <div class="flex flex-col xl2:flex-row m-8 justify-center items-center xl2:items-stretch gap-10 xl2:gap-20">
-          <div class="text-center">
-            <div class="flex flex-col m-8">
-              <a class="text-2xl p-3 " 
-                href="mailto:lalicornecosmique62@gmail.com?subject=Contact depuis le site&body=Bonjour%20Isabelle," 
-                aria-label="lalicornecosmique62@gmail.com" data-aos="zoom-in-up" data-aos-duration="1200">
-                📧 : lalicornecosmique62@gmail.com
-              </a>
-              <a class="text-2xl p-3 " 
-                href="tel:+33682157497" 
-                aria-label="06 82 15 74 97 " data-aos="zoom-in-up" data-aos-duration="1200">
-                📞 : 06 82 15 74 97
-              </a>
+          </h2>
+
+          <div class="flex flex-col xl2:flex-row m-8 justify-center items-center xl2:items-stretch gap-10 xl2:gap-20 w-full">
+
+            <div class="text-center flex flex-col items-center">
+              <div class="flex flex-col m-8">
+                <a class="text-2xl p-3"
+                  href="mailto:lalicornecosmique62@gmail.com?subject=Contact depuis le site&body=Bonjour%20Isabelle,"
+                  aria-label="lalicornecosmique62@gmail.com"
+                  data-aos="zoom-in-up" data-aos-duration="1200">
+                  📧 : lalicornecosmique62@gmail.com
+                </a>
+                <a class="text-2xl p-3"
+                  href="tel:+33682157497"
+                  aria-label="06 82 15 74 97"
+                  data-aos="zoom-in-up" data-aos-duration="1200">
+                  📞 : 06 82 15 74 97
+                </a>
+              </div>
+
+              <div data-aos="zoom-in-up" data-aos-duration="1200">
+                <SocialLinks size="lg" />
+              </div>
+
+              <div class="mt-10" data-aos="zoom-in-up" data-aos-duration="1200">
+                <Button variant="gradient"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://calendly.com/isabellelamarre62/premier">
+                  Prendre rendez-vous
+                </Button>
+              </div>
             </div>
-            <div data-aos="zoom-in-up" data-aos-duration="1200">
-              <SocialLinks size="lg"  />
-            </div>
-            <div class="mt-10" data-aos="zoom-in-up" data-aos-duration="1200">
-              <Button variant="gradient" target="_blank" rel="noopener noreferrer" href="https://calendly.com/isabellelamarre62/premier">
-                Prendre rendez-vous
-              </Button>
-            </div>
+
+            <!-- 📸 Image responsive et limitée -->
+            <Image
+              src={setup}
+              alt="setup"
+              width={500}
+              height={300}
+              class="max-w-[90%] sm:max-w-[70%] md:max-w-[400px] w-full bordure-magique rounded-3xl h-auto mx-auto mb-4"
+              loading="lazy"
+              data-aos="zoom-in-up"
+              data-aos-duration="1200"
+              data-aos-offset="200"
+            />
+
           </div>
-          <Image
-            src={setup}
-            alt="setup"
-            width={500}
-            height={300}
-            class="w-200 bordure-magique rounded-3xl h-auto mx-auto mb-4"
-            loading="lazy"
-            data-aos="zoom-in-up"
-            data-aos-duration="1200"
-            data-aos-offset="200"
-          />
         </div>
-    </div>
       </section>
     </div>
   </div>

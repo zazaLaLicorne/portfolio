@@ -116,14 +116,12 @@ p {
 
 section {
   border-radius: 1rem;
-  justify-content:center;
-  align-items:center;
   padding: 2rem;
   transition: box-shadow 0.5s ease-in-out;
-  min-height: 100vh;
-  display:flex;
-  background-color: var(--section-bg);
+  min-height: auto;   /* ou 80vh si tu veux un effet page pleine */
+  display:block;      /* revenir à un comportement normal */
 }
+
 
 
 /* Light mode */

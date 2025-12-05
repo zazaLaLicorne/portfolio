@@ -8,7 +8,6 @@ export default defineConfig({
   site: "https://isabellelamarre.fr",
   integrations: [tailwind(), sitemap(), compress()],
   output: "static",
-
   vite: {
     resolve: {
       alias: {
@@ -42,5 +41,13 @@ export default defineConfig({
           "max-age=63072000; includeSubDomains; preload",
       },
     },
+  },
+    image: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
   },
 });

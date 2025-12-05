@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+const { cert } = Astro.props;
+---
+
+<div
+  class="
+    flip-card 
+    w-full max-w-[95%]           /* mobile : 90% */
+    sm:max-w-[22rem]             /* tablette portrait */
+    md:w-96 md:h-[28rem]         /* DESKTOP : tes dimensions ORIGINALES */
+    relative 
+    h-[24rem] sm:h-[26rem]       /* mobile/tablette : hauteur adaptée */
+  "
+  data-aos="flip-left"
+  data-aos-easing="ease-out-cubic"
+  data-aos-duration="2000"
+>
+  <div class="flip-inner">
+
+    <!-- FACE AVANT -->
+    <div class="flip-front rounded-xl glass p-4 flex flex-col items-center 
+                justify-start shadow-lg h-full overflow-hidden">
+
+      <Image
+        src={cert.image}
+        alt={cert.title}
+        inferSize={true}
+        class="w-full h-auto max-h-[60%] object-contain mb-3"
+        loading="lazy"
+      />
+
+      <h3 class="text-xl font-bold">{cert.title}</h3>
+      <p class="text-sm opacity-80">{cert.subtitle}</p>
+      <p class="text-xs mt-1">Émis par : {cert.issuer}</p>
+    </div>
+
+    <!-- FACE ARRIÈRE -->
+    <div class="flip-back rounded-xl glass p-4 flex flex-col 
+                justify-center shadow-lg h-full overflow-y-auto">
+      <h3 class="text-lg font-semibold mb-2">Compétences acquises</h3>
+
+      <ol class="text-sm text-left list-decimal space-y-1">
+        {cert.skills.map((skill) => (
+          <li>{skill}</li>
+        ))}
+      </ol>
+
+      <p class="text-xs mt-4">Date d'émission : {cert.date}</p>
+    </div>
+
+  </div>
+</div>
