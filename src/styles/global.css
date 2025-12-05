@@ -118,8 +118,9 @@ section {
   border-radius: 1rem;
   padding: 2rem;
   transition: box-shadow 0.5s ease-in-out;
-  min-height: auto;   /* ou 80vh si tu veux un effet page pleine */
-  display:block;      /* revenir à un comportement normal */
+  max-width: 1100px;
+  width: 95%;
+  margin-inline: auto;
 }
 
 
@@ -132,6 +133,19 @@ section {
 /* Dark mode */
 :root.dark section {
   animation: glowPulseDark 8s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  section {
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    max-width: 1250px;
+    width: 100%;
+  }
 }
 
 /* ------------------------------

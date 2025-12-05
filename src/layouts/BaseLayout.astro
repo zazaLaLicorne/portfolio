@@ -57,8 +57,8 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
           // Paramètres globaux
           duration: 800,              // Durée de l'animation (ms)
           easing: 'ease-in-out',      // Fonction d'easing
-          once: false,                // Animation une seule fois (false = répète)
-          mirror: true,               // Animation au scroll inverse
+          once: true,                 // Animation une seule fois puis reste visible
+          mirror: false,              // Pas d'animation inverse pour ne pas cacher l'élément
           offset: 120,                // Décalage (px) avant déclenchement
           delay: 0,                   // Délai (ms)
           anchorPlacement: 'top-bottom', // Position de déclenchement
