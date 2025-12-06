@@ -27,7 +27,7 @@ const projects = [...allProjects]
 <BaseLayout>
   <div class="max-w-7xl mx-2 px-4 sm:px-4 lg:px-6 py-12">
     <!-- Hero Section -->
-    <div class="max-h-screen h-screen text-center grid items-center gap-4 mb-20">
+    <div class="max-h-screen h-screen section-inner text-center grid items-center gap-4 mb-20">
       <Image
         src={portrait}
         alt="Portrait d'Isabelle"
@@ -59,7 +59,7 @@ const projects = [...allProjects]
     <!-- Sections -->
     <div class="space-y-20 flex flex-col items-center w-full">
       <section id="about">
-        <div class="text-center font-medium">
+        <div class="text-center section-inner">
           <h2 class="text-4xl font-bold mb-4">A propos de moi</h2>
           
           <div class="flex flex-col justify-center items-center mt-8 space-y-6">
@@ -113,7 +113,7 @@ const projects = [...allProjects]
       </section>
 
       <section id="certifications" class="flex flex-col justify-normal min-h-screen items-center gap-8">
-        <div class="text-center">
+        <div class="text-center section-inner">
           <h2 class="text-4xl font-bold mb-4">Certifications</h2>
           <div class="flex flex-col lg:flex-row justify-center items-center gap-10">
                 {certifications.map((cert) => (
@@ -124,14 +124,14 @@ const projects = [...allProjects]
       </section>
 
       <section id="technos">
-        <div class="text-center">
+        <div class="text-center section-inner">
           <h2 class="text-4xl font-bold mb-4">Technologies & Outils</h2>
           <TechCards size="lg" />
         </div>
       </section>
 
       <section id="realisations" class="flex flex-col justify-start items-center gap-8">
-        <div class="text-center">
+        <div class="text-center section-inner">
           <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Mes Réalisations
           </h2>
@@ -151,7 +151,7 @@ const projects = [...allProjects]
       </section>
 
       <!-- <section id="tarifs">
-        <div class="text-center">
+        <div class="text-center section-inner">
           <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Section 5
           </h2>
@@ -162,7 +162,7 @@ const projects = [...allProjects]
       </section> -->
 
       <section id="contact">
-        <div class="container flex flex-col justify-center items-center text-center"> 
+        <div class="section-inner flex flex-col justify-center items-center text-center"> 
           <h2 class="text-4xl font-bold mb-4">
             Contacts
           </h2>
