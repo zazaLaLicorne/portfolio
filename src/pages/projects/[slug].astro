@@ -21,10 +21,24 @@ if (!projet) {
   throw new Error(`Projet introuvable`);
 }
 
-// Pour les icônes tech du dossier public/icons
-// function techIcon(name) {
-//   return `/icons/${name.toLowerCase()}.webp`;
-// }
+function badgeColor(score) {
+  const val = Number(score);
+  if (val >= 90) return "bg-green-500 text-white";
+  if (val >= 50) return "bg-yellow-500 text-black";
+  return "bg-red-500 text-white";
+}
+
+const hasSecurityHeaders = Boolean(projet.scores?.security_headers);
+
+const hasLighthouseDesktop = projet.scores?.lighthouse?.desktop &&
+  Object.values(projet.scores.lighthouse.desktop)
+    .some(v => v !== null && v !== "" && v !== undefined);
+
+const hasLighthouseMobile = projet.scores?.lighthouse?.mobile &&
+  Object.values(projet.scores.lighthouse.mobile)
+    .some(v => v !== null && v !== "" && v !== undefined);
+
+const hasAnyScore = hasSecurityHeaders || hasLighthouseDesktop || hasLighthouseMobile;
 
 // Pour la date plus lisible
 const date = new Date(projet.date).toLocaleDateString("fr-FR", {
@@ -139,67 +153,124 @@ function toEmbed(url) {
   </div>
 )}
 
-    <!-- Notes -->
-   {projet.scores?.lighthouse && projet.scores?.security_headers && (
-    <div class="mt-20" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-center mb-6">Scores du projet</h2>
+<!-- Scores du projet -->
+{hasAnyScore && (
 
-    <!-- TABLEAU SECURITY HEADERS -->
-      <div class="overflow-x-auto justify-self-center mb-10">
-        <table class="table-auto border-collapse rounded-xl overflow-hidden shadow-lg">
-          <thead class="bg-gray-200 dark:bg-gray-700">
-            <tr>
-              <th class="p-4 font-bold">Test</th>
-              <th class="p-4  font-bold">Note</th>
-            </tr>
-          </thead>
-          <tbody class="bg-white dark:bg-gray-800">
-            <tr class="border-t border-gray-300 dark:border-gray-700">
-              <td class="p-4 font-medium">Security Headers</td>
-              <td class="p-4 font-bold text-accent">
-                {projet.scores.security_headers}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="mt-20" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold text-center mb-10">Scores du projet</h2>
 
-    <!-- TABLEAU LIGHTHOUSE -->
-    <h3 class="text-xl font-semibold text-center mb-4">Lighthouse</h3>
+    <!-- GRID DES CARTES -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-    <div class="overflow-x-auto ">
-      <table class="table-auto w-full border-collapse rounded-xl overflow-hidden shadow-lg">
-        <thead class="bg-gray-200 dark:bg-gray-700">
-          <tr>
-            <th class="p-4 font-bold ">Plateforme</th>
-            <th class="p-4 font-bold ">Performance</th>
-            <th class="p-4 font-bold ">Accessibilité</th>
-            <th class="p-4 font-bold ">Best Practices</th>
-            <th class="p-4 font-bold ">SEO</th>
-          </tr>
-        </thead>
+      <!-- 🔒 SECURITY HEADERS -->
+      {hasSecurityHeaders && (
+        <div class="p-6 rounded-xl shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
+     flex flex-col justify-center items-center text-center">
 
-        <tbody class="text-center bg-white dark:bg-gray-800">
+          <h3 class="text-xl font-semibold mb-3">Security Headers</h3>
+          <span class={`px-4 py-2 rounded-full font-bold text-sm ${badgeColor(Number(projet.scores.security_headers) * 10)}`}>
+            {projet.scores.security_headers}
+          </span>
+          <p class="opacity-70 text-sm mt-2">
+            Analyse des en-têtes HTTP pour la sécurité globale du site.
+          </p>
+        </div>
+      )}
 
-          <!-- DESKTOP -->
-          <tr class="border-t border-gray-300 dark:border-gray-700">
-            <td class="p-4 font-medium ">Desktop</td>
-            <td class="p-4 ">{projet.scores.lighthouse.desktop.performance}</td>
-            <td class="p-4 ">{projet.scores.lighthouse.desktop.accessibility}</td>
-            <td class="p-4 ">{projet.scores.lighthouse.desktop.best_practices}</td>
-            <td class="p-4 ">{projet.scores.lighthouse.desktop.seo}</td>
-          </tr>
+      <!-- 💻 LIGHTHOUSE DESKTOP -->
+      {hasLighthouseMobile && (
+        <div class="p-6 rounded-xl shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+          <h3 class="text-xl font-semibold justify-center mb-4 flex items-center gap-2">
+            Lighthouse 💻 Desktop
+          </h3>
 
-          <!-- MOBILE -->
-          <tr class="border-t border-gray-300 dark:border-gray-700">
-            <td class="p-4 font-medium ">Mobile</td>
-            <td class="p-4 ">{projet.scores.lighthouse.mobile.performance}</td>
-            <td class="p-4 ">{projet.scores.lighthouse.mobile.accessibility}</td>
-            <td class="p-4 ">{projet.scores.lighthouse.mobile.best_practices}</td>
-            <td class="p-4 ">{projet.scores.lighthouse.mobile.seo}</td>
-          </tr>
-        </tbody>
-      </table>
+          <div class="space-y-3">
+            {projet.scores.lighthouse.desktop.performance && (
+              <div class="flex justify-between items-center">
+                <span>Performance</span>
+                <span class={`px-3 py-1 rounded-full ${badgeColor(projet.scores.lighthouse.desktop.performance)}`}>
+                  {projet.scores.lighthouse.desktop.performance}
+                </span>
+              </div>
+            )}
+
+            {projet.scores.lighthouse.desktop.accessibility && (
+              <div class="flex justify-between items-center">
+                <span>Accessibilité</span>
+                <span class={`px-3 py-1 rounded-full ${badgeColor(projet.scores.lighthouse.desktop.accessibility)}`}>
+                  {projet.scores.lighthouse.desktop.accessibility}
+                </span>
+              </div>
+            )}
+
+            {projet.scores.lighthouse.desktop.best_practices && (
+              <div class="flex justify-between items-center">
+                <span>Best Practices</span>
+                <span class={`px-3 py-1 rounded-full ${badgeColor(projet.scores.lighthouse.desktop.best_practices)}`}>
+                  {projet.scores.lighthouse.desktop.best_practices}
+                </span>
+              </div>
+            )}
+
+            {projet.scores.lighthouse.desktop.seo && (
+              <div class="flex justify-between items-center">
+                <span>SEO</span>
+                <span class={`px-3 py-1 rounded-full ${badgeColor(projet.scores.lighthouse.desktop.seo)}`}>
+                  {projet.scores.lighthouse.desktop.seo}
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      <!-- 📱 LIGHTHOUSE MOBILE -->
+      {projet.scores?.lighthouse?.mobile && (
+        <div class="p-6 rounded-xl shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+          <h3 class="text-xl font-semibold justify-center mb-4 flex items-center gap-2">
+           Lighthouse 📱 Mobile
+          </h3>
+
+          <div class="space-y-3">
+            {projet.scores.lighthouse.mobile.performance && (
+              <div class="flex justify-between items-center">
+                <span>Performance</span>
+                <span class={`px-3 py-1 rounded-full ${badgeColor(projet.scores.lighthouse.mobile.performance)}`}>
+                  {projet.scores.lighthouse.mobile.performance}
+                </span>
+              </div>
+            )}
+
+            {projet.scores.lighthouse.mobile.accessibility && (
+              <div class="flex justify-between items-center">
+                <span>Accessibilité</span>
+                <span class={`px-3 py-1 rounded-full ${badgeColor(projet.scores.lighthouse.mobile.accessibility)}`}>
+                  {projet.scores.lighthouse.mobile.accessibility}
+                </span>
+              </div>
+            )}
+
+            {projet.scores.lighthouse.mobile.best_practices && (
+              <div class="flex justify-between items-center">
+                <span>Best Practices</span>
+                <span class={`px-3 py-1 rounded-full ${badgeColor(projet.scores.lighthouse.mobile.best_practices)}`}>
+                  {projet.scores.lighthouse.mobile.best_practices}
+                </span>
+              </div>
+            )}
+
+            {projet.scores.lighthouse.mobile.seo && (
+              <div class="flex justify-between items-center">
+                <span>SEO</span>
+                <span class={`px-3 py-1 rounded-full ${badgeColor(projet.scores.lighthouse.mobile.seo)}`}>
+                  {projet.scores.lighthouse.mobile.seo}
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
     </div>
   </div>
 )}
@@ -211,8 +282,8 @@ function toEmbed(url) {
 
     <div
       class={hasOneVideo
-        ? "flex justify-center"
-        : "grid grid-cols-1 md:grid-cols-2 gap-10"}
+        ? "grid grid-cols-1 gap-10 justify-items-center"
+        : "grid grid-cols-1 gap-10"}
       data-aos="zoom-in"
     >
 
@@ -291,7 +362,7 @@ function toEmbed(url) {
     {projet.images?.length > 0 && (
       <div data-aos="fade-up">
         <h2 class="text-2xl font-semibold mb-4">Galerie</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 gap-6">
           {projet.images.map((img) => (
             <div class="rounded-xl overflow-hidden shadow-lg">
               <Image
@@ -318,6 +389,11 @@ function toEmbed(url) {
 </ProjectsLayout> 
 
 <style>
+  /* Container principal de la page */
+  .project-page {
+    padding-inline: 1.5rem;
+  }
+
   /* Container principal de la description */
   .project-description {
     text-align: left;
@@ -337,7 +413,7 @@ function toEmbed(url) {
   /* Paragraphes */
   .project-description :global(p) {
     margin: 1rem 0;
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
     font-weight: 300;
     line-height: 1.6;
     text-align: center;
@@ -350,7 +426,7 @@ function toEmbed(url) {
     list-style-position: outside;
     margin: 1rem 0;
     padding-left: 2rem;
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
   }
 
   /* Items de liste */
@@ -368,6 +444,17 @@ function toEmbed(url) {
   /* Texte en italique */
   .project-description :global(em) {
     font-style: italic;
+  }
+
+  @media (max-width: 640px) {
+    .project-page {
+      padding-inline: 1.25rem;
+    }
+    .project-description :global(p),
+    .project-description :global(ul),
+    .project-description :global(li) {
+      text-align: left;
+    }
   }
 
 </style>

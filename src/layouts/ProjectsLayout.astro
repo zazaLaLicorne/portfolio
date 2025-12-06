@@ -1,41 +1,30 @@
 ---
 import Layout from "./BaseLayout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 ---
 
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <slot name="head" />
-  </head>
-
-  <body class="bg-white dark:bg-gray-900">
-    <Header />
-
-    <main class="content-wrapper container mx-auto py-12">
-      <slot />
-    </main>
-
-    <Footer />
-  </body>
-</html>
+<Layout>
+  <main class="content-wrapper mx-auto py-12 px-6 sm:px-8 lg:px-10 text-base md:text-lg leading-relaxed">
+    <slot />
+  </main>
+</Layout>
 
 <style>
   /* espace central adapté au contenu */
   .content-wrapper {
-    max-width: 900px;
+    max-width: 1100px;
     text-align: left;
+    color: var(--color-text);
   }
 
   /* listes classiques */
   .content-wrapper ul {
     list-style: disc;
     padding-left: 1.5rem;
+    
     margin: 1rem 0;
   }
-  
+
   .content-wrapper li {
     margin-bottom: 0.4rem;
   }
