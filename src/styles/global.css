@@ -140,14 +140,14 @@ section > * {
 
 
 /* Light mode */
-:root section {
+/* :root section {
   animation: glowPulseLight 8s ease-in-out infinite;
-}
+} */
 
 /* Dark mode */
-:root.dark section {
+/* :root.dark section {
   animation: glowPulseDark 8s ease-in-out infinite;
-}
+} */
 
 @media (max-width: 640px) {
   section {
