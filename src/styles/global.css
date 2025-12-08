@@ -115,12 +115,14 @@ p {
 -------------------------------- */
 
 section {
-  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
-  transition: box-shadow 0.5s ease-in-out;
-  max-width: 1100px;
-  width: 99%;
-  margin-inline: auto;
+  min-height: 100vh;
+
+  max-width: 900px;   /* largeur max lisible */
+  margin: 0 auto;     /* et on centre ! */
 }
 
 section > * {

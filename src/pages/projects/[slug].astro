@@ -110,13 +110,14 @@ function toEmbed(url) {
     </div>
 
     <!-- Description -->
-   <div data-aos="fade-up" class="project-description mb-12" set:html={projet.description}>
+   <div data-aos="fade-up" class="project-description my-16" set:html={projet.description}>
 
    </div>
+  </br>
 
     <!-- Tech Stack -->
     <div data-aos="fade-up" class="mb-16">
-      <h2 class="text-2xl font-semibold text-center mb-4">Technologies utilisées</h2>
+      <h4 class="font-semibold text-center mb-8">Technologies utilisées</h4>
       <div class="flex flex-wrap justify-center gap-6">
         {projet.techs.map((tech) => (
           <div class="flex flex-col gap-3 items-center" data-aos="zoom-in" data-aos-delay="100">
@@ -136,7 +137,7 @@ function toEmbed(url) {
         <!-- Liens externes -->
    {(projet.project_url || projet.github_url) && (
   <div data-aos="fade-up" class="flex flex-col text-center gap-6 mb-20">
-    <h2 class="text-2xl font-semibold mb-4">Liens du projet</h2>
+    <h4 class="font-semibold mb-8">Liens du projet</h4>
 
     {projet.project_url && (
       <Button variant="projet" href={projet.project_url} target="_blank">
@@ -157,7 +158,7 @@ function toEmbed(url) {
 {hasAnyScore && (
 
   <div class="mt-20" data-aos="fade-up">
-    <h2 class="text-2xl font-semibold text-center mb-10">Scores du projet</h2>
+    <h4 class="font-semibold text-center mb-8">Scores du projet</h4>
 
     <!-- GRID DES CARTES -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -278,7 +279,7 @@ function toEmbed(url) {
     <!-- Vidéos du projet -->
 {projet.videos && (
   <div class="mt-20" data-aos="fade-up">
-    <h2 class="text-2xl font-semibold text-center mb-6">Vidéos de présentation</h2>
+    <h4 class="text-2xl font-semibold text-center mb-6">Vidéos de présentation</h4>
 
     <div
       class={hasOneVideo
@@ -361,7 +362,7 @@ function toEmbed(url) {
     <!-- Galerie / screenshots si existants -->
     {projet.images?.length > 0 && (
       <div data-aos="fade-up">
-        <h2 class="text-2xl font-semibold mb-4">Galerie</h2>
+        <h4 class="text-2xl font-semibold mb-4">Galerie</h4>
         <div class="grid grid-cols-1 gap-6">
           {projet.images.map((img) => (
             <div class="rounded-xl overflow-hidden shadow-lg">
@@ -402,13 +403,14 @@ function toEmbed(url) {
   }
 
   /* Titres h4 */
-  .project-description :global(h4) {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
+.project-description :global(h4) {
+  /* font-size: 2rem;  */
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 
   /* Paragraphes */
   .project-description :global(p) {
