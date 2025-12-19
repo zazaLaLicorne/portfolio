@@ -1,27 +1,29 @@
 [
   {
-    "id": "908a2cc7-3047-4236-80ec-257a2805f3d9",
-    "slug": "karine-lamarre",
+    "id": "karine-lamarre-therapies",
     "title": "Karine LAMARRE Thérapies",
-    "description": "<h4><strong>Site vitrine professionnel – Projet client (Astro)</strong></h4>\n\n<p>Développement complet d’un site vitrine pour une praticienne en thérapie individuelle et de couple. Le site a été conçu pour offrir une présentation claire de ses services, renforcer sa crédibilité en ligne et faciliter la prise de rendez-vous.</p>\n\n<h4>Objectifs du projet :</h4>\n<ul>\n  <li>Proposer une identité visuelle sobre, chaleureuse et cohérente avec son activité.</li>\n  <li>Structurer l’information pour une lecture simple et intuitive.</li>\n  <li>Garantir une navigation fluide sur mobile, tablette et ordinateur.</li>\n  <li>Optimiser la vitesse, la sécurité et le référencement naturel.</li>\n</ul>\n\n<h4>Travaux réalisés :</h4>\n<ul>\n  <li>Conception du design et de l’architecture du site.</li>\n  <li>Développement avec Astro pour maximiser les performances.</li>\n  <li>Intégration responsive et optimisation des assets (images, polices, scripts).</li>\n  <li>Mise en place de bonnes pratiques SEO : sémantique, structure, meta tags, sitemap, robots.txt.</li>\n  <li>Configuration de Google Analytics et Google Search Console.</li>\n  <li>Renforcement de la sécurité avec un score A+ en security headers.</li>\n  <li>Optimisations techniques permettant d’atteindre 100 % dans les quatre catégories Lighthouse.</li>\n</ul>\n\n<h4>Résultat :</h4>\n<p>Un site vitrine rapide, sécurisé, accessible et parfaitement adapté à une activité professionnelle locale souhaitant accroître sa visibilité et sa crédibilité.</p>\n",
+    "description": "\n<h4>Site vitrine professionnel – Projet client (Astro)</h4>\n<p>Développement complet d’un site vitrine pour une praticienne en thérapie individuelle et de couple. Le site a été conçu pour offrir une présentation claire de ses services, renforcer sa crédibilité en ligne et faciliter la prise de rendez-vous.</p>\n\n<h4>Objectifs du projet</h4>\n<ul>\n  <li>Proposer une identité visuelle sobre, chaleureuse et cohérente avec son activité</li>\n  <li>Structurer l’information pour une lecture simple et intuitive.</li>\n  <li>Garantir une navigation fluide sur mobile, tablette et ordinateur.</li>\n  <li>Optimiser la vitesse, la sécurité et le référencement naturel.</li>\n</ul>\n\n<h4>Travaux réalisés</h4>\n<ul>\n  <li>Conception du design et de l’architecture du site.</li>\n  <li>Développement avec Astro pour maximiser les performances.</li>\n  <li>Intégration responsive et optimisation des assets (images, polices, scripts).</li>\n  <li>Mise en place de bonnes pratiques SEO : sémantique, structure, meta tags, sitemap, robots.txt.</li>\n  <li>Configuration de Google Analytics et Google Search Console.</li>\n  <li>Renforcement de la sécurité avec un score A+ en security headers.</li>\n  <li>Optimisations techniques permettant d’atteindre 100 % dans les quatre catégories Lighthouse.</li>\n</ul>\n\n<h4>Résultats</h4>\n<p>Un site vitrine rapide, sécurisé, accessible et parfaitement adapté à une activité professionnelle locale souhaitant accroître sa visibilité et sa crédibilité./p>\n",
     "project_url": "https://karinelamarretherapies.fr",
     "github_url": "",
-    "badge": "independent",
+    "badge": "independant",
     "priority": "high",
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1766071233/portfolio/projects/hffq42ecd4izmqeaf1xo.webp",
     "images": [],
-    "screenshots": [],
-    "techs": ["Astro", "HTML", "CSS"],
-    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1763994254/mes-projets/portfolio/karine-lamarre/thumbnail/szjytpotwwgq9ybmbmoh.webp",
-    "date": "2025-11-24",
+    "date": "2025-11-20",
+    "techs": [
+      "astro",
+      "css",
+      "html"
+    ],
     "videos": {
       "desktop": "https://youtu.be/Bs_6mZoZKLc",
       "mobile": {
-        "landscape": "",
-        "portrait": "https://youtube.com/shorts/VWlvSTJDj4M"
+        "portrait": "https://youtube.com/shorts/VWlvSTJDj4M",
+        "landscape": ""
       },
       "tablet": {
-        "landscape": "https://youtu.be/PFvmj8Y1xg0",
-        "portrait": "https://youtube.com/shorts/llz4h-hbEpg"
+        "portrait": "https://youtube.com/shorts/llz4h-hbEpg",
+        "landscape": "https://youtu.be/PFvmj8Y1xg0"
       }
     },
     "scores": {
@@ -41,33 +43,39 @@
       },
       "security_headers": "A+"
     },
-    "createdAt": "2025-11-24T12:22:35.030Z"
+    "createdAt": "2025-12-18T17:06:16.603Z"
   },
   {
-    "id": "d38a2b7a-d63d-4cdb-9f04-78bf5d6d2e74",
-    "slug": "wap",
+    "id": "wap",
     "title": "WAP",
-    "description": "<h4>Application Mobile - React Native- Projet pour le titre RNCP</h4>\n<p>Conception et Développement d'une application React Native dans le cadre du projet de fin de formation pour la présentation au titre RNCP de concepteur développeur d'application web et mobile. Ce projet favorise la rencontre entre propriétaires de chiens afin de rendre plus agréable la promenade</p>\n<h4>Objectif du projet :</h4>\n<ul>\n<li>Permet d'afficher/ajouter/décrire les lieux DogFriendly</li>\n<li>Permet d'afficher les amis, inconnus et personnes bloquées</li>\n<li>Tuto pour montrer les fonctionnalités de l'application</li>\n</ul>\n<h4>Travaux réalisés :</h4>\n<ul>\n<li>Création des users story et mockup</li>\n<li>Modélisation de  la BDD</li>\n<li>Géolocalisation</li>\n<li>Identification par mot de passe</li>\n<li>Codage en React Native</li>\n<li>Backend avec Express et MongoDB</li>\n</ul>\n<h4>Résultats</h4>\n<p>Ce projet a été une expérience professionnelle et personnelle enrichissante. Il m’a permis d’appliquer toutes les compétences acquises pendant ma formation : développement front-end et back-end, gestion des bases de données et méthodologies Agiles. J’ai également appris à gérer des délais serrés et à collaborer avec des coéquipiers expérimentés. Wap est le reflet de notre travail collectif et de notre passion pour la technologie.</p>",
+    "description": "\n<h4>Application Mobile - React Native- Projet pour le titre RNCP</h4>\n<p>Votre texte ici…</p>\n\n<h4>Conception et Développement d'une application React Native dans le cadre du projet de fin de formation pour la présentation au titre RNCP de concepteur développeur d'application web et mobile. Ce projet favorise la rencontre entre propriétaires de chiens afin de rendre plus agréable la promenade.</h4>\n<ul>\n  <li>Permet d'afficher/ajouter/décrire les lieux DogFriendly</li>\n  <li>Permet d'afficher les amis, inconnus et personnes bloquées</li>\n  <li>Tuto pour montrer les fonctionnalités de l'application</li>\n</ul>\n\n<h4>Travaux réalisés</h4>\n<ul>\n  <li>Création des users story et mockup</li>\n  <li>Modélisation de la BDD</li>\n  <li>Géolocalisation</li>\n  <li>Identification par mot de passe</li>\n  <li>Codage en React Native</li>\n  <li>Backend avec Express et MongoDB\n</li>\n</ul>\n\n<h4>Résultats</h4>\n<p>Ce projet a été une expérience professionnelle et personnelle enrichissante. Il m’a permis d’appliquer toutes les compétences acquises pendant ma formation : développement front-end et back-end, gestion des bases de données et méthodologies Agiles. J’ai également appris à gérer des délais serrés et à collaborer avec des coéquipiers expérimentés. Wap est le reflet de notre travail collectif et de notre passion pour la technologie.</p>\n",
     "project_url": "",
     "github_url": "",
     "badge": "formation",
-    "priority": "medium",
+    "priority": "low",
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1766072524/portfolio/projects/owqc0wnfr1pdoohxvxwl.webp",
     "images": [],
-    "screenshots": [],
-    "techs": ["React Native", "Express", "Next", "MongoDB", "Cloudinary"],
-    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1764687527/mes-projets/portfolio/wap/thumbnail/z6xaoc35cowbd7wpfjln.webp",
-    "date": "2025-12-02",
+    "techs": [
+      "cloudinary",
+      "express",
+      "mongodb",
+      "next",
+      "reactnative",
+      "vercel"
+    ],
     "videos": {
       "desktop": "",
       "mobile": {
-        "landscape": "",
-        "portrait": "https://youtu.be/aSK4vxZDad8"
+        "portrait": "https://youtu.be/aSK4vxZDad8",
+        "landscape": ""
       },
       "tablet": {
-        "landscape": "",
-        "portrait": ""
+        "portrait": "",
+        "landscape": ""
       }
     },
+    "date": "2024-12-20",
+    "createdAt": "2025-12-18T17:07:34.991Z",
     "scores": {
       "lighthouse": {
         "desktop": {
@@ -84,41 +92,40 @@
         }
       },
       "security_headers": ""
-    },
-    "createdAt": "2025-12-02T14:47:15.341Z"
+    }
   },
   {
-    "id": "f7a63c91-2f3d-4eb5-ab1d-2326f519f46d",
-    "slug": "flower",
+    "id": "flower",
     "title": "Flower",
-    "description": "<h4>Galerie Photo - Site Personnel  -React</h4>\n<p>Dans le cadre de mon activité freelance, j'ai conçu et développé un site web vitrine mettant en valeur une collection personnelle de photographies botaniques. Ce projet m’a permis de mobiliser une large palette de compétences techniques, de la gestion des médias à l’optimisation SEO, en passant par la mise en place d’un backoffice sur mesure.</p>\n<h4>Missions réalisées :</h4>\n<ul>\n<li>Développement fullstack avec Next.js 15 (App Router) et MongoDB</li>\n<li>Intégration Cloudinary pour l’optimisation, la compression automatique et l’hébergement des images</li>\n<li>Création d’un script d’upload intelligent permettant :</li>\n<ul>\n<li>le chargement par lots d’images classées en dossiers,</li>\n<li>la transformation automatique des formats (WebP),</li>\n<li>l’exportation d’un fichier JSON pour l’insertion en base de données</li>\n</ul>\n<li>Mise en place d’un système de tri dynamique des photos par catégorie, saison, fleur et couleur (via API)</li>\n<li>Développement d’un carrousel responsive avec système de \"likes\" enregistrés en BDD</li>\n<li>Optimisation SEO</li>\n<li>Intégration de Google Analytics avec bannière de consentement RGPD</li>\n</ul>",
+    "description": "\n<h4>Galerie Photo - Site Personnel -React</h4>\n<p>Dans le cadre de mon activité freelance, j'ai conçu et développé un site web vitrine mettant en valeur une collection personnelle de photographies botaniques. Ce projet m’a permis de mobiliser une large palette de compétences techniques, de la gestion des médias à l’optimisation SEO, en passant par la mise en place d’un backoffice sur mesure.</p>\n\n<h4>Missions réalisées</h4>\n<ul>\n  <li>Développement fullstack avec Next.js 15 (App Router) et MongoDB</li>\n  <li>Intégration Cloudinary pour l’optimisation, la compression automatique et l’hébergement des images</li>\n  <li>Création d’un script d’upload intelligent permettant :</li>\n<ul>\n  <li>le chargement par lots d’images classées en dossiers</li>\n  <li>la transformation automatique des formats (WebP)</li>\n  <li>l’exportation d’un fichier JSON pour l’insertion en base de données</li>\n</ul>\n  <li>Mise en place d’un système de tri dynamique des photos par catégorie, saison, fleur et couleur (via API)</li>\n  <li>Développement d’un carrousel responsive avec système de \"likes\" enregistrés en BDD</li>\n  <li>Optimisation SEO</li>\n  <li>Intégration de Google Analytics avec bannière de consentement RGPD</li>\n</ul>\n\n<h4>Résultats</h4>\n<p>Un site sécurisé et rapide malgré plus de 100 photos a chargé</p>\n",
     "project_url": "https://flower.isabellelamarre.fr",
     "github_url": "",
-    "badge": "personel",
+    "badge": "personnel",
     "priority": "medium",
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1766073159/portfolio/projects/bki4weu2jru8uh9d0m0l.webp",
     "images": [],
-    "screenshots": [],
     "techs": [
-      "React",
-      "Next",
-      "TypeScript",
-      "TailwindCss",
-      "Shadcn/UI",
-      "MongoDB",
-      "Google Analytics",
-      "Google Search Console"
+      "cloudinary",
+      "ga",
+      "gsc",
+      "mongodb",
+      "next",
+      "react",
+      "shadcnui",
+      "tailwind",
+      "ts",
+      "vercel"
     ],
-    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1764695099/mes-projets/portfolio/flower/thumbnail/frbmw2ueeilszmwjxrat.webp",
-    "date": "2025-12-02",
+   
     "videos": {
       "desktop": "https://youtu.be/evBGno9HsG4",
       "mobile": {
-        "landscape": "",
-        "portrait": ""
+        "portrait": "",
+        "landscape": ""
       },
       "tablet": {
-        "landscape": "",
-        "portrait": ""
+        "portrait": "",
+        "landscape": ""
       }
     },
     "scores": {
@@ -138,6 +145,158 @@
       },
       "security_headers": "A"
     },
-    "createdAt": "2025-12-02T17:03:42.906Z"
+    "date": "2025-07-22",
+    "createdAt": "2025-12-18T17:15:20.123Z"
+  },
+  {
+    "id": "karine-lamarre-therapies",
+    "title": "Karine LAMARRE Thérapies",
+    "description": "\n<h4>Site vitrine professionnel – Projet client (Astro)</h4>\n<p>Développement complet d’un site vitrine pour une praticienne en thérapie individuelle et de couple. Le site a été conçu pour offrir une présentation claire de ses services, renforcer sa crédibilité en ligne et faciliter la prise de rendez-vous.</p>\n\n<h4>Objectifs du projet</h4>\n<ul>\n  <li>Proposer une identité visuelle sobre, chaleureuse et cohérente avec son activité</li>\n  <li>Structurer l’information pour une lecture simple et intuitive.</li>\n  <li>Garantir une navigation fluide sur mobile, tablette et ordinateur.</li>\n  <li>Optimiser la vitesse, la sécurité et le référencement naturel.</li>\n</ul>\n\n<h4>Travaux réalisés</h4>\n<ul>\n  <li>Conception du design et de l’architecture du site.</li>\n  <li>Développement avec Astro pour maximiser les performances.</li>\n  <li>Intégration responsive et optimisation des assets (images, polices, scripts).</li>\n  <li>Mise en place de bonnes pratiques SEO : sémantique, structure, meta tags, sitemap, robots.txt.</li>\n  <li>Configuration de Google Analytics et Google Search Console.</li>\n  <li>Renforcement de la sécurité avec un score A+ en security headers.</li>\n  <li>Optimisations techniques permettant d’atteindre 100 % dans les quatre catégories Lighthouse.</li>\n</ul>\n\n<h4>Résultats</h4>\n<p>Un site vitrine rapide, sécurisé, accessible et parfaitement adapté à une activité professionnelle locale souhaitant accroître sa visibilité et sa crédibilité./p>\n",
+    "project_url": "https://karinelamarretherapies.fr",
+    "github_url": "",
+    "badge": "independant",
+    "priority": "high",
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1766071233/portfolio/projects/hffq42ecd4izmqeaf1xo.webp",
+    "images": [],
+    "date": "2025-11-20",
+    "techs": [
+      "astro",
+      "css",
+      "html"
+    ],
+    "videos": {
+      "desktop": "https://youtu.be/Bs_6mZoZKLc",
+      "mobile": {
+        "portrait": "https://youtube.com/shorts/VWlvSTJDj4M",
+        "landscape": ""
+      },
+      "tablet": {
+        "portrait": "https://youtube.com/shorts/llz4h-hbEpg",
+        "landscape": "https://youtu.be/PFvmj8Y1xg0"
+      }
+    },
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        },
+        "mobile": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        }
+      },
+      "security_headers": "A+"
+    },
+    "createdAt": "2025-12-18T17:06:16.603Z"
+  },
+  {
+    "id": "wap",
+    "title": "WAP",
+    "description": "\n<h4>Application Mobile - React Native- Projet pour le titre RNCP</h4>\n<p>Votre texte ici…</p>\n\n<h4>Conception et Développement d'une application React Native dans le cadre du projet de fin de formation pour la présentation au titre RNCP de concepteur développeur d'application web et mobile. Ce projet favorise la rencontre entre propriétaires de chiens afin de rendre plus agréable la promenade.</h4>\n<ul>\n  <li>Permet d'afficher/ajouter/décrire les lieux DogFriendly</li>\n  <li>Permet d'afficher les amis, inconnus et personnes bloquées</li>\n  <li>Tuto pour montrer les fonctionnalités de l'application</li>\n</ul>\n\n<h4>Travaux réalisés</h4>\n<ul>\n  <li>Création des users story et mockup</li>\n  <li>Modélisation de la BDD</li>\n  <li>Géolocalisation</li>\n  <li>Identification par mot de passe</li>\n  <li>Codage en React Native</li>\n  <li>Backend avec Express et MongoDB\n</li>\n</ul>\n\n<h4>Résultats</h4>\n<p>Ce projet a été une expérience professionnelle et personnelle enrichissante. Il m’a permis d’appliquer toutes les compétences acquises pendant ma formation : développement front-end et back-end, gestion des bases de données et méthodologies Agiles. J’ai également appris à gérer des délais serrés et à collaborer avec des coéquipiers expérimentés. Wap est le reflet de notre travail collectif et de notre passion pour la technologie.</p>\n",
+    "project_url": "",
+    "github_url": "",
+    "badge": "formation",
+    "priority": "low",
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1766072524/portfolio/projects/owqc0wnfr1pdoohxvxwl.webp",
+    "images": [],
+    "techs": [
+      "cloudinary",
+      "express",
+      "mongodb",
+      "next",
+      "reactnative",
+      "vercel"
+    ],
+    "videos": {
+      "desktop": "",
+      "mobile": {
+        "portrait": "https://youtu.be/aSK4vxZDad8",
+        "landscape": ""
+      },
+      "tablet": {
+        "portrait": "",
+        "landscape": ""
+      }
+    },
+    "date": "2024-12-20",
+    "createdAt": "2025-12-18T17:07:34.991Z",
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "",
+          "accessibility": "",
+          "best_practices": "",
+          "seo": ""
+        },
+        "mobile": {
+          "performance": "",
+          "accessibility": "",
+          "best_practices": "",
+          "seo": ""
+        }
+      },
+      "security_headers": ""
+    }
+  },
+  {
+    "id": "flower",
+    "title": "Flower",
+    "description": "\n<h4>Galerie Photo - Site Personnel -React</h4>\n<p>Dans le cadre de mon activité freelance, j'ai conçu et développé un site web vitrine mettant en valeur une collection personnelle de photographies botaniques. Ce projet m’a permis de mobiliser une large palette de compétences techniques, de la gestion des médias à l’optimisation SEO, en passant par la mise en place d’un backoffice sur mesure.</p>\n\n<h4>Missions réalisées</h4>\n<ul>\n  <li>Développement fullstack avec Next.js 15 (App Router) et MongoDB</li>\n  <li>Intégration Cloudinary pour l’optimisation, la compression automatique et l’hébergement des images</li>\n  <li>Création d’un script d’upload intelligent permettant :</li>\n<ul>\n  <li>le chargement par lots d’images classées en dossiers</li>\n  <li>la transformation automatique des formats (WebP)</li>\n  <li>l’exportation d’un fichier JSON pour l’insertion en base de données</li>\n</ul>\n  <li>Mise en place d’un système de tri dynamique des photos par catégorie, saison, fleur et couleur (via API)</li>\n  <li>Développement d’un carrousel responsive avec système de \"likes\" enregistrés en BDD</li>\n  <li>Optimisation SEO</li>\n  <li>Intégration de Google Analytics avec bannière de consentement RGPD</li>\n</ul>\n\n<h4>Résultats</h4>\n<p>Un site sécurisé et rapide malgré plus de 100 photos a chargé</p>\n",
+    "project_url": "https://flower.isabellelamarre.fr",
+    "github_url": "",
+    "badge": "personnel",
+    "priority": "medium",
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1766073159/portfolio/projects/bki4weu2jru8uh9d0m0l.webp",
+    "images": [],
+    "techs": [
+      "cloudinary",
+      "ga",
+      "gsc",
+      "mongodb",
+      "next",
+      "react",
+      "shadcnui",
+      "tailwind",
+      "ts",
+      "vercel"
+    ],
+   
+    "videos": {
+      "desktop": "https://youtu.be/evBGno9HsG4",
+      "mobile": {
+        "portrait": "",
+        "landscape": ""
+      },
+      "tablet": {
+        "portrait": "",
+        "landscape": ""
+      }
+    },
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "100",
+          "accessibility": "96",
+          "best_practices": "100",
+          "seo": "100"
+        },
+        "mobile": {
+          "performance": "95",
+          "accessibility": "96",
+          "best_practices": "100",
+          "seo": "100"
+        }
+      },
+      "security_headers": "A"
+    },
+    "date": "2025-07-22",
+    "createdAt": "2025-12-18T17:15:20.123Z"
   }
 ]
+  
+

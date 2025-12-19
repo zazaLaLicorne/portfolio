@@ -1,0 +1,42 @@
+[
+  {
+    "id": "mario-passeri",
+    "author": "Mario Passeri",
+    "role": "Responsable informatique et cybersécurité",
+    "relationship": "Mentor d'Isabelle",
+    "source": "LinkedIn",
+    "date": "15/10/2025",
+    "content": "J'ai eu le plaisir d'accompagner Isabelle LAMARRE durant un stage d'un mois en PMSMP au sein de mon agence de cybersécurité, autour du développement front-end du nouveau site web de l'agence avec Astro.js. Isabelle s'est montrée très impliquée, curieuse et passionnée par sa reconversion dans le numérique. Elle a su s'adapter rapidement, apprendre avec enthousiasme et contribuer activement au projet. Travailler avec elle a été un véritable plaisir.Je la recommande vivement pour son sérieux, sa motivation et son bel état d'esprit, en lui souhaitant plein de réussite dans la suite de son parcours.",
+    "rating": "",
+    "image": "https://res.cloudinary.com/isabellelamarre/image/upload/v1765993668/portfolio/reviews/zqxe8hrc2kwtcllbtglb.jpg"
+  },
+  {
+    "author": "Karine LAMARRE",
+    "role": "Praticienne en relation d'aide",
+    "relationship": "Cliente d'Isabelle",
+    "source": "LinkedIn",
+    "date": "16/11/2025",
+    "content": "Isabelle est à l'écoute des besoins et réajuste au fur et à mesure le projet. \nElle est force de proposition. Isabelle est disponible, réactive et efficace.",
+    "image": "https://res.cloudinary.com/isabellelamarre/image/upload/v1765993835/portfolio/reviews/oreslvnye3hprw5n1qzv.jpg",
+    "id": "karine-lamarre"
+  },
+  {
+    "author": "Karine",
+    "role": "Karine Lamarre Thérapies",
+    "source": "Malt",
+    "date": "16/11/2025",
+    "content": "Isabelle a su écouter mes besoins et réajuster au fur et à mesure le projet. Elle a été force de proposition, ce qui a permis d'aller au delà de la demande, de sortir de ma zone de confort. Le projet est en phase de finalisation et je suis très satisfaite du résultat, cela me ressemble vraiment. Merci Isabelle pour ta disponibilité, ta réactivité et ton efficacité.",
+    "rating": "5",
+    "id": "karine"
+  },
+  {
+    "author": "Karine Lamarre thérapies",
+    "role": "",
+    "source": "Google",
+    "date": "17/11/2025",
+    "content": "Isabelle a su écouter mes besoins et réajuster au fur et à mesure le projet. Elle a été force de proposition, ce qui a permis d'aller au delà de la demande, de sortir de ma zone de confort. Le projet est en phase de finalisation et je suis très satisfaite du résultat, cela me ressemble vraiment. Merci Isabelle pour ta disponibilité, ta réactivité et ton efficacité.",
+    "rating": "5",
+    "image": "https://res.cloudinary.com/isabellelamarre/image/upload/v1765994649/portfolio/reviews/kkiptbytiwqloivfgnu0.jpg",
+    "id": "karine-lamarre-therapies"
+  }
+]

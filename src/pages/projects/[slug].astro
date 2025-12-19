@@ -3,13 +3,12 @@ import { Image } from "astro:assets";
 import projects from "@/data/projects.json";
 import ProjectsLayout from "@/layouts/ProjectsLayout.astro";
 import Button from "@/components/Button.astro";
-import { getTechIcon } from "@/lib/techIcons";
-
+import { TECH_REGISTRY } from "@/config/techRegistry";
 
 // Générer toutes les routes statiques
 export function getStaticPaths() {
   return projects.map((projet) => ({
-    params: { slug: projet.slug },
+    params: { slug: projet.id },
     props: { projet },
   }));
 }
@@ -46,6 +45,14 @@ const date = new Date(projet.date).toLocaleDateString("fr-FR", {
   month: "long",
   day: "numeric",
 });
+
+const gallery =
+  Array.isArray(projet.images)
+    ? projet.images.filter(
+        (img): img is string =>
+          typeof img === "string" && img.trim().length > 0
+      )
+    : [];
 
 const videosList = [
   projet.videos?.desktop,
@@ -99,6 +106,7 @@ function toEmbed(url) {
 
     <!-- Thumbnail -->
     <div data-aos="zoom-in" class="rounded-xl overflow-hidden shadow-lg mb-12">
+      {typeof projet.thumbnail === "string" && projet.thumbnail.length > 0 && (
       <Image
         src={projet.thumbnail}
         alt={projet.title}
@@ -107,6 +115,7 @@ function toEmbed(url) {
         loading="eager"
         class="w-full h-auto object-cover"
       />
+    )}
     </div>
 
     <!-- Description -->
@@ -119,22 +128,21 @@ function toEmbed(url) {
     <div data-aos="fade-up" class="mb-16">
       <h4 class="font-semibold text-center mb-8">Technologies utilisées</h4>
       <div class="flex flex-wrap justify-center gap-6">
-        {projet.techs.map((tech) => (
-          <div class="flex flex-col gap-3 items-center" data-aos="zoom-in" data-aos-delay="100">
-            <Image
-              src={getTechIcon(tech)}
-              alt={tech}
-              width={40}
-              height={40}
-              class="w-10 h-10 object-contain"
-              loading="lazy"
-            />
-            <span class="text-lg">{tech}</span>
-          </div>
-        ))}
+        {Array.isArray(projet.techs) &&
+          projet.techs.map((tech) => {
+            const meta = TECH_REGISTRY[tech];
+            if (!meta) return null;
+            return (
+              <div class="flex flex-col gap-3 items-center">
+                <Image src={meta.icon} alt={meta.label} width={40} height={40} title={meta.label} class="w-10 h-10 object-contain"
+              loading="lazy"/>
+                {/* <span>{meta.label}</span> */}
+              </div>
+            );
+          })}
       </div>
     </div>
-        <!-- Liens externes -->
+        <!-- Liens externes  -->
    {(projet.project_url || projet.github_url) && (
   <div data-aos="fade-up" class="flex flex-col text-center gap-6 mb-20">
     <h4 class="font-semibold mb-8">Liens du projet</h4>
@@ -360,7 +368,7 @@ function toEmbed(url) {
 )}
 
     <!-- Galerie / screenshots si existants -->
-    {projet.images?.length > 0 && (
+   {gallery.length > 0 && (
       <div data-aos="fade-up">
         <h4 class="text-2xl font-semibold mb-4">Galerie</h4>
         <div class="grid grid-cols-1 gap-6">
@@ -381,7 +389,7 @@ function toEmbed(url) {
     )}
   
   <div class="flex justify-center mt-12">
-  <Button variant="retour" href="/projects/page/1">
+  <Button variant="retour" href="/projects">
     ← Retour à la liste des projets
   </Button>
 </div>

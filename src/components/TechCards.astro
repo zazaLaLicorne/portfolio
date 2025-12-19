@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { getTechIcon } from "@/lib/techIcons";
-
+import { TECH_REGISTRY } from "@/config/techRegistry";
 
 interface Props {
   size?: "sm" | "md" | "lg";
@@ -9,39 +8,30 @@ interface Props {
 
 const { size = "md" } = Astro.props;
 
-// Catégories – on retire les chemins vers /public
-// Seule la clé name est nécessaire.
 const categories = [
   {
     title: "Conception & Suivi Projet",
-    techs: ["Figma", "Canva", "Notion"],
+    techs: ["figma", "canva", "notion"],
   },
   {
     title: "Langages",
-    techs: ["JavaScript", "TypeScript", "HTML", "CSS"],
+    techs: ["js", "ts", "html", "css"],
   },
   {
     title: "Framework Front",
-    techs: ["React", "React Native", "Astro", "Next"],
+    techs: ["react", "reactnative", "astro", "next"],
   },
   {
     title: "Backend & BDD",
-    techs: ["Node.js", "MongoDB", "Express"],
+    techs: ["node", "mongodb", "express"],
   },
   {
     title: "Bibliothèques CSS",
-    techs: ["TailwindCss", "Daisy UI", "Shadcn/UI"],
+    techs: ["tailwind", "daisyui", "shadcnui"],
   },
   {
     title: "Outils",
-    techs: [
-      "GitHub",
-      "Vercel",
-      "Google Analytics",
-      "Google Search Console",
-      "VSCode",
-      "Cloudinary",
-    ],
+    techs: ["github", "vercel", "ga", "gsc", "vscode", "cloudinary"],
   },
 ];
 
@@ -50,45 +40,48 @@ const sizeClasses = {
   md: "w-16 h-16",
   lg: "w-20 h-20",
 };
-
-
 ---
 
-
 <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 text-center">
-  {categories.map((category, index) => (
-    <div
-      class="card glass flex flex-col items-center justify-center p-6"
-      data-aos="fade-up"
-      data-aos-delay={index * 200}
-    >
-      <h3 class="mb-4 text-xl font-bold">{category.title}</h3>
+  {
+    categories.map((category, index) => (
+      <div
+        class="card flex flex-col items-center justify-center p-6 bg-[--bg-light] dark:bg-[--bg-secondary-dark]"
+        data-aos="fade-up"
+        data-aos-delay={index * 200}
+      >
+        <h3 class="mb-4 text-xl font-bold">{category.title}</h3>
 
-      <div class="flex flex-wrap justify-center gap-4">
-        {category.techs.map(tech => (
-          <div class="flex flex-col items-center transition-transform hover:scale-110">
-            <Image
-              src={getTechIcon(tech)}
-              alt={tech}
-              width={100}
-              height={100}
-              class={`rounded-md object-contain ${sizeClasses[size]}`}
-              loading="lazy"
-            />
-            <span class="text-sm text-center mt-2">{tech}</span>
-          </div>
-        ))}
+        <div class="flex flex-wrap justify-center gap-4">
+          {category.techs.map((tech) => {
+            const meta = TECH_REGISTRY[tech];
+            if (!meta) return null;
+
+            return (
+              <div class="flex flex-col items-center transition-transform hover:scale-110">
+                <Image
+                  src={meta.icon}
+                  alt={meta.label}
+                  width={100}
+                  height={100}
+                  class={`rounded-md object-contain ${sizeClasses[size]}`}
+                  loading="lazy"
+                />
+                <span class="text-sm text-center mt-2">{meta.label}</span>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
-  ))}
+    ))
+  }
 </div>
-
-
 
 <style>
   .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
   .card:hover {
     transform: translateY(-4px) scale(1.02);
@@ -96,7 +89,9 @@ const sizeClasses = {
   }
 
   img {
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
   }
 
   img:hover {
@@ -105,8 +100,9 @@ const sizeClasses = {
   }
 
   @keyframes pulse {
-    0%, 100% {
-      transform: scale(1.0);
+    0%,
+    100% {
+      transform: scale(1);
       filter: brightness(1);
     }
     50% {

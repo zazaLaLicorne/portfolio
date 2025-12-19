@@ -1,11 +1,11 @@
 ---
 import Button from "./Button.astro";
 import { Image } from "astro:assets";
-import { getTechIcon } from "@/lib/techIcons";
+import { TECH_REGISTRY } from "@/config/techRegistry";
 
 interface Props {
   projet: {
-    slug: string;
+    id: string;
     title: string;
     description: string;
     thumbnail: string;
@@ -18,10 +18,6 @@ interface Props {
 
 const { projet, index } = Astro.props;
 
-// const isLazy = index >= 2; 
-// const loadingType = isLazy ? "lazy" : "eager";
-
-
 // On tronque la description proprement
 const shortDescription =
   projet.description.length > 120
@@ -29,12 +25,11 @@ const shortDescription =
     : projet.description;
 
 // Génération URL
-const link = `/projects/${projet.slug}/`;
+const link = `/projects/${projet.id}/`;
 
 function cldThumbnail(url, width = 720) {
-  return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width},c_fill/`);
+  return url.replace("/upload/", `/upload/f_auto,q_auto,w_${width},c_fill/`);
 }
-
 ---
 
 <div
@@ -42,7 +37,7 @@ function cldThumbnail(url, width = 720) {
   data-aos-delay={index * 200}
   data-aos-duration="900"
   data-aos-easing="cubic-bezier(.21,.98,.6,1)"
-  class="group bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
+  class="group bg-[--bg-light] dark:bg-[--bg-secondary-dark] rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
 >
   <!-- Image -->
   <div class="relative h-56 overflow-hidden">
@@ -52,8 +47,7 @@ function cldThumbnail(url, width = 720) {
       width={800}
       height={500}
       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-      loading=lazy
-
+      loading="lazy"
     />
     <!-- Badge -->
     {
@@ -73,23 +67,20 @@ function cldThumbnail(url, width = 720) {
 
     <!-- Tech stack -->
     <div class="flex flex-wrap items-center justify-center gap-3 mt-2">
-      {
-        projet.techs.map((tech) => (
-          <Image
-            src={getTechIcon(tech)}
-            alt={tech}
-            width={40}
-            height={40}
-            class="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
-            loading=lazy
-
-          />
-        ))
-      }
+      {Array.isArray(projet.techs) &&
+        projet.techs.map((tech) => {
+          const meta = TECH_REGISTRY[tech];
+          if (!meta) return null;
+          return (
+            <div class="flex flex-col gap-3 items-center">
+              <Image src={meta.icon} alt={meta.label} width={40} height={40} class="w-10 h-10 object-contain"
+                loading="lazy" title={meta.label} />
+            </div>
+          );
+        })}
     </div>
 
     <!-- Bouton -->
     <Button href={link}>Voir le projet</Button>
   </div>
 </div>
-

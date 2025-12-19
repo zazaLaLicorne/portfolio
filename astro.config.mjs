@@ -49,5 +49,6 @@ export default defineConfig({
         hostname: "res.cloudinary.com",
       },
     ],
+    domains: ["res.cloudinary.com"],
   },
 });

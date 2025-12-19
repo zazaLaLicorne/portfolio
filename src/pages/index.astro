@@ -11,6 +11,8 @@ import certifications from "../data/certifications.json";
 import setup from "../assets/images/setup.jpg";
 import portrait2 from "../assets/images/portrait2.jpg";
 import CertificationCard from "../components/CertificationCard.astro";
+import Reviews from "@/components/Reviews.astro";
+
 
 const priorityOrder = {
   high: 1,
@@ -77,7 +79,7 @@ const projects = [...allProjects]
                 data-aos="zoom-in-down"
               />
               
-              <div class="space-y-6 text-left">
+              <div class="space-y-6 text-center">
                 <p data-aos="fade-right" data-aos-duration="1200" class="text-xl">
                   Je m'appelle Isabelle, développeuse web passionnée et
                   curieuse, avec un parcours atypique : de la rigueur des
@@ -121,19 +123,46 @@ const projects = [...allProjects]
         </div>
       </section>
 
-      <!-- Certifications Section -->
-      <section id="certifications" class="px-4">
-        <div class="max-w-6xl mx-auto">
-          <div class="text-center section-inner">
-            <h2 class="text-4xl font-bold mb-12">Certifications</h2>
-            <div class="flex flex-col lg:flex-row justify-center items-center gap-10">
-              {certifications.map((cert) => (
-                <CertificationCard cert={cert} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+<!-- Certifications Section -->
+<section id="certifications" class="px-4 py-20">
+  <div class="max-w-6xl mx-auto">
+
+    <h2 class="text-4xl font-bold text-center mb-12">
+      Certifications
+    </h2>
+
+    <!-- GRID -->
+    <div
+      class="
+        grid 
+        grid-cols-1 
+        sm:grid-cols-2 
+        gap-10 
+        justify-items-center
+      "
+    >
+      {certifications.slice(0, 4).map((cert) => (
+        <CertificationCard cert={cert} />
+      ))}
+    </div>
+
+    <!-- Voir plus -->
+    {certifications.length > 4 && (
+      <div class="flex justify-center mt-12">
+        <a
+          href="/certifications"
+          class="px-6 py-3 rounded-lg font-semibold
+                 bg-primary text-white
+                 hover:opacity-90 transition"
+        >
+          Voir toutes les certifications
+        </a>
+      </div>
+    )}
+
+  </div>
+</section>
+
 
       <!-- Technologies Section -->
       <section id="technos" class="px-4">
@@ -157,13 +186,15 @@ const projects = [...allProjects]
                 <ProjectCard projet={projet} index={index} />
               ))}
             </div>
-            {allProjects.length > 6 && (
-              <Button href="/projects/page/2">Voir plus de projets</Button>
+            {allProjects.length > 4 && (
+              <Button href="/projects">Voir tous les projets</Button>
             )}
           </div>
         </div>
       </section>
 
+      <Reviews />
+     
       <!-- Contact Section -->
       <section id="contact" class="px-4">
         <div class="max-w-6xl mx-auto">
@@ -176,17 +207,17 @@ const projects = [...allProjects]
               
               <div class="text-center flex flex-col items-center space-y-8">
                 <div class="flex flex-col gap-4">
-                  <a class="text-xl md:text-2xl p-3"
+                  <a class="text-md md:text-2xl p-3 mx-4"
                     href="mailto:lalicornecosmique62@gmail.com?subject=Contact depuis le site&body=Bonjour%20Isabelle,"
                     aria-label="lalicornecosmique62@gmail.com"
                     data-aos="zoom-in-up" data-aos-duration="1200">
-                    📧 : lalicornecosmique62@gmail.com
+                     📧: lalicornecosmique62@gmail.com
                   </a>
-                  <a class="text-xl md:text-2xl p-3"
+                  <a class="text-md md:text-2xl p-3"
                     href="tel:+33682157497"
                     aria-label="06 82 15 74 97"
                     data-aos="zoom-in-up" data-aos-duration="1200">
-                    📞 : 06 82 15 74 97
+                  📱: 06 82 15 74 97
                   </a>
                 </div>
 
@@ -194,7 +225,10 @@ const projects = [...allProjects]
                   <SocialLinks size="lg" />
                 </div>
 
-                <div data-aos="zoom-in-up" data-aos-duration="1200">
+                <div class="my-4 gap-4"
+                data-aos="zoom-in-up" data-aos-duration="1200" >
+                  <p class="text-center my-4 mx-4">Vous pouvez prendre rendez-vous directement ici pour me parler de votre projet, 
+                    soit en visio via GoogleMeet ou je me déplace dans un rayon de 50 km autours d'Arras.</p>
                   <Button variant="gradient"
                           target="_blank"
                           rel="noopener noreferrer"
