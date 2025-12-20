@@ -13,7 +13,6 @@ import portrait2 from "../assets/images/portrait2.jpg";
 import CertificationCard from "../components/CertificationCard.astro";
 import Reviews from "@/components/Reviews.astro";
 
-
 const priorityOrder = {
   high: 1,
   medium: 2,
@@ -29,7 +28,9 @@ const projects = [...allProjects]
 <BaseLayout>
   <div class="w-full">
     <!-- Hero Section -->
-    <div class="max-h-screen h-screen flex items-center justify-center px-4">
+    <div
+      class="max-h-screen h-screen flex items-center justify-center bg-[url(/src/assets/images/hisu-lee-V4Pn7QeYdPQ-unsplash.jpg)] dark:bg-[url(/src/assets/images/fht1.jpg)] bg-cover bg-center px-4"
+    >
       <div class="text-center grid items-center gap-4 max-w-4xl mx-auto">
         <Image
           src={portrait}
@@ -61,14 +62,17 @@ const projects = [...allProjects]
     </div>
 
     <!-- Sections Container -->
-    <div class="space-y-32 py-20">
-      
+    <div
+      class="space-y-32 py-20 bg-[url(/src/assets/images/pink-324175_1280.jpg)]  dark:bg-[url(/src/assets/images/licorne.png)] bg-cover bg-center relative
+      min-h-screen
+      bg-fixed"
+    >
       <!-- About Section -->
       <section id="about" class="px-4">
         <div class="max-w-6xl mx-auto">
           <div class="text-center section-inner">
             <h2 class="text-4xl font-bold mb-12">À propos de moi</h2>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <Image
                 src={portrait2}
@@ -78,183 +82,204 @@ const projects = [...allProjects]
                 loading="lazy"
                 data-aos="zoom-in-down"
               />
-              
+
               <div class="space-y-6 text-center">
-                <p data-aos="fade-right" data-aos-duration="1200" class="text-xl">
+                <p
+                  data-aos="fade-right"
+                  data-aos-duration="1200"
+                  class="text-xl"
+                >
                   Je m'appelle Isabelle, développeuse web passionnée et
                   curieuse, avec un parcours atypique : de la rigueur des
                   laboratoires scientifiques à la créativité du développement
                   web.
                 </p>
                 <hr class="hr-gradient" />
-                
-                <p class="text-xl" data-aos="fade-left" data-aos-duration="1200">
+
+                <p
+                  class="text-xl"
+                  data-aos="fade-left"
+                  data-aos-duration="1200"
+                >
                   J'aime transformer des idées en projets concrets, qu'il
                   s'agisse de sites vitrines élégants, d'applications
                   interactives ou d'outils pratiques de back-office.
                 </p>
                 <hr class="hr-gradient" />
-                
-                <p class="text-xl" data-aos="fade-right" data-aos-duration="1200">
-                  🚀 Toujours en quête d'apprentissage, je me forme
-                  actuellement sur Google Cloud et je m'intéresse
-                  particulièrement aux environnements Next.js, MongoDB et aux
-                  solutions DevOps pour rendre mes projets encore plus solides
-                  et performants.
+
+                <p
+                  class="text-xl"
+                  data-aos="fade-right"
+                  data-aos-duration="1200"
+                >
+                  🚀 Toujours en quête d'apprentissage, je me forme actuellement
+                  sur Google Cloud et je m'intéresse particulièrement aux
+                  environnements Next.js, MongoDB et aux solutions DevOps pour
+                  rendre mes projets encore plus solides et performants.
                 </p>
                 <hr class="hr-gradient" />
-                
-                <p class="text-xl" data-aos="fade-left" data-aos-duration="1200">
-                  💡 Ce que j'aime le plus ? Trouver des solutions simples à
-                  des problèmes complexes, et apporter une touche personnelle
-                  et créative à mes projets.
+
+                <p
+                  class="text-xl"
+                  data-aos="fade-left"
+                  data-aos-duration="1200"
+                >
+                  💡 Ce que j'aime le plus ? Trouver des solutions simples à des
+                  problèmes complexes, et apporter une touche personnelle et
+                  créative à mes projets.
                 </p>
                 <hr class="hr-gradient" />
-                
-                <p class="text-xl" data-aos="fade-right" data-aos-duration="1200">
+
+                <p
+                  class="text-xl"
+                  data-aos="fade-right"
+                  data-aos-duration="1200"
+                >
                   👉 Aujourd'hui, je suis à la recherche aussi bien d'un poste
                   salarié pour continuer à monter en compétences au sein d'une
-                  équipe, que de missions freelance pour accompagner des
-                  projets concrets et variés.
+                  équipe, que de missions freelance pour accompagner des projets
+                  concrets et variés.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
+   
+    <!-- Certifications Section -->
+    <section id="certifications" class="px-4 py-20">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12">Certifications</h2>
 
-<!-- Certifications Section -->
-<section id="certifications" class="px-4 py-20">
-  <div class="max-w-6xl mx-auto">
-
-    <h2 class="text-4xl font-bold text-center mb-12">
-      Certifications
-    </h2>
-
-    <!-- GRID -->
-    <div
-      class="
-        grid 
-        grid-cols-1 
-        sm:grid-cols-2 
-        gap-10 
-        justify-items-center
-      "
-    >
-      {certifications.slice(0, 4).map((cert) => (
-        <CertificationCard cert={cert} />
-      ))}
-    </div>
-
-    <!-- Voir plus -->
-    {certifications.length > 4 && (
-      <div class="flex justify-center mt-12">
-        <a
-          href="/certifications"
-          class="px-6 py-3 rounded-lg font-semibold
-                 bg-primary text-white
-                 hover:opacity-90 transition"
+        <!-- GRID -->
+        <div
+          class="grid
+        grid-cols-1
+        sm:grid-cols-2
+        gap-10
+        justify-items-center"
         >
-          Voir toutes les certifications
-        </a>
-      </div>
-    )}
-
-  </div>
-</section>
-
-
-      <!-- Technologies Section -->
-      <section id="technos" class="px-4">
-        <div class="max-w-6xl mx-auto">
-          <div class="text-center section-inner">
-            <h2 class="text-4xl font-bold mb-12">Technologies & Outils</h2>
-            <TechCards size="lg" />
-          </div>
+          {
+            certifications
+              .slice(0, 4)
+              .map((cert) => <CertificationCard cert={cert} />)
+          }
         </div>
-      </section>
 
-      <!-- Projects Section -->
-      <section id="realisations" class="px-4">
-        <div class="max-w-6xl mx-auto">
-          <div class="text-center section-inner">
-            <h2 class="text-4xl font-bold mb-12">
-              Mes Réalisations
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
-              {projects.map((projet, index) => (
-                <ProjectCard projet={projet} index={index} />
-              ))}
+        <!-- Voir plus -->
+        {
+          certifications.length > 4 && (
+            <div class="flex justify-center mt-12">
+             <Button variant="gradient" href="/certifications">Voir toutes les certifications</Button>
             </div>
-            {allProjects.length > 4 && (
-              <Button href="/projects">Voir tous les projets</Button>
-            )}
-          </div>
+          )
+        }
+      </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technos" class="px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center section-inner">
+          <h2 class="text-4xl font-bold mb-12">Technologies & Outils</h2>
+          <TechCards size="lg" />
         </div>
-      </section>
+      </div>
+    </section>
 
-      <Reviews />
-     
-      <!-- Contact Section -->
-      <section id="contact" class="px-4">
-        <div class="max-w-6xl mx-auto">
-          <div class="section-inner text-center"> 
-            <h2 class="text-4xl font-bold mb-12">
-              Contacts
-            </h2>
+    <!-- Projects Section -->
+    <section id="realisations" class="px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center section-inner">
+          <h2 class="text-4xl font-bold mb-12">Mes Réalisations</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+            {
+              projects.map((projet, index) => (
+                <ProjectCard projet={projet} index={index} />
+              ))
+            }
+          </div>
+          {
+            allProjects.length > 4 && (
+              <Button variant="gradient" href="/projects">Voir tous les projets</Button>
+            )
+          }
+        </div>
+      </div>
+    </section>
 
-            <div class="flex flex-col xl:flex-row justify-center items-center gap-10 xl:gap-20">
-              
-              <div class="text-center flex flex-col items-center space-y-8">
-                <div class="flex flex-col gap-4">
-                  <a class="text-md md:text-2xl p-3 mx-4"
-                    href="mailto:lalicornecosmique62@gmail.com?subject=Contact depuis le site&body=Bonjour%20Isabelle,"
-                    aria-label="lalicornecosmique62@gmail.com"
-                    data-aos="zoom-in-up" data-aos-duration="1200">
-                     📧: lalicornecosmique62@gmail.com
-                  </a>
-                  <a class="text-md md:text-2xl p-3"
-                    href="tel:+33682157497"
-                    aria-label="06 82 15 74 97"
-                    data-aos="zoom-in-up" data-aos-duration="1200">
+    <Reviews />
+
+    <!-- Contact Section -->
+    <section id="contact" class="px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="section-inner text-center">
+          <h2 class="text-4xl font-bold mb-12">Contacts</h2>
+
+          <div
+            class="flex flex-col xl:flex-row justify-center items-center gap-10 xl:gap-20"
+          >
+            <div class="text-center flex flex-col items-center  glass space-y-8">
+              <div class="flex flex-col gap-4">
+                <a
+                  class="text-md md:text-2xl p-3 mx-4"
+                  href="mailto:lalicornecosmique62@gmail.com?subject=Contact depuis le site&body=Bonjour%20Isabelle,"
+                  aria-label="lalicornecosmique62@gmail.com"
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1200"
+                >
+                  📧: lalicornecosmique62@gmail.com
+                </a>
+                <a
+                  class="text-md md:text-2xl p-3"
+                  href="tel:+33682157497"
+                  aria-label="06 82 15 74 97"
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1200"
+                >
                   📱: 06 82 15 74 97
-                  </a>
-                </div>
-
-                <div data-aos="zoom-in-up" data-aos-duration="1200">
-                  <SocialLinks size="lg" />
-                </div>
-
-                <div class="my-4 gap-4"
-                data-aos="zoom-in-up" data-aos-duration="1200" >
-                  <p class="text-center my-4 mx-4">Vous pouvez prendre rendez-vous directement ici pour me parler de votre projet, 
-                    soit en visio via GoogleMeet ou je me déplace dans un rayon de 50 km autours d'Arras.</p>
-                  <Button variant="gradient"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="https://calendly.com/isabellelamarre62/premier">
-                    Prendre rendez-vous
-                  </Button>
-                </div>
+                </a>
               </div>
-
-              <Image
-                src={setup}
-                alt="setup"
-                width={500}
-                height={300}
-                class="max-w-[90%] sm:max-w-[70%] md:max-w-[400px] w-full bordure-magique rounded-3xl h-auto"
-                loading="lazy"
+              <hr class="hr-gradient w-3/4" />
+              <div data-aos="zoom-in-up" data-aos-duration="1200">
+                <SocialLinks size="lg" />
+              </div>
+              <hr class="hr-gradient w-3/4" />
+              <div
+                class="my-4 gap-4"
                 data-aos="zoom-in-up"
                 data-aos-duration="1200"
-                data-aos-offset="200"
-              />
-
+              >
+                <p class="text-center my-4 mx-4">
+                  Vous pouvez prendre rendez-vous directement ici pour me parler
+                  de votre projet, soit en visio via GoogleMeet ou je me déplace
+                  dans un rayon de 50 km autours d'Arras.
+                </p>
+                <Button
+                  variant="gradient"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://calendly.com/isabellelamarre62/premier"
+                >
+                  Prendre rendez-vous
+                </Button>
+              </div>
             </div>
+
+            <Image
+              src={setup}
+              alt="setup"
+              width={500}
+              height={300}
+              class="max-w-[90%] sm:max-w-[70%] md:max-w-[400px] w-full bordure-magique rounded-3xl h-auto"
+              loading="lazy"
+              data-aos="zoom-in-up"
+              data-aos-duration="1200"
+              data-aos-offset="200"
+            />
           </div>
         </div>
-      </section>
-
-    </div>
+      </div>
+    </section>
   </div>
 </BaseLayout>

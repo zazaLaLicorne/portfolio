@@ -85,9 +85,9 @@ function toEmbed(url) {
 
 <!-- PAGE PROJET -->
 <ProjectsLayout>    
-<div class="project-page">
+<div class="project-page ">
 
-  <div data-aos="fade-up" class="max-w-4xl mt-10 pt-10 mx-auto">
+  <div data-aos="fade-up" class="max-w-4xl mt-10 pt-10 mx-auto ">
 
     <!-- Titre + badge -->
     <h1 class="text-4xl text-center font-bold mb-4">{projet.title}</h1>
@@ -173,7 +173,7 @@ function toEmbed(url) {
 
       <!-- 🔒 SECURITY HEADERS -->
       {hasSecurityHeaders && (
-        <div class="p-6 rounded-xl shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
+        <div class="p-6 rounded-xl shadow-lg glass border border-gray-200 dark:border-gray-700
      flex flex-col justify-center items-center text-center">
 
           <h3 class="text-xl font-semibold mb-3">Security Headers</h3>
@@ -188,7 +188,7 @@ function toEmbed(url) {
 
       <!-- 💻 LIGHTHOUSE DESKTOP -->
       {hasLighthouseMobile && (
-        <div class="p-6 rounded-xl shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+        <div class="p-6 rounded-xl shadow-lg glass border border-gray-200 dark:border-gray-700">
           <h3 class="text-xl font-semibold justify-center mb-4 flex items-center gap-2">
             Lighthouse 💻 Desktop
           </h3>
@@ -235,7 +235,7 @@ function toEmbed(url) {
 
       <!-- 📱 LIGHTHOUSE MOBILE -->
       {projet.scores?.lighthouse?.mobile && (
-        <div class="p-6 rounded-xl shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+        <div class="p-6 rounded-xl shadow-lg glass border border-gray-200 dark:border-gray-700">
           <h3 class="text-xl font-semibold justify-center mb-4 flex items-center gap-2">
            Lighthouse 📱 Mobile
           </h3>
@@ -372,7 +372,7 @@ function toEmbed(url) {
       <div data-aos="fade-up">
         <h4 class="text-2xl font-semibold mb-4">Galerie</h4>
         <div class="grid grid-cols-1 gap-6">
-          {projet.images.map((img) => (
+          {gallery.map((img) => (
             <div class="rounded-xl overflow-hidden shadow-lg">
               <Image
                 src={img}

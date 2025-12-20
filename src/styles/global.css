@@ -70,9 +70,9 @@ h1, h2, h3 {
   color: var(--color-primary);
 }
 
-
+ /* bg-white dark:bg-gray-900; */
 body {
-  @apply  text-base bg-white dark:bg-gray-900;
+  @apply  text-base dark:bg-gray-900;
   color: var(--color-text);
   line-height: 1.6;
   margin: 0;
