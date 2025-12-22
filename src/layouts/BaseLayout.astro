@@ -28,7 +28,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
     <meta name="ga-id" content={GA_ID} />
 
     <!-- Script pour éviter le flash de contenu -->
-    // filepath: c:\Users\isabe\Desktop\developpement\IL\portfolio\src\layouts\BaseLayout.astro
+   
     <script
       is:inline
       define:vars={{
@@ -107,9 +107,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
   <body class="min-h-screen flex flex-col overflow-x-hidden">
     <Header />
 
-    <main
-      class="flex-grow pt-16 w-full relative bg-fixed bg-cover bg-no-repeat bg-center transition-background duration-500 main-bg"
-    >
+    <main class="flex-grow pt-16 w-full relative bg-cover bg-no-repeat bg-center transition-background duration-500 main-bg">
       <slot />
     </main>
 
