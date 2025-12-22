@@ -18,6 +18,7 @@
     --accent-dark: #A64D79;
     --text-dark: #FDEFEF;
     --text-secondary-dark: #DAD0C2;
+    --neon:#ed08ba;
 
     /* === VARIABLES ACTIVES (par défaut Light) === */
     --bg: var(--bg-light);

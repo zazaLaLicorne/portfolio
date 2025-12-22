@@ -4,82 +4,75 @@ const { cert } = Astro.props;
 ---
 
 <div
-  class="
-    flip-card 
-    w-full max-w-none            /* mobile : pleine largeur */
-    sm:max-w-[26rem]             /* tablette portrait : un peu plus large */
-    md:w-96 md:h-[28rem]         /* DESKTOP : tes dimensions ORIGINALES */
-    relative 
-    h-[24rem] sm:h-[26rem]       /* mobile/tablette : hauteur adaptée */
-    text-center
-  "
+  class="flip-card
+    w-full max-w-none /* mobile : pleine largeur */
+    sm:max-w-[26rem] /* tablette portrait : un peu plus large */
+    md:w-96 md:h-[28rem] /* DESKTOP : tes dimensions ORIGINALES */
+    relative
+    h-[24rem] sm:h-[26rem] /* mobile/tablette : hauteur adaptée */
+    text-center"
   data-aos="flip-left"
   data-aos-easing="ease-out-cubic"
   data-aos-duration="2000"
 >
   <div class="flip-inner">
-
     <!-- FACE AVANT -->
-    <div class="flip-front rounded-xl glass p-4 flex flex-col items-center 
-                justify-start shadow-lg h-full overflow-hidden">
-
+    <div
+      class="flip-front rounded-xl glass p-4 flex flex-col items-center
+                justify-start shadow-lg h-full overflow-hidden"
+    >
       <Image
         src={cert.image}
         alt={cert.title}
-        inferSize={true}
+        width={231}
+        height={210}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         class="w-full h-auto max-h-[60%] object-contain mb-3"
         loading="lazy"
       />
 
-      <h3 class="text-xl font-bold">{cert.title}</h3>
+      <h2 class="text-xl font-bold">{cert.title}</h2>
       <p class="text-sm opacity-80">{cert.subtitle}</p>
       <p class="text-xs mt-1">Émis par : {cert.issuer}</p>
     </div>
 
     <!-- FACE ARRIÈRE -->
     <!-- FACE ARRIÈRE -->
-<div
-  class="flip-back rounded-xl glass p-4 flex flex-col 
+    <div
+      class="flip-back rounded-xl glass p-4 flex flex-col
          justify-center shadow-lg h-full overflow-y-auto"
->
-  <h3 class="text-lg font-semibold mb-2">
-    Compétences & contenu
-  </h3>
+    >
+      <h3 class="text-lg font-semibold mb-2">Compétences & contenu</h3>
 
-  <!-- Résumé (badges Google, ou mixte) -->
-  {cert.summary && (
-    <p class="text-sm mb-4">
-      {cert.summary}
-    </p>
-  )}
+      <!-- Résumé (badges Google, ou mixte) -->
+      {cert.summary && <p class="text-sm mb-4">{cert.summary}</p>}
 
-  <!-- Compétences (RNCP ou mixte) -->
-  {Array.isArray(cert.skills) && cert.skills.length > 0 && (
-    <>
-      <h4 class="text-sm font-semibold mb-1">
-        Compétences acquises
-      </h4>
+      <!-- Compétences (RNCP ou mixte) -->
+      {
+        Array.isArray(cert.skills) && cert.skills.length > 0 && (
+          <>
+            <h4 class="text-sm font-semibold mb-1">Compétences acquises</h4>
 
-      <ol class="text-sm text-left list-decimal space-y-1 mb-3">
-        {cert.skills.map((skill) => (
-          <li>{skill}</li>
-        ))}
-      </ol>
-    </>
-  )}
+            <ol class="text-sm text-left list-decimal space-y-1 mb-3">
+              {cert.skills.map((skill) => (
+                <li>{skill}</li>
+              ))}
+            </ol>
+          </>
+        )
+      }
 
-  <!-- Fallback -->
-  {!cert.summary &&
-    (!Array.isArray(cert.skills) || cert.skills.length === 0) && (
-      <p class="text-sm italic opacity-70">
-        Détails non renseignés
+      <!-- Fallback -->
+      {
+        !cert.summary &&
+          (!Array.isArray(cert.skills) || cert.skills.length === 0) && (
+            <p class="text-sm italic opacity-70">Détails non renseignés</p>
+          )
+      }
+
+      <p class="text-xs mt-auto">
+        Date d’émission : {cert.date}
       </p>
-    )}
-
-  <p class="text-xs mt-auto">
-    Date d’émission : {cert.date}
-  </p>
-</div>
-
+    </div>
   </div>
 </div>

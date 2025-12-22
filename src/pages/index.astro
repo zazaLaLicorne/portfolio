@@ -8,8 +8,8 @@ import TechCards from "../components/TechCards.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import allProjects from "../data/projects.json";
 import certifications from "../data/certifications.json";
-import setup from "../assets/images/setup.jpg";
-import portrait2 from "../assets/images/portrait2.jpg";
+import setup from "../assets/images/setup.webp";
+import portrait2 from "../assets/images/portrait2.webp";
 import CertificationCard from "../components/CertificationCard.astro";
 import Reviews from "@/components/Reviews.astro";
 
@@ -29,15 +29,18 @@ const projects = [...allProjects]
   <div class="w-full">
     <!-- Hero Section -->
     <div
-      class="max-h-screen h-screen flex items-center justify-center bg-[url(/src/assets/images/hisu-lee-V4Pn7QeYdPQ-unsplash.jpg)] dark:bg-[url(/src/assets/images/fht1.jpg)] bg-cover bg-center px-4"
-    >
+      class="max-h-screen h-screen flex items-center justify-center bg-[url(/src/assets/images/jei-lee-yRXuXvy4sQ4-unsplash.jpg)] dark:bg-[url(/src/assets/images/bg-black1.webp)] bg-cover bg-center px-4"
+      style="margin-top: -4rem; height: calc(100vh + 4rem);"
+>
+      >
       <div class="text-center grid items-center gap-4 max-w-4xl mx-auto">
         <Image
           src={portrait}
           alt="Portrait d'Isabelle"
           class="rounded-full justify-self-center img-hero bordure-magique"
-          width={300}
-          height={300}
+          width={200}
+          height={200}
+          sizes="(max-width: 768px) 100vw, 50vw"
           loading="eager"
           data-aos="fade-down"
           data-aos-duration="1200"
@@ -51,10 +54,16 @@ const projects = [...allProjects]
         >
           Isabelle LAMARRE
         </h1>
+        <div>
+        <h2 data-aos="zoom-in-down"
+          data-aos-duration="1200"
+          data-aos-offset="200"><em class="text-[var(--neon)]">La Licorne Cosmique</em></h2>
+        </div>
         <p
           class="text-3xl max-w-2xl mx-auto"
-          data-aos="zoom-in-down"
+          data-aos="zoom-out-up"
           data-aos-duration="1200"
+          data-aos-offset="200"
         >
           Développeuse Web passionnée par les technologies modernes
         </p>
@@ -63,9 +72,7 @@ const projects = [...allProjects]
 
     <!-- Sections Container -->
     <div
-      class="space-y-32 py-20 bg-[url(/src/assets/images/pink-324175_1280.jpg)]  dark:bg-[url(/src/assets/images/licorne.png)] bg-cover bg-center relative
-      min-h-screen
-      bg-fixed"
+      class="space-y-32 py-20 min-h-screen"
     >
       <!-- About Section -->
       <section id="about" class="px-4">
@@ -78,12 +85,13 @@ const projects = [...allProjects]
                 src={portrait2}
                 alt="Portrait d'Isabelle à son set-up de travail"
                 class="bordure-magique rounded-3xl h-auto mx-auto"
-                width={500}
+                 width={500}
+                height={300}
                 loading="lazy"
                 data-aos="zoom-in-down"
               />
 
-              <div class="space-y-6 text-center">
+              <div class="space-y-6 text-center glass">
                 <p
                   data-aos="fade-right"
                   data-aos-duration="1200"

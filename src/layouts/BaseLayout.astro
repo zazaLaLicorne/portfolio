@@ -4,7 +4,11 @@ import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
 import "../styles/global.css";
 import "../styles/effects.css";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
+import bgdark from "../assets/images/bg-licorne.webp";
+import bglight from "../assets/images/sakura-pink.webp";
+import bgProjectsLight from "../assets/images/zoltan-tasi-PN8Un1ywbE8-unsplash.jpg";
+import bgProjectsDark from "../assets/images/fumee-pink.webp";
 const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
 
@@ -14,6 +18,8 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
     <title>Isabelle LAMARRE Portfolio</title>
     <meta
       name="description"
@@ -22,16 +28,59 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
     <meta name="ga-id" content={GA_ID} />
 
     <!-- Script pour éviter le flash de contenu -->
-    <script is:inline>
+    // filepath: c:\Users\isabe\Desktop\developpement\IL\portfolio\src\layouts\BaseLayout.astro
+    <script
+      is:inline
+      define:vars={{
+        bgdarkUrl: bgdark.src,
+        bglightUrl: bglight.src,
+        bgProjectsDarkUrl: bgProjectsDark.src,
+        bgProjectsLightUrl: bgProjectsLight.src,
+      }}
+    >
       // Appliquer le thème immédiatement avant le rendu
       (function () {
-        const theme = localStorage.getItem("theme") || "light";
+        const theme = localStorage.getItem("theme") || "dark";
         if (theme === "dark") {
           document.documentElement.classList.add("dark");
         }
+        // Détecter si on est sur une page projets
+        const isProjects = window.location.pathname.includes("/projects");
+        const bgUrl = isProjects
+          ? theme === "dark"
+            ? bgProjectsDarkUrl
+            : bgProjectsLightUrl
+          : theme === "dark"
+            ? bgdarkUrl
+            : bglightUrl;
+        document.addEventListener("DOMContentLoaded", () => {
+          const mainBg = document.querySelector(".main-bg");
+          if (mainBg) {
+            mainBg.style.backgroundImage = `url(${bgUrl})`;
+          }
+        });
+        // Écouter les changements de thème
+        document.addEventListener("themeChange", (e) => {
+          const theme = e.detail.theme;
+          const isProjects = window.location.pathname.includes("/projects");
+          const bgUrl = isProjects
+            ? theme === "dark"
+              ? bgProjectsDarkUrl
+              : bgProjectsLightUrl
+            : theme === "dark"
+              ? bgdarkUrl
+              : bglightUrl;
+          const mainBg = document.querySelector(".main-bg");
+          if (mainBg) {
+            mainBg.style.backgroundImage = `url(${bgUrl})`;
+          }
+        });
       })();
     </script>
-    <style is:inline>
+    <style
+      is:inline
+      define:vars={{ bgdarkUrl: bgdark.src, bglightUrl: bglight.src }}
+    >
       /* Fallback immédiat pour éviter le “flash” décentré avant le chargement des CSS */
       .page-shell {
         max-width: 1250px;
@@ -39,63 +88,72 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
         padding: 0 1.25rem;
         width: 100%;
       }
+      section {
+        scroll-margin-top: 4rem; /* 64px pour h-16 */
+      }
+
       @media (min-width: 640px) {
-        .page-shell { padding: 0 1.5rem; }
+        .page-shell {
+          padding: 0 1.5rem;
+        }
       }
       @media (min-width: 1024px) {
-        .page-shell { padding: 0 2rem; }
+        .page-shell {
+          padding: 0 2rem;
+        }
       }
     </style>
   </head>
- <body class="min-h-screen flex flex-col overflow-x-hidden">
-  <Header />
+  <body class="min-h-screen flex flex-col overflow-x-hidden">
+    <Header />
 
-  <main class="flex-grow pt-16">
-    <slot />
-  </main>
+    <main
+      class="flex-grow pt-16 w-full relative bg-fixed bg-cover bg-no-repeat bg-center transition-background duration-500 main-bg"
+    >
+      <slot />
+    </main>
 
-  <Analytics />
-  <Footer />
-     
+    <Analytics />
+    <Footer />
+
     <script
       is:inline
       define:vars={{ GA_ID }}
       type="module"
       src="/script/banner-cookies.js"></script>
-   <script>
-      import AOS from 'aos';
-      
+    <script>
+      import AOS from "aos";
+
       // Initialisation AOS après le chargement du DOM
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener("DOMContentLoaded", () => {
         AOS.init({
           // Paramètres globaux
-          duration: 800,              // Durée de l'animation (ms)
-          easing: 'ease-in-out',      // Fonction d'easing
-          once: true,                 // Animation une seule fois puis reste visible
-          mirror: false,              // Pas d'animation inverse pour ne pas cacher l'élément
-          offset: 120,                // Décalage (px) avant déclenchement
-          delay: 0,                   // Délai (ms)
-          anchorPlacement: 'top-bottom', // Position de déclenchement
-          
+          duration: 800, // Durée de l'animation (ms)
+          easing: "ease-in-out", // Fonction d'easing
+          once: true, // Animation une seule fois puis reste visible
+          mirror: false, // Pas d'animation inverse pour ne pas cacher l'élément
+          offset: 120, // Décalage (px) avant déclenchement
+          delay: 0, // Délai (ms)
+          anchorPlacement: "top-bottom", // Position de déclenchement
+
           // Classe à ajouter lors de l'initialisation
-          startEvent: 'DOMContentLoaded',
-          
+          startEvent: "DOMContentLoaded",
+
           // Gestion du throttle (performance)
-          throttleDelay: 99,
-          debounceDelay: 50,
-          
+          throttleDelay: 50,
+          debounceDelay: 25,
+
           // Désactiver pour les animations réduites
           disableMutationObserver: false,
-          disable : (
-            /bot|crawler|spider|crawling/i.test(navigator.userAgent)
-            || window.matchMedia('(prefers-reduced-motion: reduce)').matches
-          )
+          disable:
+            /bot|crawler|spider|crawling/i.test(navigator.userAgent) ||
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches,
         });
 
         // Rafraîchir AOS après changement de thème
-        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggle = document.getElementById("theme-toggle");
         if (themeToggle) {
-          themeToggle.addEventListener('click', () => {
+          themeToggle.addEventListener("click", () => {
             setTimeout(() => {
               AOS.refresh();
             }, 300);

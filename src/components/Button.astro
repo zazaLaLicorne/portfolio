@@ -17,14 +17,14 @@ const {
 } = Astro.props;
 
 const base =
-  "px-4 py-2 rounded-lg transition text-grey-900  font-semibold transform hover:-translate-y-0.5 duration-200 dark:hover:text-gray-800";
+  "px-4 py-2 rounded-lg transition text-grey-300 hover:text-white font-semibold transform hover:-translate-y-0.5 duration-200 dark:hover:text-[var(--neon)]";
 
 const variants: Record<string, string> = {
   default:
     "bg-primaryLight dark:bg-primaryDark hover:bg-secondaryLight dark:hover:bg-primaryLight",
 
   retour:
-    "bg-gray-400 dark:bg-gray-600 hover:bg-gray-500 dark:hover:bg-gray-500",
+    "bg-[var(--bg-tertiary-dark)] dark:bg-gray-600  hover:bg-gray-500 dark:hover:bg-gray-500",
 
   validez:
     "bg-green-500 dark:bg-green-600 hover:bg-green-600 dark:hover:bg-green-500",
@@ -35,7 +35,7 @@ const variants: Record<string, string> = {
   gradient: "animated-gradient hover:opacity-90",
 
   projet:
-    "flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700",
+    "flex items-center justify-center gap-2 border border-[var(--bg-tertiary-dark)] dark:border-[var(--neon)] hover:bg-[var(--bg-tertiary-dark)] dark:hover:bg-gray-700",
 
 };
 

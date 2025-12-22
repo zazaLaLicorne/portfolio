@@ -1,32 +1,32 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
-import Image from "astro/components/Image.astro";
 const isHome = Astro.url.pathname === "/";
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shadow-md transition-colors duration-300">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-light)] dark:bg-zinc-950 backdrop-blur-md shadow-md transition-colors duration-300">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       
       <!-- Logo -->
+      
       <div class="flex-shrink-0">
-        <a href="/" aria-label="home" class="flex items-center hover:text-[var(--accent-dark)] transition-colors">
+        <a href="/" aria-label="home" class="flex items-center hover:text-[var(--neon)] transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="currentColor">
             <path d="M226.67-186.67h140v-246.66h226.66v246.66h140v-380L480-756.67l-253.33 190v380ZM160-120v-480l320-240 320 240v480H526.67v-246.67h-93.34V-120H160Zm320-352Z"/>
           </svg>
         </a>
       </div>
-
+      
       <!-- Navigation Desktop -->
     {isHome && (
       <ul class="hidden md:flex items-center space-x-8">
-        <li><a href="#about" class="hover:text-[var(--accent-dark)] font-medium transition-colors">Qui suis-je?</a></li>
-        <li><a href="#certifications" class="hover:text-[var(--accent-dark)] font-medium transition-colors">Certifications</a></li>
-        <li><a href="#technos" class="hover:text-[var(--accent-dark)] font-medium transition-colors">Technos</a></li>
-        <li><a href="#realisations" class="hover:text-[var(--accent-dark)] font-medium transition-colors">Réalisations</a></li>
-        <li><a href="#reviews" class="hover:text-[var(--accent-dark)] font-medium transition-colors">Avis</a></li>
-        <li><a href="#contact" class="hover:text-[var(--accent-dark)] font-medium transition-colors">Contacts</a></li>
-        <li><a href="/CV.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--accent-dark)] font-medium transition-colors">Voir le CV</a></li>
+        <li><a href="#about" class="hover:text-[var(--neon)] font-medium transition-colors">Qui suis-je?</a></li>
+        <li><a href="#certifications" class="hover:text-[var(--neon)] font-medium transition-colors">Certifications</a></li>
+        <li><a href="#technos" class="hover:text-[var(--neon)] font-medium transition-colors">Technos</a></li>
+        <li><a href="#realisations" class="hover:text-[var(--neon)] font-medium transition-colors">Réalisations</a></li>
+        <li><a href="#reviews" class="hover:text-[var(--neon)] font-medium transition-colors">Avis</a></li>
+        <li><a href="#contact" class="hover:text-[var(--neon)] font-medium transition-colors">Contacts</a></li>
+        <li><a href="/CV.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--neon)] font-medium transition-colors">Voir le CV</a></li>
       </ul>
      )}
       <!-- Theme Toggle -->
@@ -50,12 +50,12 @@ const isHome = Astro.url.pathname === "/";
     <!-- Menu Mobile -->
     <div id="mobile-menu" class="hidden text-center md:hidden pb-4 mt-80 rounded-lg bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shadow-lg transition-all duration-300">
       <ul class="space-y-2 px-4">
-        <li><a href="#about" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Qui suis-je?</a></li>
-        <li><a href="#certifications" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Certifications</a></li>
-        <li><a href="#technos" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Technos</a></li>
-        <li><a href="#realisations" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Réalisations</a></li>
-        <li><a href="#reviews" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Avis</a></li>
-        <li><a href="#contact" class="block px-4 py-2 hover:text-[var(--color-accent)] rounded-lg transition-colors">Contacts</a></li>
+        <li><a href="#about" class="block px-4 py-2 hover:text-[var(--neon)] rounded-lg transition-colors">Qui suis-je?</a></li>
+        <li><a href="#certifications" class="block px-4 py-2 hover:text-[var(--neon)] rounded-lg transition-colors">Certifications</a></li>
+        <li><a href="#technos" class="block px-4 py-2 hover:text-[var(--neon)] rounded-lg transition-colors">Technos</a></li>
+        <li><a href="#realisations" class="block px-4 py-2 hover:text-[var(--neon)] rounded-lg transition-colors">Réalisations</a></li>
+        <li><a href="#reviews" class="block px-4 py-2 hover:text-[var(--neon)] rounded-lg transition-colors">Avis</a></li>
+        <li><a href="#contact" class="block px-4 py-2 hover:text-[var(--neon)] rounded-lg transition-colors">Contacts</a></li>
         <li><a href="/CV.pdf" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 hover:text-[var(--accent-dark)] rounded-lg transition-colors">Voir le CV</a></li>
       </ul>
     </div>

@@ -2,7 +2,7 @@
 import ProjectCard from "@/components/ProjectCard.astro";
 import projects from "@/data/projects.json";
 import "../../styles/global.css";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectLayout from "../../layouts/ProjectsLayout.astro";
 import Button from "@/components/Button.astro";
 
 const PRIORITY_ORDER = {
@@ -17,7 +17,7 @@ const sortedProjects = [...projects].sort(
 );
 ---
 
-<BaseLayout>
+<ProjectLayout>
   <section class="px-4 flex justify-center text-center flex-col py-20">
     <div class="max-w-6xl mx-auto">
       <h1 class="text-4xl font-bold text-center mb-12">Tous mes projets</h1>
@@ -34,4 +34,4 @@ const sortedProjects = [...projects].sort(
       <Button href="/" variant="gradient">← Retour à l’accueil</Button>
     </div>
   </section>
-</BaseLayout>
+</ProjectLayout>
