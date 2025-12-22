@@ -89,7 +89,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
         width: 100%;
       }
       section {
-        scroll-margin-top: 4rem; /* 64px pour h-16 */
+        scroll-margin-top: 3rem; /* 64px pour h-16 */
       }
 
       @media (min-width: 640px) {
@@ -107,7 +107,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
   <body class="min-h-screen flex flex-col overflow-x-hidden">
     <Header />
 
-    <main class="flex-grow pt-16 w-full relative bg-cover bg-no-repeat bg-center transition-background duration-500 main-bg">
+    <main class="flex-grow pt-16 w-full bg-fixed relative bg-cover bg-no-repeat bg-center transition-background duration-500 main-bg">
       <slot />
     </main>
 
