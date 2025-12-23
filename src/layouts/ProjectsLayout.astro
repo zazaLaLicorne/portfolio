@@ -1,15 +1,15 @@
 ---
-import Layout from "./BaseLayout.astro";
+import BaseLayout from "./BaseLayout.astro";
 import "../styles/global.css";
 ---
 
-<Layout>
-  <div class="w-full relative bg-fixed bg-cover bg-no-repeat bg-center main-bg">
+<BaseLayout layout="layout-projects">
+  <div class="w-full relative ">
   <main class="content-wrapper mx-auto py-12 px-6 sm:px-8 lg:px-10 text-base md:text-lg leading-relaxed">
     <slot />
   </main>
 </div>
-</Layout>
+</BaseLayout>
 
 <style>
   /* espace central adapté au contenu */

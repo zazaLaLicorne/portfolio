@@ -5,8 +5,8 @@ import Analytics from "../components/Analytics.astro";
 import "../styles/global.css";
 import "../styles/effects.css";
 import "aos/dist/aos.css";
-import bgdark from "../assets/images/bg-licorne.webp";
-import bglight from "../assets/images/sakura-pink.webp";
+// import bgdark from "../assets/images/bg-licorne.webp";
+// import bglight from "../assets/images/sakura-pink.webp";
 
 const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
@@ -48,10 +48,9 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
         document.documentElement.classList.toggle("dark", theme === "dark");
       })();
     </script>
-
     <style
       is:inline
-      define:vars={{ bgdarkUrl: bgdark.src, bglightUrl: bglight.src }}
+    
     >
       /* Fallback immédiat pour éviter le “flash” décentré avant le chargement des CSS */
       .page-shell {
@@ -76,7 +75,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
       }
     </style>
   </head>
-  <body class="min-h-[100svh]flex flex-col overflow-x-hidden">
+  <body class={`min-h-[100svh] flex flex-col overflow-x-hidden ${Astro.props.layout ?? ""}`}>
        <div
     id="global-bg"
     class="fixed inset-0 -z-20 bg-cover bg-center bg-no-repeat transition-opacity duration-500"

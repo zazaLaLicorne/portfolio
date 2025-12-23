@@ -38,22 +38,19 @@ h1, h2, h3 {
   color: var(--color-primary);
 }
 html.dark #global-bg {
-  background-image: url("../assets/images/bg-licorne.webp");
+  background-image: url("/background/bg-licorne.webp");
 }
 
 html:not(.dark) #global-bg {
-  background-image: url("../assets/images/sakura-pink.webp");
+  background-image: url("/background/sakura-pink.webp");
+}
+html:not(.dark) .layout-projects #global-bg {
+  background-image: url("/background/hortensia-purple.webp");
 }
 
-html.dark #hero-bg {
-  background-image: url("../assets/images/bg-black1.webp");
+html.dark .layout-projects #global-bg {
+  background-image: url("/background/fumee-pink.webp");
 }
-
-html:not(.dark) #hero-bg {
-  background-image: url("../assets/images/jei-lee-yRXuXvy4sQ4-unsplash.jpg");
-}
-
- /* bg-white dark:bg-gray-900; */
 body {
   @apply  text-base dark:bg-gray-900;
   color: var(--color-text);

@@ -27,12 +27,28 @@ const projects = [...allProjects]
 
 <BaseLayout>
   <div class="relative min-h-[100svh]">
-    <div class="relative min-h-[100svh] overflow-hidden">
-      <div
-        id="hero-bg"
-        class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat transition-opacity duration-500">
-      </div>
+<div class="relative w-full min-h-[100svh] overflow-hidden">
 
+  <!-- IMAGE HERO LIGHT (LCP) -->
+  <img
+    src="/background/sakura-white.webp"
+    alt=""
+    fetchpriority="high"
+    decoding="async"
+    class="absolute inset-0 w-full h-full object-cover -z-10 dark:hidden"
+  />
+
+  <!-- IMAGE HERO DARK (LCP) -->
+  <img
+    src="/background/bg-black1.webp"
+    alt=""
+    fetchpriority="high"
+    decoding="async"
+    class="absolute inset-0 w-full h-full object-cover -z-10 hidden dark:block"
+  />
+
+  <!-- OVERLAY OPTIONNEL (gradient / voile) -->
+  <div class="absolute inset-0 bg-black/30 dark:bg-black/50"></div>
     <!-- HERO CONTENT -->
     <div class="relative flex items-center justify-center min-h-[100svh] px-4">
       <div class="text-center grid items-center gap-4 max-w-4xl mx-auto">
