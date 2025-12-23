@@ -26,12 +26,15 @@ const projects = [...allProjects]
 ---
 
 <BaseLayout>
-  <div class="w-full">
-    <!-- Hero Section -->
-    <div
-      class="max-h-screen h-screen flex items-center justify-center bg-[url(/src/assets/images/jei-lee-yRXuXvy4sQ4-unsplash.jpg)] dark:bg-[url(/src/assets/images/bg-black1.webp)] bg-cover bg-center px-4"
-      style="margin-top: -2rem; height: calc(100vh + 4rem);">
-      
+  <div class="relative min-h-[100svh]">
+    <div class="relative min-h-[100svh] overflow-hidden">
+      <div
+        id="hero-bg"
+        class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat transition-opacity duration-500">
+      </div>
+
+    <!-- HERO CONTENT -->
+    <div class="relative flex items-center justify-center min-h-[100svh] px-4">
       <div class="text-center grid items-center gap-4 max-w-4xl mx-auto">
         <Image
           src={portrait}
@@ -49,14 +52,17 @@ const projects = [...allProjects]
           class="text-gradient text-6xl md:text-6xl font-extrabold mb-6"
           data-aos="zoom-in-up"
           data-aos-duration="1200"
-          data-aos-offset="200">
+          data-aos-offset="200"
+        >
           Isabelle LAMARRE
         </h1>
         <div>
-        <h2 class="italic text-[var(--neon)]"
-          data-aos="zoom-in-down"
-          data-aos-duration="1200"
-          data-aos-offset="200">
+          <h2
+            class="italic text-[var(--neon)]"
+            data-aos="zoom-in-down"
+            data-aos-duration="1200"
+            data-aos-offset="200"
+          >
             La Licorne Cosmique
           </h2>
         </div>
@@ -70,11 +76,10 @@ const projects = [...allProjects]
         </p>
       </div>
     </div>
+  </div>
 
     <!-- Sections Container -->
-    <div
-      class="space-y-32 py-20 min-h-screen"
-    >
+    <div class="space-y-32 py-20 min-h-[100svh]">
       <!-- About Section -->
       <section id="about" class="px-4">
         <div class="max-w-6xl mx-auto">
@@ -86,7 +91,7 @@ const projects = [...allProjects]
                 src={portrait2}
                 alt="Portrait d'Isabelle à son set-up de travail"
                 class="bordure-magique rounded-3xl h-auto mx-auto"
-                 width={500}
+                width={400}
                 height={300}
                 loading="lazy"
                 data-aos="zoom-in-down"
@@ -154,141 +159,148 @@ const projects = [...allProjects]
           </div>
         </div>
       </section>
-   
-    <!-- Certifications Section -->
-    <section id="certifications" class="px-4 py-20">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-12">Certifications</h2>
 
-        <!-- GRID -->
-        <div
-          class="grid
+      <!-- Certifications Section -->
+      <section id="certifications" class="px-4 py-20">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold text-center mb-12">Certifications</h2>
+
+          <!-- GRID -->
+          <div
+            class="grid
         grid-cols-1
         sm:grid-cols-2
         gap-10
         justify-items-center"
-        >
-          {
-            certifications
-              .slice(0, 4)
-              .map((cert) => <CertificationCard cert={cert} />)
-          }
-        </div>
-
-        <!-- Voir plus -->
-        {
-          certifications.length > 4 && (
-            <div class="flex justify-center mt-12">
-             <Button variant="gradient" href="/certifications">Voir toutes les certifications</Button>
-            </div>
-          )
-        }
-      </div>
-    </section>
-
-    <!-- Technologies Section -->
-    <section id="technos" class="px-4">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center section-inner">
-          <h2 class="text-4xl font-bold mb-12">Technologies & Outils</h2>
-          <TechCards size="lg" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="realisations" class="px-4">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center section-inner">
-          <h2 class="text-4xl font-bold mb-12">Mes Réalisations</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+          >
             {
-              projects.map((projet, index) => (
-                <ProjectCard projet={projet} index={index} />
-              ))
+              certifications
+                .slice(0, 4)
+                .map((cert) => <CertificationCard cert={cert} />)
             }
           </div>
+
+          <!-- Voir plus -->
           {
-            allProjects.length > 4 && (
-              <Button variant="gradient" href="/projects">Voir tous les projets</Button>
+            certifications.length > 4 && (
+              <div class="flex justify-center mt-12">
+                <Button variant="gradient" href="/certifications">
+                  Voir toutes les certifications
+                </Button>
+              </div>
             )
           }
         </div>
-      </div>
-    </section>
+      </section>
 
-    <Reviews />
-
-    <!-- Contact Section -->
-    <section id="contact" class="px-4">
-      <div class="max-w-6xl mx-auto">
-        <div class="section-inner text-center">
-          <h2 class="text-4xl font-bold mb-12">Contacts</h2>
-
-          <div
-            class="flex flex-col xl:flex-row justify-center items-center gap-10 xl:gap-20"
-          >
-            <div class="text-center flex flex-col items-center  glass space-y-8">
-              <div class="flex flex-col gap-4">
-                <a
-                  class="text-md md:text-2xl p-3 mx-4"
-                  href="mailto:lalicornecosmique62@gmail.com?subject=Contact depuis le site&body=Bonjour%20Isabelle,"
-                  aria-label="lalicornecosmique62@gmail.com"
-                  data-aos="zoom-in-up"
-                  data-aos-duration="1200"
-                >
-                  📧: lalicornecosmique62@gmail.com
-                </a>
-                <a
-                  class="text-md md:text-2xl p-3"
-                  href="tel:+33682157497"
-                  aria-label="06 82 15 74 97"
-                  data-aos="zoom-in-up"
-                  data-aos-duration="1200"
-                >
-                  📱: 06 82 15 74 97
-                </a>
-              </div>
-              <hr class="hr-gradient w-3/4" />
-              <div data-aos="zoom-in-up" data-aos-duration="1200">
-                <SocialLinks size="lg" />
-              </div>
-              <hr class="hr-gradient w-3/4" />
-              <div
-                class="my-4 gap-4"
-                data-aos="zoom-in-up"
-                data-aos-duration="1200"
-              >
-                <p class="text-center my-4 mx-4">
-                  Vous pouvez prendre rendez-vous directement ici pour me parler
-                  de votre projet, soit en visio via GoogleMeet ou je me déplace
-                  dans un rayon de 50 km autours d'Arras.
-                </p>
-                <Button
-                  variant="gradient"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://calendly.com/isabellelamarre62/premier"
-                >
-                  Prendre rendez-vous
-                </Button>
-              </div>
-            </div>
-
-            <Image
-              src={setup}
-              alt="setup"
-              width={500}
-              height={300}
-              class="max-w-[90%] sm:max-w-[70%] md:max-w-[400px] w-full bordure-magique rounded-3xl h-auto"
-              loading="lazy"
-              data-aos="zoom-in-up"
-              data-aos-duration="1200"
-              data-aos-offset="200"
-            />
+      <!-- Technologies Section -->
+      <section id="technos" class="px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center section-inner">
+            <h2 class="text-4xl font-bold mb-12">Technologies & Outils</h2>
+            <TechCards size="lg" />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="realisations" class="px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center section-inner">
+            <h2 class="text-4xl font-bold mb-12">Mes Réalisations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+              {
+                projects.map((projet, index) => (
+                  <ProjectCard projet={projet} index={index} />
+                ))
+              }
+            </div>
+            {
+              allProjects.length > 4 && (
+                <Button variant="gradient" href="/projects">
+                  Voir tous les projets
+                </Button>
+              )
+            }
+          </div>
+        </div>
+      </section>
+
+      <Reviews />
+
+      <!-- Contact Section -->
+      <section id="contact" class="px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="section-inner text-center">
+            <h2 class="text-4xl font-bold mb-12">Contacts</h2>
+
+            <div
+              class="flex flex-col xl:flex-row justify-center items-center gap-10 xl:gap-20"
+            >
+              <div
+                class="text-center flex flex-col items-center glass space-y-8"
+              >
+                <div class="flex flex-col gap-4">
+                  <a
+                    class="text-md md:text-2xl p-3 mx-4"
+                    href="mailto:lalicornecosmique62@gmail.com?subject=Contact depuis le site&body=Bonjour%20Isabelle,"
+                    aria-label="lalicornecosmique62@gmail.com"
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1200"
+                  >
+                    📧: lalicornecosmique62@gmail.com
+                  </a>
+                  <a
+                    class="text-md md:text-2xl p-3"
+                    href="tel:+33682157497"
+                    aria-label="06 82 15 74 97"
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1200"
+                  >
+                    📱: 06 82 15 74 97
+                  </a>
+                </div>
+                <hr class="hr-gradient w-3/4" />
+                <div data-aos="zoom-in-up" data-aos-duration="1200">
+                  <SocialLinks size="lg" />
+                </div>
+                <hr class="hr-gradient w-3/4" />
+                <div
+                  class="my-4 gap-4"
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1200"
+                >
+                  <p class="text-center my-4 mx-4">
+                    Vous pouvez prendre rendez-vous directement ici pour me
+                    parler de votre projet, soit en visio via GoogleMeet ou je
+                    me déplace dans un rayon de 50 km autours d'Arras.
+                  </p>
+                  <Button
+                    variant="gradient"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://calendly.com/isabellelamarre62/premier"
+                  >
+                    Prendre rendez-vous
+                  </Button>
+                </div>
+              </div>
+
+              <Image
+                src={setup}
+                alt="setup"
+                width={500}
+                height={300}
+                class="max-w-[90%] sm:max-w-[70%] md:max-w-[400px] w-full bordure-magique rounded-3xl h-auto"
+                loading="lazy"
+                data-aos="zoom-in-up"
+                data-aos-duration="1200"
+                data-aos-offset="200"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </BaseLayout>

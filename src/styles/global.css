@@ -37,6 +37,21 @@ html.dark {
 h1, h2, h3 {
   color: var(--color-primary);
 }
+html.dark #global-bg {
+  background-image: url("../assets/images/bg-licorne.webp");
+}
+
+html:not(.dark) #global-bg {
+  background-image: url("../assets/images/sakura-pink.webp");
+}
+
+html.dark #hero-bg {
+  background-image: url("../assets/images/bg-black1.webp");
+}
+
+html:not(.dark) #hero-bg {
+  background-image: url("../assets/images/jei-lee-yRXuXvy4sQ4-unsplash.jpg");
+}
 
  /* bg-white dark:bg-gray-900; */
 body {

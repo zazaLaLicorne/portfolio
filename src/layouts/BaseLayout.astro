@@ -7,8 +7,7 @@ import "../styles/effects.css";
 import "aos/dist/aos.css";
 import bgdark from "../assets/images/bg-licorne.webp";
 import bglight from "../assets/images/sakura-pink.webp";
-import bgProjectsLight from "../assets/images/zoltan-tasi-PN8Un1ywbE8-unsplash.jpg";
-import bgProjectsDark from "../assets/images/fumee-pink.webp";
+
 const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
 
@@ -18,64 +17,38 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="preload"href="/fonts/roboto-regular.woff2"as="font" type="font/woff2" crossorigin/>
-    <link rel="preload"href="/fonts/roboto-italic.woff2"as="font" type="font/woff2" crossorigin/>
+    <link
+      rel="preload"
+      href="/fonts/roboto-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/roboto-italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
     <title>Isabelle LAMARRE Portfolio</title>
-    <meta name="description" content="Portfolio d'Isabelle LAMARRE - Développeuse Web/JS/React/Next/Astro" />
+    <meta
+      name="description"
+      content="Portfolio d'Isabelle LAMARRE - Développeuse Web/JS/React/Next/Astro"
+    />
     <meta name="ga-id" content={GA_ID} />
 
     <!-- Script pour éviter le flash de contenu -->
-   
-    <script
-      is:inline
-      define:vars={{
-        bgdarkUrl: bgdark.src,
-        bglightUrl: bglight.src,
-        bgProjectsDarkUrl: bgProjectsDark.src,
-        bgProjectsLightUrl: bgProjectsLight.src,
-      }}
-    >
-      // Appliquer le thème immédiatement avant le rendu
+
+    <script is:inline>
       (function () {
         const theme = localStorage.getItem("theme") || "dark";
-        if (theme === "dark") {
-          document.documentElement.classList.add("dark");
-        }
-        // Détecter si on est sur une page projets
-        const isProjects = window.location.pathname.includes("/projects");
-        const bgUrl = isProjects
-          ? theme === "dark"
-            ? bgProjectsDarkUrl
-            : bgProjectsLightUrl
-          : theme === "dark"
-            ? bgdarkUrl
-            : bglightUrl;
-        document.addEventListener("DOMContentLoaded", () => {
-          const mainBg = document.querySelector(".main-bg");
-          if (mainBg) {
-            mainBg.style.backgroundImage = `url(${bgUrl})`;
-          }
-        });
-        // Écouter les changements de thème
-        document.addEventListener("themeChange", (e) => {
-          const theme = e.detail.theme;
-          const isProjects = window.location.pathname.includes("/projects");
-          const bgUrl = isProjects
-            ? theme === "dark"
-              ? bgProjectsDarkUrl
-              : bgProjectsLightUrl
-            : theme === "dark"
-              ? bgdarkUrl
-              : bglightUrl;
-          const mainBg = document.querySelector(".main-bg");
-          if (mainBg) {
-            mainBg.style.backgroundImage = `url(${bgUrl})`;
-          }
-        });
+        document.documentElement.classList.toggle("dark", theme === "dark");
       })();
     </script>
+
     <style
       is:inline
       define:vars={{ bgdarkUrl: bgdark.src, bglightUrl: bglight.src }}
@@ -103,13 +76,16 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
       }
     </style>
   </head>
-  <body class="min-h-screen flex flex-col overflow-x-hidden">
-    <Header />
+  <body class="min-h-[100svh]flex flex-col overflow-x-hidden">
+       <div
+    id="global-bg"
+    class="fixed inset-0 -z-20 bg-cover bg-center bg-no-repeat transition-opacity duration-500"
+  ></div>
 
-    <main class="flex-grow pt-16 w-full bg-fixed relative bg-cover bg-no-repeat bg-center transition-background duration-500 main-bg">
+    <Header />
+    <main class="relative flex-grow pt-16 w-full">
       <slot />
     </main>
-
     <Analytics />
     <Footer />
 
