@@ -93,24 +93,10 @@ p {
 /* ------------------------------
    🌟 Sections
 -------------------------------- */
-
 section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  min-height: 100vh;
-
-  max-width: 900px;   /* largeur max lisible */
-  margin: 0 auto;     /* et on centre ! */
+  scroll-margin-top: 4rem;
 }
 
-section > * {
-  width: 100%;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .section-inner {
   width: 100%;
@@ -136,13 +122,13 @@ section > * {
     padding-inline: 1.25rem;
   }
 }
-
+/* 
 @media (min-width: 1024px) {
   section {
     max-width: 1250px;
     width: 100%;
   }
-}
+} */
 
 /* ------------------------------
    🧩 Utilitaires globaux
