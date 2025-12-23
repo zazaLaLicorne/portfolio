@@ -37,6 +37,22 @@ html.dark {
 h1, h2, h3 {
   color: var(--color-primary);
 }
+
+html.dark #global-bg {
+  background-image: url("/background/bg-licorne-mobile.webp");
+}
+html:not(.dark) #global-bg {
+  background-image: url("/background/sakura-pink-mobile.webp");
+}
+html:not(.dark) .layout-projects #global-bg {
+  background-image: url("/background/hortensia-purple-mobile.webp");
+}
+
+html.dark .layout-projects #global-bg {
+  background-image: url("/background/fumee-pink-mobile.webp");
+}
+
+@media (min-width: 768px) {
 html.dark #global-bg {
   background-image: url("/background/bg-licorne.webp");
 }
@@ -50,6 +66,7 @@ html:not(.dark) .layout-projects #global-bg {
 
 html.dark .layout-projects #global-bg {
   background-image: url("/background/fumee-pink.webp");
+}
 }
 body {
   @apply  text-base dark:bg-gray-900;
@@ -122,13 +139,7 @@ section {
     padding-inline: 1.25rem;
   }
 }
-/* 
-@media (min-width: 1024px) {
-  section {
-    max-width: 1250px;
-    width: 100%;
-  }
-} */
+
 
 /* ------------------------------
    🧩 Utilitaires globaux

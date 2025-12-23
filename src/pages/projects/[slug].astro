@@ -126,7 +126,7 @@ function toEmbed(url) {
 
     <!-- Tech Stack -->
     <div data-aos="fade-up" class="mb-16">
-      <h4 class="font-semibold text-center mb-8">Technologies utilisées</h4>
+      <h3 class="font-semibold text-center mb-8">Technologies utilisées</h3>
       <div class="flex flex-wrap justify-center gap-6">
         {Array.isArray(projet.techs) &&
           projet.techs.map((tech) => {
@@ -145,7 +145,7 @@ function toEmbed(url) {
         <!-- Liens externes  -->
    {(projet.project_url || projet.github_url) && (
   <div data-aos="fade-up" class="flex flex-col text-center gap-6 mb-20">
-    <h4 class="font-semibold mb-8">Liens du projet</h4>
+    <h3 class="font-semibold mb-8">Liens du projet</h3>
 
     {projet.project_url && (
       <Button variant="projet" href={projet.project_url} target="_blank">
@@ -166,7 +166,7 @@ function toEmbed(url) {
 {hasAnyScore && (
 
   <div class="mt-20" data-aos="fade-up">
-    <h4 class="font-semibold text-center mb-8">Scores du projet</h4>
+    <h3 class="font-semibold text-center mb-8">Scores du projet</h3>
 
     <!-- GRID DES CARTES -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -176,7 +176,7 @@ function toEmbed(url) {
         <div class="p-6 rounded-xl shadow-lg glass border border-gray-200 dark:border-gray-700
      flex flex-col justify-center items-center text-center">
 
-          <h3 class="text-xl font-semibold mb-3">Security Headers</h3>
+          <h3 class="font-semibold text-center mb-8">Security Headers</h3>
           <span class={`px-4 py-2 rounded-full font-bold text-sm ${badgeColor(Number(projet.scores.security_headers) * 10)}`}>
             {projet.scores.security_headers}
           </span>
@@ -189,7 +189,7 @@ function toEmbed(url) {
       <!-- 💻 LIGHTHOUSE DESKTOP -->
       {hasLighthouseMobile && (
         <div class="p-6 rounded-xl shadow-lg glass border border-gray-200 dark:border-gray-700">
-          <h3 class="text-xl font-semibold justify-center mb-4 flex items-center gap-2">
+          <h3 class="font-semibold text-center mb-8">
             Lighthouse 💻 Desktop
           </h3>
 
@@ -236,7 +236,7 @@ function toEmbed(url) {
       <!-- 📱 LIGHTHOUSE MOBILE -->
       {projet.scores?.lighthouse?.mobile && (
         <div class="p-6 rounded-xl shadow-lg glass border border-gray-200 dark:border-gray-700">
-          <h3 class="text-xl font-semibold justify-center mb-4 flex items-center gap-2">
+          <h3 class="font-semibold text-center mb-8">
            Lighthouse 📱 Mobile
           </h3>
 
@@ -287,7 +287,7 @@ function toEmbed(url) {
     <!-- Vidéos du projet -->
 {projet.videos && (
   <div class="mt-20" data-aos="fade-up">
-    <h4 class="text-2xl font-semibold text-center mb-6">Vidéos de présentation</h4>
+    <h3 class="font-semibold text-center mb-8">Vidéos de présentation</h3>
 
     <div
       class={hasOneVideo
@@ -370,7 +370,7 @@ function toEmbed(url) {
     <!-- Galerie / screenshots si existants -->
    {gallery.length > 0 && (
       <div data-aos="fade-up">
-        <h4 class="text-2xl font-semibold mb-4">Galerie</h4>
+        <h3 class="font-semibold text-center mb-8">Galerie</h3>
         <div class="grid grid-cols-1 gap-6">
           {gallery.map((img) => (
             <div class="rounded-xl overflow-hidden shadow-lg">
