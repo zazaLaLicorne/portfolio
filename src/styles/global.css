@@ -27,9 +27,12 @@
 /* ------------------------------
    🧱 Styles de base
 -------------------------------- */
-html {
+html, body {
   scroll-behavior:smooth;
   font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 html.dark {
