@@ -38,7 +38,8 @@ const projects = [...allProjects]
         alt=""
         loading="eager"
         fetchpriority="high"
-        decoding="async"
+        widths={[400, 800, 1200, bgHeroDark.width]}
+        sizes="(max-width: 768px) 100vw, 100vw"
         class="absolute inset-0 w-full h-full object-cover -z-10 hidden dark:block"
         sizes="(max-width: 768px) 100vw, 768px"
       />
@@ -48,7 +49,8 @@ const projects = [...allProjects]
         alt=""
         loading="eager"
         fetchpriority="high"
-        decoding="async"
+        widths={[400, 800, 1200, bgHeroDark.width]}
+        sizes="(max-width: 768px) 100vw, 100vw"
         class="absolute inset-0 w-full h-full object-cover -z-10 dark:hidden"
         sizes="(max-width: 768px) 100vw, 768px"
       />

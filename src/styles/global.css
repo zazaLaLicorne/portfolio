@@ -38,12 +38,12 @@ h1, h2, h3 {
   color: var(--color-primary);
 }
 
-html.dark #global-bg {
+/* html.dark #global-bg {
   background-image: url("/background/bg-licorne-mobile.webp");
 }
 html:not(.dark) #global-bg {
   background-image: url("/background/sakura-pink-mobile.webp");
-}
+} */
 html:not(.dark) .layout-projects #global-bg {
   background-image: url("/background/hortensia-purple-mobile.webp");
 }
@@ -53,13 +53,13 @@ html.dark .layout-projects #global-bg {
 }
 
 @media (min-width: 768px) {
-html.dark #global-bg {
+/* html.dark #global-bg {
   background-image: url("/background/bg-licorne.webp");
 }
 
 html:not(.dark) #global-bg {
   background-image: url("/background/sakura-pink.webp");
-}
+} */
 html:not(.dark) .layout-projects #global-bg {
   background-image: url("/background/hortensia-purple.webp");
 }
