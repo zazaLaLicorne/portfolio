@@ -37,39 +37,44 @@ const { cert } = Astro.props;
     </div>
 
     <!-- FACE ARRIÈRE -->
-    <div
-      class="flip-back rounded-xl glass p-4 flex flex-col
-         justify-center shadow-lg h-full overflow-y-auto"
-    >
-      <h3 class="text-lg font-semibold mb-2">Compétences & contenu</h3>
+    <!-- FACE ARRIÈRE -->
+    <div class="flip-back rounded-xl glass p-4 flex flex-col shadow-lg h-full">
+      <!-- HEADER FIXE -->
+      <div class="flex-shrink-0 mb-2">
+        <h3 class="text-lg font-semibold">Compétences & contenu</h3>
+      </div>
 
-      <!-- Résumé (badges Google, ou mixte) -->
-      {cert.summary && <p class="text-sm mb-4">{cert.summary}</p>}
+      <!-- ZONE SCROLLABLE -->
+      <div class="flex-1 overflow-y-auto pr-1">
+        <!-- Résumé -->
+        {cert.summary && <p class="text-sm mb-4">{cert.summary}</p>}
 
-      <!-- Compétences (RNCP ou mixte) -->
-      {
-        Array.isArray(cert.skills) && cert.skills.length > 0 && (
-          <>
-            <h4 class="text-sm font-semibold mb-1">Compétences acquises</h4>
+        <!-- Compétences -->
+        {
+          Array.isArray(cert.skills) && cert.skills.length > 0 && (
+            <>
+              <h4 class="text-sm font-semibold mb-1">Compétences acquises</h4>
 
-            <ol class="text-sm text-left list-decimal space-y-1 mb-3">
-              {cert.skills.map((skill) => (
-                <li>{skill}</li>
-              ))}
-            </ol>
-          </>
-        )
-      }
-
-      <!-- Fallback -->
-      {
-        !cert.summary &&
-          (!Array.isArray(cert.skills) || cert.skills.length === 0) && (
-            <p class="text-sm italic opacity-70">Détails non renseignés</p>
+              <ol class="text-sm text-left list-decimal space-y-1 mb-3">
+                {cert.skills.map((skill) => (
+                  <li>{skill}</li>
+                ))}
+              </ol>
+            </>
           )
-      }
+        }
 
-      <p class="text-xs mt-auto">
+        <!-- Fallback -->
+        {
+          !cert.summary &&
+            (!Array.isArray(cert.skills) || cert.skills.length === 0) && (
+              <p class="text-sm italic opacity-70">Détails non renseignés</p>
+            )
+        }
+      </div>
+
+      <!-- FOOTER FIXE -->
+      <p class="text-xs mt-2 flex-shrink-0">
         Date d’émission : {cert.date}
       </p>
     </div>

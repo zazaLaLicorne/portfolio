@@ -72,34 +72,6 @@ html.dark .layout-projects #global-bg {
 }
 }
 
-/* .hero-bg {
-  background:
-    radial-gradient(
-      1200px 600px at 20% 20%,
-      rgba(236, 72, 153, 0.25),
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      #fdf2f8,
-      #fff
-    );
-} */
-
-/* html.dark .hero-bg {
-  background:
-    radial-gradient(
-      1200px 600px at 20% 20%,
-      rgba(236, 72, 153, 0.35),
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      #09090b,
-      #18181b
-    );
-} */
-
 body {
   @apply  text-base dark:bg-gray-900;
   color: var(--color-text);
@@ -154,17 +126,6 @@ section {
   margin-right: auto;
 }
 
-
-
-/* Light mode */
-/* :root section {
-  animation: glowPulseLight 8s ease-in-out infinite;
-} */
-
-/* Dark mode */
-/* :root.dark section {
-  animation: glowPulseDark 8s ease-in-out infinite;
-} */
 
 @media (max-width: 640px) {
   section {
@@ -241,6 +202,9 @@ section {
   perspective: 1000px;
 }
 
+.cert-header {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
 /* Mécanique interne */
 .flip-inner {
   position: relative;
