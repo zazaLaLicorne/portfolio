@@ -83,7 +83,7 @@ html.dark .layout-projects #global-bg {
     );
 } */
 
-html.dark .hero-bg {
+/* html.dark .hero-bg {
   background:
     radial-gradient(
       1200px 600px at 20% 20%,
@@ -95,7 +95,7 @@ html.dark .hero-bg {
       #09090b,
       #18181b
     );
-}
+} */
 
 body {
   @apply  text-base dark:bg-gray-900;
@@ -276,11 +276,12 @@ section {
   border-radius: calc(1rem - 6px);
   padding: 1.5rem;
 }
-/* @media (max-width: 768px) {
-  svg filter {
-    display: none;
+/* Réduction des animations pour les utilisateurs qui le demandent */
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient, .border-gradient {
+    animation: none;
   }
-} */
+}
 
 
 
