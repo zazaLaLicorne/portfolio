@@ -216,26 +216,3 @@ a:hover::after {
 }
 
 /* gradient */
-.hr-gradient {
-    border: none;
-    height: 2px;
-    margin: 2rem 0;
-    background: var(--gradient-primary);
-    background-size: 300% 100%;
-    animation: slide-gradient 6s linear infinite;
-    border-radius: 999px;
-    -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, transparent);
-    mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, transparent);
-}
-
-
-
-@media (prefers-reduced-motion: reduce) {
-    .hr-gradient {
-        animation: none;
-        background-size: auto;
-        -webkit-mask-image: none;
-        mask-image: none;
-        filter: none;
-    }
-}

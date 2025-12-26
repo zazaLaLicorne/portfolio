@@ -50,7 +50,21 @@
     background-position: 0% 50%, 0% 50%;
   }
 }
+/* ===========================
+   CLASSES GLOBALES ANIMEES
+   =========================== */
 
+.text-gradient {
+  background: var(--gradient-primary);
+  background-size: 150% 150%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: gradientShift 6s ease-in-out infinite;
+}
 
 .animated-gradient {
   background: var(--gradient-primary);
@@ -77,59 +91,37 @@
     0 0 24px var(--accent);
 }
 
-/* .gradient-static {
-  background: var(--gradient-primary);
-  background-size: 200% 200%;
-  background-position: 50% 50%;
-  color: var(--text);
-  border: none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    opacity 0.3s ease,
-    filter 0.4s ease;
-} */
-
-/* Variante hover sans animation de gradient */
-/* .gradient-static:hover {
-  transform: translateY(-4px) scale(1.03);
-  filter: brightness(1.08) saturate(1.1);
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.25),
-    0 0 12px var(--accent-light),
-    0 0 24px var(--accent);
-} */
-
-/* Container */
-.flip-card {
-  perspective: 1000px;
+.bordure-magique {
+  border: 5px solid transparent;
+  background: linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+  var(--gradient-primary) border-box;        
+  background-size: 100% 100%, 300% 100%;
+  animation: rotate-gradient 6s linear infinite;
+  box-shadow: 0 0 20px rgba(237, 21, 143, 0.4);
 }
 
-/* Mécanique interne */
-.flip-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+.hr-gradient {
+    border: none;
+    height: 2px;
+    margin: 2rem 0;
+    background: var(--gradient-primary);
+    background-size: 300% 100%;
+    animation: slide-gradient 6s linear infinite;
+    border-radius: 999px;
+    -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, transparent);
 }
 
-/* Face cachée + face visible */
-.flip-front,
-.flip-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient,
+  .animated-gradient,
+  .hr-gradient,
+  .bordure-magique {
+    background-size: auto;
+    filter: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
 }
 
-/* Face arrière */
-.flip-back {
-  transform: rotateY(180deg);
-}
-
-/* Hover : on retourne */
-.flip-card:hover .flip-inner {
-  transform: rotateY(180deg);
-}

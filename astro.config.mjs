@@ -12,6 +12,7 @@ export default defineConfig({
     sitemap({
       filter: (page) => !["/m-legales"].includes(page),
     }),
+
   ],
   output: "static",
   vite: {
