@@ -6,7 +6,13 @@ import compress from "astro-compress";
 // https://astro.build/config
 export default defineConfig({
   site: "https://isabellelamarre.fr",
-  integrations: [tailwind(), sitemap(), compress()],
+  integrations: [
+    tailwind(),
+    compress(),
+    sitemap({
+      filter: (page) => !["/m-legales"].includes(page),
+    }),
+  ],
   output: "static",
   vite: {
     resolve: {
@@ -42,7 +48,7 @@ export default defineConfig({
       },
     },
   },
-    image: {
+  image: {
     remotePatterns: [
       {
         protocol: "https",
