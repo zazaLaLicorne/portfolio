@@ -61,7 +61,7 @@ const videosList = [
   projet.videos?.mobile?.landscape,
   projet.videos?.mobile?.portrait
 ].filter(Boolean);
-
+const hasVideos = videosList.length > 0;
 const hasOneVideo = videosList.length === 1;
 
 function toEmbed(url) {
@@ -285,7 +285,7 @@ function toEmbed(url) {
 )}
 
     <!-- Vidéos du projet -->
-{projet.videos && (
+{hasVideos && (
   <div class="mt-20" data-aos="fade-up">
     <h3 class="font-semibold text-center mb-8">Vidéos de présentation</h3>
 

@@ -2,7 +2,7 @@
   {
     "id": "karine-lamarre-therapies",
     "title": "Karine LAMARRE Thérapies",
-    "description": "\n<h4>Site vitrine professionnel – Projet client (Astro)</h4>\n<p>Développement complet d’un site vitrine pour une praticienne en thérapie individuelle et de couple. Le site a été conçu pour offrir une présentation claire de ses services, renforcer sa crédibilité en ligne et faciliter la prise de rendez-vous.</p>\n\n<h4>Objectifs du projet</h4>\n<ul>\n  <li>Proposer une identité visuelle sobre, chaleureuse et cohérente avec son activité</li>\n  <li>Structurer l’information pour une lecture simple et intuitive.</li>\n  <li>Garantir une navigation fluide sur mobile, tablette et ordinateur.</li>\n  <li>Optimiser la vitesse, la sécurité et le référencement naturel.</li>\n</ul>\n\n<h4>Travaux réalisés</h4>\n<ul>\n  <li>Conception du design et de l’architecture du site.</li>\n  <li>Développement avec Astro pour maximiser les performances.</li>\n  <li>Intégration responsive et optimisation des assets (images, polices, scripts).</li>\n  <li>Mise en place de bonnes pratiques SEO : sémantique, structure, meta tags, sitemap, robots.txt.</li>\n  <li>Configuration de Google Analytics et Google Search Console.</li>\n  <li>Renforcement de la sécurité avec un score A+ en security headers.</li>\n  <li>Optimisations techniques permettant d’atteindre 100 % dans les quatre catégories Lighthouse.</li>\n</ul>\n\n<h4>Résultats</h4>\n<p>Un site vitrine rapide, sécurisé, accessible et parfaitement adapté à une activité professionnelle locale souhaitant accroître sa visibilité et sa crédibilité./p>\n",
+    "description": "\n<h2>Site vitrine professionnel – Projet client (Astro)</h2>\n<p>Développement complet d’un site vitrine pour une praticienne en thérapie individuelle et de couple. Le site a été conçu pour offrir une présentation claire de ses services, renforcer sa crédibilité en ligne et faciliter la prise de rendez-vous.</p>\n\n<h3>Objectifs du projet</h3>\n<ul>\n  <li>Proposer une identité visuelle sobre, chaleureuse et cohérente avec son activité</li>\n  <li>Structurer l’information pour une lecture simple et intuitive.</li>\n  <li>Garantir une navigation fluide sur mobile, tablette et ordinateur.</li>\n  <li>Optimiser la vitesse, la sécurité et le référencement naturel.</li>\n</ul>\n\n<h3>Travaux réalisés</h3>\n<ul>\n  <li>Conception du design et de l’architecture du site.</li>\n  <li>Développement avec Astro pour maximiser les performances.</li>\n  <li>Intégration responsive et optimisation des assets (images, polices, scripts).</li>\n  <li>Mise en place de bonnes pratiques SEO : sémantique, structure, meta tags, sitemap, robots.txt.</li>\n  <li>Configuration de Google Analytics et Google Search Console.</li>\n  <li>Renforcement de la sécurité avec un score A+ en security headers.</li>\n  <li>Optimisations techniques permettant d’atteindre 100 % dans les quatre catégories Lighthouse.</li>\n</ul>\n\n<h3>Résultats</h3>\n<p>Un site vitrine rapide, sécurisé, accessible et parfaitement adapté à une activité professionnelle locale souhaitant accroître sa visibilité et sa crédibilité./p>\n",
     "project_url": "https://karinelamarretherapies.fr",
     "github_url": "",
     "badge": "independant",
@@ -48,7 +48,7 @@
   {
     "id": "wap",
     "title": "WAP",
-    "description": "\n<h4>Application Mobile - React Native- Projet pour le titre RNCP</h4>\n<p>Conception et Développement d'une application React Native dans le cadre du projet de fin de formation pour la présentation au titre RNCP de concepteur développeur d'application web et mobile. Ce projet favorise la rencontre entre propriétaires de chiens afin de rendre plus agréable la promenade.</p>\n\n<ul>\n  <li>Permet d'afficher/ajouter/décrire les lieux DogFriendly</li>\n  <li>Permet d'afficher les amis, inconnus et personnes bloquées</li>\n  <li>Tuto pour montrer les fonctionnalités de l'application</li>\n</ul>\n\n<h4>Travaux réalisés</h4>\n<ul>\n  <li>Création des users story et mockup</li>\n  <li>Modélisation de la BDD</li>\n  <li>Géolocalisation</li>\n  <li>Identification par mot de passe</li>\n  <li>Codage en React Native</li>\n  <li>Backend avec Express et MongoDB\n</li>\n</ul>\n\n<h4>Résultats</h4>\n<p>Ce projet a été une expérience professionnelle et personnelle enrichissante. Il m’a permis d’appliquer toutes les compétences acquises pendant ma formation : développement front-end et back-end, gestion des bases de données et méthodologies Agiles. J’ai également appris à gérer des délais serrés et à collaborer avec des coéquipiers expérimentés. Wap est le reflet de notre travail collectif et de notre passion pour la technologie.</p>\n",
+    "description": "\n<h2>Application Mobile - React Native- Projet pour le titre RNCP</h2>\n<p>Conception et Développement d'une application React Native dans le cadre du projet de fin de formation pour la présentation au titre RNCP de concepteur développeur d'application web et mobile. Ce projet favorise la rencontre entre propriétaires de chiens afin de rendre plus agréable la promenade.</p>\n\n<h3>Objectifs du projet</h3>\n<ul>\n  <li>Permet d'afficher/ajouter/décrire les lieux DogFriendly</li>\n  <li>Permet d'afficher les amis, inconnus et personnes bloquées</li>\n  <li>Tuto pour montrer les fonctionnalités de l'application</li>\n</ul>\n\n<h3>Travaux réalisés</h3>\n<ul>\n  <li>Création des users story et mockup</li>\n  <li>Modélisation de la BDD</li>\n  <li>Géolocalisation</li>\n  <li>Identification par mot de passe</li>\n  <li>Codage en React Native</li>\n  <li>Backend avec Express et MongoDB\n</li>\n</ul>\n\n<h3>Résultats</h3>\n<p>Ce projet a été une expérience professionnelle et personnelle enrichissante. Il m’a permis d’appliquer toutes les compétences acquises pendant ma formation : développement front-end et back-end, gestion des bases de données et méthodologies Agiles. J’ai également appris à gérer des délais serrés et à collaborer avec des coéquipiers expérimentés. Wap est le reflet de notre travail collectif et de notre passion pour la technologie.</p>\n",
     "project_url": "",
     "github_url": "",
     "badge": "formation",
@@ -97,7 +97,7 @@
   {
     "id": "flower",
     "title": "Flower",
-    "description": "\n<h4>Galerie Photo - Site Personnel -React</h4>\n<p>Dans le cadre de mon activité freelance, j'ai conçu et développé un site web vitrine mettant en valeur une collection personnelle de photographies botaniques. Ce projet m’a permis de mobiliser une large palette de compétences techniques, de la gestion des médias à l’optimisation SEO, en passant par la mise en place d’un backoffice sur mesure.</p>\n\n<h4>Missions réalisées</h4>\n<ul>\n  <li>Développement fullstack avec Next.js 15 (App Router) et MongoDB</li>\n  <li>Intégration Cloudinary pour l’optimisation, la compression automatique et l’hébergement des images</li>\n  <li>Création d’un script d’upload intelligent permettant :</li>\n<ul>\n  <li>le chargement par lots d’images classées en dossiers</li>\n  <li>la transformation automatique des formats (WebP)</li>\n  <li>l’exportation d’un fichier JSON pour l’insertion en base de données</li>\n</ul>\n  <li>Mise en place d’un système de tri dynamique des photos par catégorie, saison, fleur et couleur (via API)</li>\n  <li>Développement d’un carrousel responsive avec système de \"likes\" enregistrés en BDD</li>\n  <li>Optimisation SEO</li>\n  <li>Intégration de Google Analytics avec bannière de consentement RGPD</li>\n</ul>\n\n<h4>Résultats</h4>\n<p>Un site sécurisé et rapide malgré plus de 100 photos a chargé</p>\n",
+    "description": "\n<h2>Galerie Photo - Site Personnel -React</h2>\n<p>Dans le cadre de mon activité freelance, j'ai conçu et développé un site web vitrine mettant en valeur une collection personnelle de photographies botaniques. Ce projet m’a permis de mobiliser une large palette de compétences techniques, de la gestion des médias à l’optimisation SEO, en passant par la mise en place d’un backoffice sur mesure.</p>\n\n<h3>Missions réalisées</h3>\n<ul>\n  <li>Développement fullstack avec Next.js 15 (App Router) et MongoDB</li>\n  <li>Intégration Cloudinary pour l’optimisation, la compression automatique et l’hébergement des images</li>\n  <li>Création d’un script d’upload intelligent permettant :</li>\n<ul>\n  <li>le chargement par lots d’images classées en dossiers</li>\n  <li>la transformation automatique des formats (WebP)</li>\n  <li>l’exportation d’un fichier JSON pour l’insertion en base de données</li>\n</ul>\n  <li>Mise en place d’un système de tri dynamique des photos par catégorie, saison, fleur et couleur (via API)</li>\n  <li>Développement d’un carrousel responsive avec système de \"likes\" enregistrés en BDD</li>\n  <li>Optimisation SEO</li>\n  <li>Intégration de Google Analytics avec bannière de consentement RGPD</li>\n</ul>\n\n<h3>Résultats</h3>\n<p>Un site sécurisé et rapide malgré plus de 100 photos a chargé</p>\n",
     "project_url": "https://flower.isabellelamarre.fr",
     "github_url": "",
     "badge": "personnel",
@@ -146,5 +146,103 @@
     },
     "date": "2025-07-22",
     "createdAt": "2025-12-18T17:15:20.123Z"
+  },
+  {
+    "id": "mon-portfolio",
+    "title": "Mon Portfolio",
+    "date": "02/01/2026",
+    "description": "<h2>Portfolio-Projet professionnel(Astro)</h2>\n<p>\nConception et développement de mon site portfolio personnel, pensé comme une vitrine professionnelle évolutive.\nCe projet a été réalisé pour présenter mes compétences, mes projets et mon parcours de développeuse web, tout en servant de terrain d’expérimentation pour des choix techniques orientés performance, maintenabilité et expérience utilisateur.\nLe site a été développé avec Astro, en mettant l’accent sur la clarté, la lisibilité et la rapidité de chargement.\n</p>\n\n<h3>Objectifs du projet</h3>\n<ul>\n  <li>Créer une vitrine professionnelle claire et structurée</li>\n  <li>Valoriser mes projets, compétences et certifications</li>\n  <li>Mettre en place une base technique performante et évolutive</li>\n  <li>Approfondir l’utilisation d’Astro dans un projet réel</li>\n</ul>\n\n<h3>Travaux réalisés</h3>\n<ul>\n  <li>Conception de l’architecture globale du site</li>\n  <li>Développement des pages et composants avec Astro</li>\n  <li>Mise en place d’un système de données structuré (projets, certifications, contenus)</li>\n  <li>Optimisation des performances et du chargement des pages</li>\n  <li>Travail sur l’accessibilité, la lisibilité et le responsive design</li>\n  <li>Gestion d’un thème clair et sombre cohérent avec l’identité visuelle</li>\n</ul>\n\n<h3>Résultats</h3>\n<p>\nLe site portfolio constitue aujourd’hui une base solide pour présenter mon travail de manière professionnelle et évolutive.\nIl me permet d’ajouter facilement de nouveaux projets, contenus ou certifications, tout en garantissant de bonnes performances et une expérience utilisateur fluide.\nCe projet reflète à la fois mes compétences techniques actuelles et ma capacité à concevoir un produit pensé pour durer, autant sur le plan technique que sur le plan visuel.\n</p>\n",
+    "project_url": "https:isabellelamarre.fr",
+    "github_url": "",
+    "badge": "personnel",
+    "priority": "high",
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1767029544/portfolio/projects/dddzjesfhkono04jsqpb.png",
+    "images": "",
+    "techs": [
+      "astro",
+      "cloudinary",
+      "css",
+      "gsc",
+      "html",
+      "tailwind",
+      "ts",
+      "vercel"
+    ],
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "100",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        },
+        "mobile": {
+          "performance": "96",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        }
+      },
+      "security_headers": "A"
+    },
+    "createdAt": "2025-12-29T17:43:09.797Z",
+    "videos": {
+      "desktop": "",
+      "mobile": {
+        "portrait": "",
+        "landscape": ""
+      },
+      "tablet": {
+        "portrait": "",
+        "landscape": ""
+      }
+    }
+  },
+  {
+    "id": "sciebcz-edu-agency",
+    "title": "Science Edu Agency",
+    "date": "10/10/2025",
+    "description": "<h2>Refonte du site Science Edu Agency</h2>\n<p>\nRefonte complète du site vitrine de <strong>Science Edu Agency</strong>, initialement développé sous WordPress, réalisée dans le cadre de mon stage en octobre.\nCe projet correspond à ma première utilisation du framework Astro, mise en œuvre dans un contexte professionnel réel.\nL’objectif était de moderniser le site, d’améliorer ses performances et de simplifier sa maintenance, tout en conservant les contenus et l’identité existants.\n</p>\n\n<h3>Objectifs du projet</h3>\n<ul>\n  <li>Migrer un site WordPress vers une solution plus performante et moderne</li>\n  <li>Améliorer les performances et le temps de chargement des pages</li>\n  <li>Repenser l’architecture du site pour la rendre plus claire et maintenable</li>\n  <li>Découvrir et utiliser Astro pour la première fois en conditions réelles</li>\n</ul>\n\n<h3>Travaux réalisés</h3>\n<ul>\n  <li>Analyse du site existant et de sa structure WordPress</li>\n  <li>Reconstruction complète du site avec Astro</li>\n  <li>Migration et réorganisation des contenus</li>\n  <li>Mise en place d’une architecture statique orientée performance</li>\n  <li>Optimisation du chargement des pages et du rendu côté client</li>\n</ul>\n\n<h3>Résultats</h3>\n<p>\nLe site bénéficie désormais d’une architecture plus légère, plus rapide et plus facile à faire évoluer.\nCette refonte m’a permis de comprendre concrètement les enjeux d’une migration depuis un CMS vers un framework moderne, ainsi que les bonnes pratiques liées à la performance et à la structuration d’un site vitrine.\nCe projet représente une étape clé dans mon parcours, en tant que première expérience avec Astro et première refonte complète livrée en contexte professionnel.\n</p>\n",
+    "project_url": "https://agency.science-edu.fr/",
+    "github_url": "",
+    "badge": "stage",
+    "priority": "high",
+    "thumbnail": "https://res.cloudinary.com/isabellelamarre/image/upload/v1767030831/portfolio/projects/pf5pbe4hnmohbtow4nsa.png",
+    "images": "",
+    "techs": [
+      "astro",
+      "css",
+      "html",
+      "ts"
+    ],
+    "scores": {
+      "lighthouse": {
+        "desktop": {
+          "performance": "98",
+          "accessibility": "91",
+          "best_practices": "100",
+          "seo": "100"
+        },
+        "mobile": {
+          "performance": "76",
+          "accessibility": "100",
+          "best_practices": "100",
+          "seo": "100"
+        }
+      },
+      "security_headers": "A+"
+    },
+    "createdAt": "2025-12-29T17:54:10.004Z",
+    "videos": {
+      "desktop": "",
+      "mobile": {
+        "portrait": "",
+        "landscape": ""
+      },
+      "tablet": {
+        "portrait": "",
+        "landscape": ""
+      }
+    }
   }
 ]
